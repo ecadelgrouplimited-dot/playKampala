@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#130f26"/>
+      <stop offset="55%" stop-color="#6b2238"/>
+      <stop offset="100%" stop-color="#f28b20"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffef7a"/>
+      <stop offset="100%" stop-color="#ff7b1c"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Rounded Card -->
+  <rect width="512" height="512" rx="88" fill="url(#sky)"/>
+  <!-- Golden Kampala Sun -->
+  <circle cx="360" cy="168" r="68" fill="url(#sun)" opacity="0.92"/>
+  <!-- Seven Hills Silhouette & Skyline -->
+  <path d="M0 320 Q110 250 230 305 T512 285 L512 420 L0 420 Z" fill="#231829"/>
+  <!-- Nakasero & Downtown Arcades -->
+  <rect x="44" y="216" width="52" height="140" fill="#18121e"/>
+  <rect x="108" y="242" width="46" height="114" fill="#1e1624"/>
+  <!-- Queen's Way Clock Tower -->
+  <rect x="184" y="138" width="38" height="218" fill="#2b1f31"/>
+  <polygon points="178,138 203,102 228,138" fill="#d93829"/>
+  <circle cx="203" cy="164" r="11" fill="#ffe98a"/>
+  <!-- Glowing Arcade Windows -->
+  <rect x="56" y="232" width="10" height="12" fill="#ffcf40"/>
+  <rect x="74" y="232" width="10" height="12" fill="#ffcf40"/>
+  <rect x="56" y="256" width="10" height="12" fill="#ffcf40"/>
+  <rect x="74" y="256" width="10" height="12" fill="#36d6e8"/>
+  <!-- Asphalt Street & Uganda Black-Yellow-Red Kerb -->
+  <rect x="0" y="352" width="512" height="160" rx="24" fill="#1b1c22"/>
+  <rect x="0" y="346" width="512" height="8" fill="#f7c816"/>
+  <rect x="0" y="354" width="512" height="6" fill="#d92b2b"/>
+  <!-- Boda-Boda Motorcycle & Rider -->
+  <circle cx="176" cy="382" r="42" fill="#101114" stroke="#e0e4ec" stroke-width="10"/>
+  <circle cx="176" cy="382" r="18" fill="#8b93a6"/>
+  <circle cx="344" cy="382" r="42" fill="#101114" stroke="#e0e4ec" stroke-width="10"/>
+  <circle cx="344" cy="382" r="18" fill="#8b93a6"/>
+  <!-- Bike Frame & Tank -->
+  <path d="M176 382 L236 318 L314 318 L344 382 L252 382 Z" fill="#d92323"/>
+  <path d="M250 306 L312 306 L332 336 L262 336 Z" fill="#f22929"/>
+  <line x1="306" y1="280" x2="344" y2="382" stroke="#cfd5e2" stroke-width="12" stroke-linecap="round"/>
+  <!-- Headlight & Glowing Beam -->
+  <polygon points="342,292 504,258 504,348" fill="#fff29c" opacity="0.38"/>
+  <circle cx="338" cy="292" r="13" fill="#fff6b3"/>
+  <!-- Rider in Yellow Reflector Vest & Helmet -->
+  <path d="M218 318 L248 242 L288 248 L268 318 Z" fill="#f7d417"/>
+  <line x1="274" y1="262" x2="314" y2="282" stroke="#f7d417" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="268" cy="214" r="24" fill="#246bce"/>
+  <path d="M268 202 L294 214 L268 224 Z" fill="#9be8ff"/>
+  <!-- Title Banner -->
+  <text x="256" y="476" font-family="sans-serif" font-weight="900" font-size="52" fill="#f7c816" text-anchor="middle" letter-spacing="3">KAMPALA</text>
+</svg>

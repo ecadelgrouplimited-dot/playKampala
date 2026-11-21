@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blfy34awuiv8u"
+path="res://.godot/imported/Play_Kampala_2026-11-13T071922.mp3-588b5e7afdac54bdf13ac6397aa6121b.mp3str"
+
+[deps]
+
+source_file="res://audio/theme songs/Play_Kampala_2026-11-13T071922.mp3"
+dest_files=["res://.godot/imported/Play_Kampala_2026-11-13T071922.mp3-588b5e7afdac54bdf13ac6397aa6121b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

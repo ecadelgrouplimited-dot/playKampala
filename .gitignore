@@ -1,0 +1,18 @@
+# Godot 4 cache & local credentials
+.godot/
+.export_credentials.cfg
+*.translation
+
+# Android build outputs & signing secrets (NEVER commit keystores or large binaries)
+*.apk
+*.aab
+*.keystore
+*.jks
+*.idsig
+android/build/
+play_store_assets/screenshots_tablet/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*~

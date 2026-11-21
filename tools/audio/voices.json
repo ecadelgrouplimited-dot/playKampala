@@ -1,0 +1,43 @@
+{
+  "_how_to": "Create each voice in ElevenLabs (Voices > Voice Design, or search the Voice Library for 'Ugandan'), then paste its voice_id here. The 'design' text is the prompt to use in Voice Design.",
+  "model_id": "eleven_v3",
+  "fallback_model_id": "eleven_multilingual_v2",
+  "speakers": {
+    "conductor_m": {
+      "voice_id": "",
+      "design": "A Ugandan man in his mid-20s, a Kampala matatu taxi conductor. Loud, slightly hoarse from shouting all day, fast rhythmic street calls, strong Luganda accent when speaking English, energetic and cheeky. Recorded outdoors at a busy roadside."
+    },
+    "boda_m": {
+      "voice_id": "",
+      "design": "A Ugandan man in his early 30s, a Kampala boda boda (motorcycle taxi) rider. Friendly, relaxed and confident, Luganda-accented English, a little playful, speaks at a natural street pace."
+    },
+    "vendor_m": {
+      "voice_id": "",
+      "design": "A Ugandan man in his 30s, a roadside rolex and muchomo seller in Kampala. Loud, cheerful, persuasive calls to passers-by, Luganda-accented English, warm laugh in his voice."
+    },
+    "vendor_f": {
+      "voice_id": "",
+      "design": "A Ugandan woman in her 40s, a market seller at a busy Kampala market. Warm, loud, motherly and persuasive, calling customers, Luganda-accented English."
+    },
+    "mc_m": {
+      "voice_id": "",
+      "design": "A Ugandan man in his late 20s who calls people into a Kampala kibanda video hall and bar. Excitable, booming, like a local radio presenter, Luganda-accented English."
+    },
+    "police_m": {
+      "voice_id": "",
+      "design": "A Ugandan traffic police officer in his 40s. Stern, authoritative, slow and firm, Ugandan accent, speaking at a roadside checkpoint."
+    },
+    "customer_f": {
+      "voice_id": "",
+      "design": "A Ugandan woman in her late 20s, an office worker in Kampala. Polite but quick and a little impatient, clear Kampala accent, natural everyday English with Luganda words."
+    },
+    "customer_m": {
+      "voice_id": "",
+      "design": "A Ugandan man in his 50s, a Kampala businessman. Easy-going, warm, deep voice, Luganda-accented English."
+    },
+    "pastor_m": {
+      "voice_id": "",
+      "design": "A Ugandan Pentecostal pastor in his 40s. Powerful, joyful, preaching voice with call-and-response energy, Ugandan accent."
+    }
+  }
+}

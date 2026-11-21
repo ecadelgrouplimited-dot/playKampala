@@ -1,0 +1,64 @@
+id,category,speaker,tag,text,note
+c01,conductor,conductor_m,[shouting],"Kampala! Kampala! Paaka! Two seats, tugende!","Paaka = the taxi park; tugende = let's go"
+c02,conductor,conductor_m,[shouting],"Ntinda, Ntinda, Ntinda! Ekifo kimu kisigadde!","Ekifo kimu kisigadde = one seat remains"
+c03,conductor,conductor_m,[shouting],"Wandegeya! Makerere! Jangu, jangu, sebo!","Jangu = come; sebo = sir"
+c04,conductor,conductor_m,[shouting],"Kireka! Kireka! Seat eriyo, nyabo!","Seat eriyo = there is a seat; nyabo = madam"
+c05,conductor,conductor_m,[shouting],"Nakawa, Nakawa! We are going, we are going! Don't remain!","'Don't remain' = don't get left behind"
+c06,conductor,conductor_m,[impatient],"Extend a bit, nyabo, extend! Let the sebo sit.","'Extend' = shift over on the seat"
+c07,conductor,conductor_m,[shouting],"Abali e Ntinda, muyingire! Muyingire!","Those going to Ntinda, get in!"
+c08,conductor,conductor_m,[firm],"Bring the money, bring the money! Two thousand, two thousand!",
+c09,conductor,conductor_m,[shouting],"Stage! Stage! Driver, someone is alighting!","Stage = stop here"
+c10,conductor,conductor_m,[shouting],"Ggaba, Ggaba! Last seat by the window!",
+c11,conductor,conductor_m,[shouting],"Old Park! Old Park! Gwe sebo, ogenda?","Gwe sebo, ogenda? = You sir, are you going?"
+c12,conductor,conductor_m,[shouting],"Kisaasi! Kyanja! Tugende, we are full!",
+b01,boda,boda_m,[friendly],"Boss, boda? Where are we going?",
+b02,boda,boda_m,[playful],"Nyabo, boda! I'll take you cheap cheap.",
+b03,boda,boda_m,[calm],"Sit well, hold tight. We are branching here.","'Branching' = turning off"
+b04,boda,boda_m,[exasperated],"Banange, this jam! Let me pass from the side.","Banange = oh my people!"
+b05,boda,boda_m,[friendly],"Where should I drop you? Here at the stage?",
+b06,boda,boda_m,[persuasive],"Give me five thou, sebo. It's not far.",
+b07,boda,boda_m,[friendly],"Pay me on mobile money. I'm sending you the number.",
+b08,boda,boda_m,[upbeat],"Tugende! Hold your bag well.",
+b09,boda,boda_m,[worried],"Eh, this rain! Let us first stand under the verandah.",
+b10,boda,boda_m,[warm],"Webale nnyo, boss. Call me any time!","Webale nnyo = thank you very much"
+r01,rolex,vendor_m,[shouting],"Rolex! Rolex! Hot rolex, sebo, two eggs!",
+r02,rolex,vendor_m,[shouting],"Chapati hot hot! Come and eat!",
+r03,rolex,vendor_m,[persuasive],"Nyabo, I add for you cabbage and tomato, free!",
+r04,rolex,vendor_m,[shouting],"Kikomando! Chapati and beans, cheap cheap!","Kikomando = chopped chapati with beans"
+m01,muchomo,vendor_m,[shouting],"Muchomo! Muchomo! Hot goat meat on the stick!",
+m02,muchomo,vendor_m,[shouting],"Gonja! Roasted gonja, sweet sweet!","Gonja = roasted plantain"
+m03,muchomo,vendor_m,[persuasive],"Come and eat muchomo, it is fresh, I swear!",
+f01,fundi,vendor_m,[friendly],"Bring the bike, boss! Tyre, chain, we fix fast!",
+f02,fundi,vendor_m,[teasing],"Your chain is crying, sebo. Let me oil it.",
+f03,fundi,vendor_m,[confident],"Puncture? No problem. Five minutes only.",
+k01,market,vendor_f,[shouting],"Matooke! Fresh matooke! Come, nyabo, I give you a good price!",
+k02,market,vendor_f,[shouting],"Tomatoes, onions, sukuma wiki! Come and see!",
+k03,market,vendor_f,[persuasive],"Sebo, buy from me today. I'll reduce for you!","'Reduce' = lower the price"
+k04,market,vendor_f,[warm],"Eh, nyabo, you are lost! Come, I've kept for you the best ones.","'You are lost' = long time no see"
+k05,market,vendor_f,[shouting],"Avocado, avocado! Two for one thousand!",
+j01,fruit,vendor_f,[shouting],"Cold juice! Passion, mango, cold cold!",
+j02,fruit,vendor_f,[shouting],"Sugarcane! Sweet sugarcane, buy for the children!",
+t01,tv,mc_m,[excited],"Goal! Goal! Ah, banange, what a goal!",
+t02,tv,mc_m,[shouting],"Come inside, the match has started! Only one thousand!",
+t03,tv,mc_m,[excited],"The VJ is translating today! Come and watch the action film!","VJ = live movie narrator/translator"
+t04,bar,mc_m,[cheerful],"Bring for me another cold one, please!",
+p01,police,police_m,[stern],"Stop there! Park aside, my friend.",
+p02,police,police_m,[stern],"Where is your helmet? And your permit?",
+p03,police,police_m,[surprised],"You are carrying three people? Eh! Come here.",
+p04,police,police_m,[calm],"Okay, go. Next time, put on your helmet.",
+q01,customer,customer_f,[calling out],"Boda! Boda! Are you free?",
+q02,customer,customer_f,[haggling],"How much to Ntinda? Eh, that's too much, reduce!",
+q03,customer,customer_f,[firm],"Driver, stage! Leave me here.",
+q04,customer,customer_f,[warm],"Webale nnyo. Safe journey!",
+q05,customer,customer_f,[worried],"Please drive slowly, I'm carrying eggs!",
+q06,customer,customer_m,[friendly],"Oli otya, boss? Take me to Wandegeya.","Oli otya = how are you"
+q07,customer,customer_m,[casual],"I'm coming. Let me first pick my bag.","'I'm coming' = I'll be right back"
+q08,customer,customer_m,[impressed],"Well done, my friend. You are fast!",
+g01,greeting,customer_m,[friendly],"Oli otya?","How are you?"
+g02,greeting,customer_f,[friendly],"Bulungi, nawe?","Fine, and you?"
+g03,greeting,customer_f,[warm],"Gyebale ko!","Well done (said to someone working)"
+g04,greeting,customer_m,[warm],"Kale, webale!","Okay, thank you!"
+h01,church,pastor_m,[preaching],"Praise the Lord! Can somebody say amen!",
+h02,church,pastor_m,[welcoming],"Welcome, welcome! Sit down, the service is starting.",
+a01,momo,vendor_f,[calling out],"Mobile money! Deposit, withdraw, airtime!",
+a02,momo,vendor_f,[calling out],"Airtime! Load your phone, sebo!",

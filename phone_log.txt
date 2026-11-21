@@ -1,0 +1,36 @@
+--------- beginning of system
+11-21 07:58:19.287  2076  2141 W ActivityManager: Slow operation: 276ms so far, now at startProcess: done updating battery stats
+11-21 07:58:19.287  2076  2141 W ActivityManager: Slow operation: 277ms so far, now at startProcess: building log message
+11-21 07:58:19.287  2076  2141 W ActivityManager: Slow operation: 277ms so far, now at startProcess: starting to update pids map
+11-21 07:58:19.292  2076  2141 W ActivityManager: Slow operation: 281ms so far, now at startProcess: done updating pids map
+11-21 07:58:19.350  2076  2141 W ActivityManager: Slow operation: 93ms so far, now at startProcess: returned from zygote!
+11-21 07:58:19.398  2076  2141 W ActivityManager: Slow operation: 141ms so far, now at startProcess: done updating battery stats
+11-21 07:58:19.401  2076  2141 W ActivityManager: Slow operation: 144ms so far, now at startProcess: building log message
+11-21 07:58:19.402  2076  2141 W ActivityManager: Slow operation: 145ms so far, now at startProcess: starting to update pids map
+11-21 07:58:19.406  2076  2141 W ActivityManager: Slow operation: 149ms so far, now at startProcess: done updating pids map
+11-21 07:58:19.514  2076  3879 W ActivityManager: Slow operation: 55ms so far, now at attachApplicationLocked: immediately after bindApplication
+11-21 07:58:19.514  2076  3879 W ActivityManager: Slow operation: 56ms so far, now at attachApplicationLocked: after updateLruProcessLocked
+11-21 07:58:19.520  2076  3879 W ActivityManager: Slow operation: 61ms so far, now at attachApplicationLocked: after updateOomAdjLocked
+11-21 07:58:20.202  2076  3081 W ActivityManager: Slow operation: 97ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+11-21 07:58:20.202  2076  3081 W ActivityManager: Slow operation: 97ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+11-21 07:58:20.317  2076  3089 W ActivityManager: Slow operation: 106ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+11-21 07:58:20.317  2076  3089 W ActivityManager: Slow operation: 106ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+11-21 07:58:21.115  2076  4054 W ActivityManager: registerReceiverWithFeature: no app for null
+11-21 07:58:21.124  2076  3205 W ActivityManager: Slow operation: 75ms so far, now at finishAttachApplicationInner: after mServices.attachApplicationLocked
+11-21 07:58:21.124  2076  3205 W ActivityManager: Slow operation: 75ms so far, now at finishAttachApplicationInner: after dispatching broadcasts
+11-21 07:58:21.496  2076  2141 W ActivityManager: Slow operation: 62ms so far, now at startProcess: returned from zygote!
+11-21 07:58:21.535  2076  2303 W ActivityManager: Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@7447aa4
+11-21 07:58:21.540  2076  2141 W ActivityManager: Slow operation: 105ms so far, now at startProcess: done updating battery stats
+11-21 07:58:21.541  2076  2141 W ActivityManager: Slow operation: 106ms so far, now at startProcess: building log message
+11-21 07:58:21.541  2076  2141 W ActivityManager: Slow operation: 106ms so far, now at startProcess: starting to update pids map
+11-21 07:58:21.548  2076  2141 W ActivityManager: Slow operation: 113ms so far, now at startProcess: done updating pids map
+11-21 07:58:21.669  2076  2303 W ActivityManager: Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@d7471f
+11-21 07:58:21.853  2076  2303 W ActivityManager: Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@3fdd0f7
+11-21 07:58:21.969  2076  2303 W ActivityManager: Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@38831e2
+--------- beginning of main
+11-21 07:58:23.347 20776 23518 I godot   : Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+11-21 07:58:23.818 20776 23518 I godot   : OpenGL API OpenGL ES 3.2 v1.r54p1-12eac0.31596c752a7e2ed34e05ad43c82dd58d - Compatibility - Using Device: ARM - Mali-G57 MC2
+11-21 07:58:24.056 20776 23518 I godot   : 
+11-21 07:58:24.186  2076  2128 W ActivityManager: setHasOverlayUi called on unknown pid: 18972
+11-21 07:58:26.755  2076  2303 W ActivityManager: Unbind failed: could not find connection for android.app.LoadedApk$ServiceDispatcher$InnerConnection@abbf598
+11-21 07:58:34.413 20776 23518 I godot   : PlayKampala city built in 7656 ms (geometry 3355 ms): 283 merged meshes, 427 places, 281 shops signs, 397 moving people/vehicles
