@@ -213,11 +213,9 @@ func _physics_process(delta: float) -> void:
 
 	_resolve_agent_collisions()
 	_unstick(delta, mag)
-	# Clamp to the full city + suburbs + inter-district highways boundary (allow swimming into Lake Victoria on foot!)
-	var limit: float = main.HALF + 102.0
-	var max_z: float = (main.HALF + 52.0) if (not on_boda and absf(position.x) <= 125.0) else (main.HALF + 30.0)
-	position.x = clampf(position.x, -limit, limit)
-	position.z = clampf(position.z, -limit, max_z)
+	# Non-ending streaming world in East, West & North! Only southern deep Lake Victoria bounds motorcycles (on foot you can swim!).
+	var max_z: float = (main.HALF + 56.0) if (not on_boda and absf(position.x) <= 135.0) else (main.HALF + 32.0)
+	position.z = minf(position.z, max_z)
 	if is_swimming:
 		position.y = -0.38 + sin(_t * 3.8) * 0.06
 	elif not on_boda and absf(position.x) <= 3.3 and position.z > main.HALF + 12.0 and position.z <= main.HALF + 40.2:

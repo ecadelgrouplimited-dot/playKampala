@@ -219,9 +219,10 @@ class MapView extends Control:
 
 	func _draw() -> void:
 		var m := main
-		var full_scale: float = minf(size.x, size.y) / (m.HALF * 2.0 + 235.0)
+		var full_scale: float = minf(size.x, size.y) / (m.HALF * 2.0 + 255.0)
 		var scale := full_scale if full else 0.72
-		var centre: Vector3 = Vector3(0, 0, 8.0) if full else m.player.position
+		var out_of_town: bool = m.player != null and (absf(m.player.position.x) > m.HALF + 65.0 or absf(m.player.position.z) > m.HALF + 65.0)
+		var centre: Vector3 = (m.player.position if out_of_town else Vector3(0, 0, 8.0)) if full else m.player.position
 		var yaw: float = 0.0 if full else m.rig.yaw
 		draw_rect(Rect2(Vector2.ZERO, size), Color(0.06, 0.07, 0.09, 0.92 if full else 0.82))
 		var font := get_theme_default_font()
@@ -257,10 +258,24 @@ class MapView extends Control:
 						"pitch": "Nakivubo", "workshops": "Katwe", "mixed": "Wandegeya",
 						"estates": "Ntinda", "fuel": "Fuel", "nakasero": "Nakasero Hill"}.get(d, m.DISTRICT_NAMES[d])
 					draw_string(font, a + Vector2(4, 15), short_lbl, HORIZONTAL_ALIGNMENT_LEFT, -1, 11, Color(1, 1, 1, 0.88))
-		# roads
+		# roads (central city + streamed endless highways & red murram roads!)
 		var rw := maxf(2.2, 8.2 * scale)
 		for e in m.edges:
 			draw_line(_w2m(m.nodes[e[0]], centre, scale, yaw), _w2m(m.nodes[e[1]], centre, scale, yaw), Color(0.52, 0.53, 0.57), rw)
+		if m.get("endless_world") != null and m.endless_world.get("loaded") != null:
+			var ch_sz: float = m.endless_world.CHUNK
+			for ck in m.endless_world.loaded.keys():
+				var c2: Vector2i = ck
+				var ox := c2.x * ch_sz
+				var oz := c2.y * ch_sz
+				if c2.y == 0:
+					draw_line(_w2m(Vector3(ox - ch_sz * 0.5, 0, 0), centre, scale, yaw), _w2m(Vector3(ox + ch_sz * 0.5, 0, 0), centre, scale, yaw), Color(0.55, 0.57, 0.62), rw)
+				elif absi(c2.y) % 2 == 1:
+					draw_line(_w2m(Vector3(ox - ch_sz * 0.5, 0, oz), centre, scale, yaw), _w2m(Vector3(ox + ch_sz * 0.5, 0, oz), centre, scale, yaw), Color(0.68, 0.36, 0.20), maxf(1.8, rw * 0.65))
+				if c2.x == 0 and c2.y < 0:
+					draw_line(_w2m(Vector3(0, 0, oz - ch_sz * 0.5), centre, scale, yaw), _w2m(Vector3(0, 0, oz + ch_sz * 0.5), centre, scale, yaw), Color(0.55, 0.57, 0.62), rw)
+				elif absi(c2.x) % 2 == 1:
+					draw_line(_w2m(Vector3(ox, 0, oz - ch_sz * 0.5), centre, scale, yaw), _w2m(Vector3(ox, 0, oz + ch_sz * 0.5), centre, scale, yaw), Color(0.68, 0.36, 0.20), maxf(1.8, rw * 0.65))
 		# Real Kampala Street Names on the Full-Screen City Map
 		if full and m.get("EW_STREETS") and m.get("NS_STREETS"):
 			for j in m.EW_STREETS.size():
@@ -527,74 +542,74 @@ func _ready() -> void:
 
 	minimap = MapView.new()
 	minimap.main = main
-	minimap.position = Vector2(12, 12)
-	minimap.size = Vector2(196, 196)
+	minimap.position = Vector2(10, 10)
+	minimap.size = Vector2(176, 176)
 	minimap.clip_contents = true
 	minimap.mouse_filter = Control.MOUSE_FILTER_STOP
 	add_child(minimap)
 
-	# --- top-centre wallet card: Mobile Money, day, fuel & speedometer
-	var top := _panel(self, Color(0.05, 0.06, 0.08, 0.82), Color(1.0, 0.82, 0.12, 0.55))
+	# --- top-centre sleek translucent wallet bar: Mobile Money, day, fuel & speedometer
+	var top := _panel(self, Color(0.05, 0.06, 0.08, 0.66), Color(1.0, 0.82, 0.12, 0.42))
 	top.anchor_left = 0.5
 	top.anchor_right = 0.5
-	top.offset_left = -255
-	top.offset_right = 255
-	top.offset_top = 8
+	top.offset_left = -238
+	top.offset_right = 238
+	top.offset_top = 6
 	var tv := VBoxContainer.new()
-	tv.add_theme_constant_override("separation", 3)
+	tv.add_theme_constant_override("separation", 1)
 	top.add_child(tv)
-	money_lbl = _label(tv, FONT, Color(1.0, 0.84, 0.15))
+	money_lbl = _label(tv, 16, Color(1.0, 0.85, 0.18))
 	money_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	day_lbl = _label(tv, 15, Color(0.9, 0.9, 0.9))
+	day_lbl = _label(tv, 13, Color(0.92, 0.92, 0.92))
 	day_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	var fuel_row := HBoxContainer.new()
 	fuel_row.alignment = BoxContainer.ALIGNMENT_CENTER
-	fuel_row.add_theme_constant_override("separation", 10)
+	fuel_row.add_theme_constant_override("separation", 8)
 	tv.add_child(fuel_row)
-	fuel_lbl = _label(fuel_row, 15, Color(0.88, 0.88, 0.88))
+	fuel_lbl = _label(fuel_row, 13, Color(0.90, 0.90, 0.90))
 	fuel_lbl.text = "Fuel"
 	var bar_bg := ColorRect.new()
 	bar_bg.color = Color(1, 1, 1, 0.16)
-	bar_bg.custom_minimum_size = Vector2(180, 12)
+	bar_bg.custom_minimum_size = Vector2(150, 9)
 	bar_bg.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	bar_bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	fuel_row.add_child(bar_bg)
 	fuel_fill = ColorRect.new()
 	fuel_fill.color = Color(0.25, 0.92, 0.42)
-	fuel_fill.size = Vector2(180, 12)
+	fuel_fill.size = Vector2(150, 9)
 	fuel_fill.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	bar_bg.add_child(fuel_fill)
-	speed_lbl = _label(fuel_row, 15, Color(0.55, 0.9, 1.0))
+	speed_lbl = _label(fuel_row, 13, Color(0.58, 0.92, 1.0))
 	speed_lbl.text = "On Foot"
 
-	# --- current job, under the wallet (minimizable!)
-	job_panel = _panel(self, Color(0.05, 0.06, 0.08, 0.78), Color(0.2, 0.9, 0.45, 0.48))
+	# --- current job pill, sleek & compact under the wallet (minimizable!)
+	job_panel = _panel(self, Color(0.05, 0.06, 0.08, 0.66), Color(0.2, 0.9, 0.45, 0.40))
 	job_panel.anchor_left = 0.5
 	job_panel.anchor_right = 0.5
-	job_panel.offset_left = -350
-	job_panel.offset_right = 350
-	job_panel.offset_top = 104
+	job_panel.offset_left = -315
+	job_panel.offset_right = 315
+	job_panel.offset_top = 80
 	var jh := HBoxContainer.new()
-	jh.add_theme_constant_override("separation", 8)
+	jh.add_theme_constant_override("separation", 6)
 	job_panel.add_child(jh)
-	job_lbl = _label(jh, 16, Color.WHITE)
+	job_lbl = _label(jh, 14, Color.WHITE)
 	job_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	job_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	job_lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	job_skip_btn = _btn(jh, "✕ Skip", func(): main.jobs.reject_job(), Vector2(68, 26), 12)
-	job_errand_btn = _btn(jh, "🚶 Errand", func(): main.jobs.resume_dispatch(true), Vector2(82, 26), 12)
-	job_mode_btn = _btn(jh, "⏸️ Break", func(): main.jobs.toggle_dispatch(), Vector2(76, 26), 12)
+	job_skip_btn = _btn(jh, "✕ Skip", func(): main.jobs.reject_job(), Vector2(62, 24), 11)
+	job_errand_btn = _btn(jh, "🚶 Errand", func(): main.jobs.resume_dispatch(true), Vector2(76, 24), 11)
+	job_mode_btn = _btn(jh, "⏸️ Break", func(): main.jobs.toggle_dispatch(), Vector2(70, 24), 11)
 	job_min_btn = _btn(jh, "—", func():
 		job_minimized = not job_minimized
-		job_min_btn.text = "+" if job_minimized else "—", Vector2(28, 26), 13)
+		job_min_btn.text = "+" if job_minimized else "—", Vector2(26, 24), 12)
 
-	# --- interactive, auto-adapting & closable Tutorial Coach
-	tut_panel = _panel(self, Color(0.06, 0.09, 0.15, 0.92), Color(1.0, 0.84, 0.15, 0.75))
+	# --- interactive, auto-adapting & closable Tutorial Coach (compact translucent pill)
+	tut_panel = _panel(self, Color(0.05, 0.08, 0.13, 0.72), Color(1.0, 0.84, 0.15, 0.50))
 	tut_panel.anchor_left = 0.5
 	tut_panel.anchor_right = 0.5
-	tut_panel.offset_left = -310
-	tut_panel.offset_right = 310
-	tut_panel.offset_top = 160
+	tut_panel.offset_left = -280
+	tut_panel.offset_right = 280
+	tut_panel.offset_top = 120
 	var th := HBoxContainer.new()
 	th.add_theme_constant_override("separation", 8)
 	tut_panel.add_child(th)
@@ -1450,7 +1465,7 @@ func _process(delta: float) -> void:
 		"  •  Power Cut" if not main.power_on else "",
 		own_str]
 	var f: float = main.player.fuel_fraction()
-	fuel_fill.size.x = maxf(4.0 if f <= 0.0 else 0.0, 180.0 * f)
+	fuel_fill.size.x = maxf(4.0 if f <= 0.0 else 0.0, 150.0 * f)
 	var pulse_warn := 0.5 + 0.5 * sin(Time.get_ticks_msec() * 0.01)
 	if f <= 0.0:
 		fuel_fill.color = Color(1.0, 0.18, 0.15).lerp(Color(1.0, 0.75, 0.1), pulse_warn)

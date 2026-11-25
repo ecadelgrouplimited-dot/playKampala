@@ -25,7 +25,22 @@ there are no art files to manage yet.
 - **Power cut**: the lights go off, except one building on a generator
   and the rolex stand's charcoal
 
-## Sculpted 3D Vehicles, Palm Boulevards & Street-Level Chase Camera (v1.1.0 / v4.0)
+## First-Class Realism, Endless Streaming World & Deep Kampala Life Overhaul (v1.1.0 / v5.0)
+- **Grounded Ugandan Palette, Architectural AO Shader & Contact Shadows** (`scripts/main.gd`, `project.godot`):
+  - Enabled 4× MSAA (`msaa_3d=2`) and crisp `4096` soft directional shadows (`soft_shadow_filter_quality=3`).
+  - Upgraded `mat_solid` to a custom world-space architectural shader with triplanar plaster micro-grain, lower-wall ground-contact ambient occlusion (`0..0.52m`), and authentic Ugandan red-laterite lower-wall dust splash (`0..0.68m`).
+  - Added soft under-chassis contact shadow blobs (`_attach_contact_shadow()`) under every boda, matatu, car, bus, and 40ft trailer, replaced toy-saturated wall/cloth palettes with cohesive sun-bleached Kampala earth/plaster tones, and decluttered streets with weathered concrete mid-block curbs + yellow/black safety kerbs only at junctions.
+  - Slimmed the top wallet & job HUD into sleek translucent glass bars (`scripts/hud.gd`, `scripts/life.gd`) so ~90% of the viewport showcases the 3D streets, palms, and skyline.
+- **Non-Ending Streaming Suburbs, Villages & Inter-District Highways** (`scripts/endless_world.gd`, `scripts/player.gd`, `scripts/main.gd`):
+  - Added `EndlessWorld`, a real-time `96m × 96m` (`5×5` active grid) chunk streamer with deterministic procedural generation and clean chunk unloading + dynamic place/mud-road registration.
+  - Ride infinitely along **Jinja–Mukono–Lugazi Highway** (`Bweyogerere → Kira → Seeta → Mukono → Lugazi`), **Bombo–Luweero–Gulu Highway** (`Kawempe → Matugga → Bombo → Wobulenzi`), **Masaka–Wakiso Highway** (`Nateete → Buloba → Wakiso → Mpigi`), and **Entebbe Highway** (`Kajjansi → Kisubi`), or turn onto endless red laterite murram/mud village feeder tracks.
+  - Streams realistic **Walled Suburb Bungalow Estates** (perimeter walls, sliding gates, solar panels, Crest water tanks, compounds), **Developing Construction Plots** (unfinished red-brick storied houses, eucalyptus timber scaffolding, sand heaps & brick stacks), **Suburb Trading Centres** (Pork Joints, Kinyozi Salons, Hardware, MoMo & Stages), **Community Boreholes** (with yellow 20L jerrycan queues), **Primary Schools**, and **Matooke Shamba Farms**.
+- **New Authentic Kampala & Suburb Life Activities** (`scripts/life.gd`):
+  - **Rural-to-City Matooke Trading Loop**: Buy wholesale Shamba Matooke & Village Eggs at suburb/village farms (`UGX 4,500`, visible on your carrier) and sell them at any City Market for `UGX 11,000` (`+UGX 6,500` trader profit), or help harvest in the shamba (`+UGX 4,500`).
+  - **Community Borehole & Construction Hustles**: Pump cool fresh borehole water for free, carry 20L yellow jerrycans for suburb neighbours (`+UGX 3,000`), mix mortar & stack red clay bricks at suburb building sites (`+UGX 6,500`), or buy Tororo Cement toward your future plot.
+  - **Driving School, Executive Kinyozi, Pork Joints, Yaka! & Street Football**: Earn your Official Riding Permit via the Driving School Road Test (`UGX 18,000`), get rating-boosting skin-fades or box-braids at salons, pay room Yaka! electricity tokens or Stage Data Bundles (instant VIP call) at MoMo kiosks, feast at suburb Pork Joints, and join 5-aside street football kickabouts.
+
+## Sculpted 3D Vehicles, Palm Boulevards & Street-Level Chase Camera (v4.0)
 - **Procedural 3D Mesh Sculptor** (`scripts/mesh_sculpt.gd` + `scripts/mesh_baker.gd`): Added beveled 2D-to-3D profile extrusion (`extrude_profile`), curved tropical palm/banana fronds (`curved_frond`), and faceted low-poly foliage canopies (`faceted_canopy`) baked directly into merged single-draw-call meshes.
 - **Zero-Box Sculpted Vehicles**: Replaced boxy vehicle primitives with a sculpted teardrop-tank **Bajaj Boxer boda-boda** (raked chrome forks, curved fender, round headlamp, twin orange coil shocks, alloy hubs & side mirrors), sloped-windshield **Toyota HiAce Kampala matatu**, and aerodynamic **3-box sedans**.
 - **Cinematic Street-Level Chase Camera & Golden Equatorial Atmosphere** (`scripts/camera_rig.gd`, `scripts/main.gd`):

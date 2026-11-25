@@ -30,6 +30,7 @@ var hunger := 70.0     # 100 = full
 var energy := 85.0
 var mood := 60.0
 var groceries := 0
+var farm_produce := 0  # wholesale matooke/eggs bought at suburb shambas to sell in city markets!
 var slept_home := false
 var home := {}         # {name, pos, district, cat}
 var cat_of: Array = [] # category of each main.places entry
@@ -141,15 +142,15 @@ func categorize(name: String) -> String:
 		return "church"
 	if "bar & lodge" in n or "bar" in n.split(" ") or "pub" in n or "club" in n:
 		return "bar"
-	for k in ["restaurant", "chapati", "bakery", "juice", "rolex", "muchomo", "gonja", "fruit cart", "sugarcane", "cold soda", "kitchen", "cafe", "food"]:
+	for k in ["restaurant", "chapati", "bakery", "juice", "rolex", "muchomo", "gonja", "fruit cart", "sugarcane", "cold soda", "kitchen", "cafe", "food", "pork"]:
 		if k in n:
 			return "food"
-	for k in ["market", "supermarket", "general merchandise", "wholesalers", "agro"]:
+	for k in ["market", "supermarket", "general merchandise", "wholesalers", "agro", "shamba", "harvest"]:
 		if k in n:
 			return "market"
 	if "clinic" in n or "pharmacy" in n or "hospital" in n:
 		return "health"
-	if "saloon" in n or "salon" in n:
+	if "saloon" in n or "salon" in n or "kinyozi" in n or "braiding" in n:
 		return "salon"
 	if "fuel" in n:
 		return "fuel"
@@ -157,13 +158,13 @@ func categorize(name: String) -> String:
 		return "taxi"
 	if "boda stage" in n:
 		return "stage"
-	if "mobile money" in n or "forex" in n:
+	if "mobile money" in n or "forex" in n or "agent" in n:
 		return "momo"
-	if "beach" in n or "pier" in n or "clock tower" in n:
+	if "beach" in n or "pier" in n or "clock tower" in n or "borehole" in n:
 		return "leisure"
 	if "stadium" in n or "pitch" in n:
 		return "sport"
-	for k in ["boutique", "fashions", "shoe", "tailoring", "cosmetics", "electronics", "phone repair", "mattress", "furniture", "hardware", "stationery", "printing", "video", "spare parts", "butchery", "mechanic", "tyre fundi"]:
+	for k in ["boutique", "fashions", "shoe", "tailoring", "cosmetics", "electronics", "phone repair", "mattress", "furniture", "hardware", "stationery", "printing", "video", "spare parts", "butchery", "mechanic", "tyre fundi", "building site", "cement", "brick", "driving school"]:
 		if k in n:
 			return "shop"
 	return "other"
@@ -310,6 +311,11 @@ func activities_for(pl: Dictionary) -> Array:
 					"text": "Freshly crushed sugarcane juice with a kick of ginger and lime. Instant Kampala energy!"})
 				out.append({"label": "Tropical fruit plate (watermelon, pineapple & mango)", "cost": 2500, "hours": 0.3, "hunger": 38, "energy": 14, "mood": 12,
 					"text": "Sweet, juicy slices of Ugandan pineapple, red watermelon and mango from the pushcart."})
+			elif "pork" in nl:
+				out.append({"label": "Sizzling suburb pork platter, gonja & kachumbari", "cost": 8000, "hours": 0.85, "hunger": 72, "mood": 24,
+					"text": "Crispy roasted pork ribs, sweet gonja, steamed cassava and tangy kachumbari under the shade at %s!" % n})
+				out.append({"label": "Quick pork skewer & cold soda", "cost": 3500, "hours": 0.35, "hunger": 36, "mood": 12,
+					"text": "Smoky pork skewer straight off the grill with an ice-cold glass soda."})
 			elif "newspaper" in nl or "soda" in nl:
 				out.append({"label": "Ice-cold soda & read Bukedde / New Vision headlines", "cost": 2000, "hours": 0.3, "hunger": 15, "energy": 12, "mood": 15,
 					"text": "You pop open a cold glass bottle of soda and debate today's front-page Kampala stories with passers-by."})
@@ -347,16 +353,28 @@ func activities_for(pl: Dictionary) -> Array:
 				out.append({"label": "Join the evening fellowship", "cost": 0, "hours": 1.5, "mood": 26,
 					"text": "Praise songs, testimonies and tea. You leave lighter."})
 		"market":
-			out.append({"label": "Buy groceries for the week", "cost": 8000, "hours": 0.6, "mood": 4, "groceries": 2,
-				"text": "Tomatoes, onions, beans, rice and a tray of eggs. You bargain the price down. 'Mpa ku discount!'"})
-			out.append({"label": "Buy a bunch of matooke", "cost": 6000, "hours": 0.3, "groceries": 1,
-				"text": "A big green bunch of matooke. Heavy, but it'll feed you for days."})
-			out.append({"label": "Buy roasted groundnuts & gonja", "cost": 2000, "hours": 0.15, "hunger": 22, "mood": 6,
-				"text": "Hot salted groundnuts and sweet roasted plantain straight from the market basket."})
-			out.append({"label": "Help unload a produce sack (+UGX 3,500)", "cost": 0, "hours": 0.4, "energy": -14, "mood": 4, "special": "market_earn",
-				"text": "You help a market mama carry heavy matooke & tomato crates to her stall. She sends UGX 3,500 on MoMo!"})
-			out.append({"label": "Stroll and window-shop", "cost": 0, "hours": 0.5, "mood": 6, "energy": -3,
-				"text": "Second-hand shoes, bright kitenge, radios blaring. Kampala in full colour."})
+			var m_nl := n.to_lower()
+			if "shamba" in m_nl or "harvest" in m_nl:
+				out.append({"label": "🌱 Buy wholesale Shamba Matooke & Eggs (Sell in City for 11k!)", "cost": 4500, "hours": 0.35, "mood": 10, "special": "buy_farm",
+					"text": "You strap a huge farm-fresh green bunch of matooke & village eggs onto your carrier at %s!" % n})
+				out.append({"label": "Eat boiled farm cassava & fresh groundnut sauce", "cost": 2000, "hours": 0.3, "hunger": 44, "energy": 10, "mood": 12,
+					"text": "Warm soft village cassava with rich roasted g-nut sauce under the mango trees."})
+				out.append({"label": "Help harvest matooke in the shamba (+UGX 4,500)", "cost": 0, "hours": 0.55, "energy": -16, "mood": 8, "special": "shamba_earn",
+					"text": "You help the farmer cut and carry heavy matooke bunches to the murram roadside. +UGX 4,500!"})
+			else:
+				if farm_produce > 0:
+					out.append({"label": "💰 Sell wholesale Shamba Matooke (+UGX 11,000!)", "cost": 0, "hours": 0.25, "mood": 16, "special": "sell_farm",
+						"text": "The market mama eagerly buys your fresh village shamba produce for UGX 11,000 cash on MoMo!"})
+				out.append({"label": "Buy groceries for the week", "cost": 8000, "hours": 0.6, "mood": 4, "groceries": 2,
+					"text": "Tomatoes, onions, beans, rice and a tray of eggs. You bargain the price down. 'Mpa ku discount!'"})
+				out.append({"label": "Buy a bunch of matooke", "cost": 6000, "hours": 0.3, "groceries": 1,
+					"text": "A big green bunch of matooke. Heavy, but it'll feed you for days."})
+				out.append({"label": "Buy roasted groundnuts & gonja", "cost": 2000, "hours": 0.15, "hunger": 22, "mood": 6,
+					"text": "Hot salted groundnuts and sweet roasted plantain straight from the market basket."})
+				out.append({"label": "Help unload a produce sack (+UGX 3,500)", "cost": 0, "hours": 0.4, "energy": -14, "mood": 4, "special": "market_earn",
+					"text": "You help a market mama carry heavy matooke & tomato crates to her stall. She sends UGX 3,500 on MoMo!"})
+				out.append({"label": "Stroll and window-shop", "cost": 0, "hours": 0.5, "mood": 6, "energy": -3,
+					"text": "Second-hand shoes, bright kitenge, radios blaring. Kampala in full colour."})
 		"myhome":
 			out.append({"label": "Sleep until morning", "cost": 0, "hours": 0.0, "special": "sleep",
 				"text": "You lock the door, set the alarm and fall asleep to the sound of the city."})
@@ -373,21 +391,36 @@ func activities_for(pl: Dictionary) -> Array:
 			out.append({"label": "Buy painkillers & ORS", "cost": 3000, "hours": 0.2, "energy": 12,
 				"text": "Panadol and oral rehydration salts for the long day ahead."})
 		"salon":
-			out.append({"label": "Get a fresh haircut", "cost": 5000, "hours": 0.8, "mood": 22,
-				"text": "Clippers buzzing, a radio talk show and the latest gossip. You look sharp."})
+			out.append({"label": "Sharp Kampala skin-fade & hot towel", "cost": 5000, "hours": 0.75, "mood": 24, "special": "groom_boost",
+				"text": "Clippers buzzing at %s, warm face towel, radio talk show & sharp hairline. Customers rate smart riders higher!" % n})
+			out.append({"label": "Executive box-braids / neat locs styling", "cost": 12000, "hours": 1.2, "mood": 34, "special": "groom_vip",
+				"text": "Fresh neat styling and scalp oil treatment at %s. You step out looking first-class!" % n})
+		"momo":
+			out.append({"label": "Pay Yaka! electricity token for your room", "cost": 3000, "hours": 0.15, "mood": 14,
+				"text": "Beep-beep-beep! 14.2 units punched into your room's Yaka! meter before tonight."})
+			out.append({"label": "Buy Stage Data Bundle (instant VIP trip alert!)", "cost": 2000, "hours": 0.1, "mood": 10, "special": "momo_vip",
+				"text": "Mobile data bundle activated! High-paying VIP app customers immediately see you online."})
 		"shop":
 			out.append_array(_shop_items(n.to_lower(), n))
 			out.append({"label": "Browse and chat", "cost": 0, "hours": 0.25, "mood": 3,
 				"text": "You look around, chat with the shopkeeper and promise to come back."})
 		"leisure":
-			out.append({"label": "Swim in Lake Victoria (Free)", "cost": 0, "hours": 0.6, "mood": 26, "energy": -6, "special": "swim",
-				"text": "You wade off Ggaba Beach into cool Lake Victoria and swim along the shoreline. Walk into the water anytime on foot too!"})
-			out.append({"label": "Relax by the lake", "cost": 0, "hours": 1.0, "mood": 22, "energy": 10,
-				"text": "The breeze off Lake Victoria, fishing canoes coming in. Peace."})
-			out.append({"label": "Fried tilapia & chips", "cost": 12000, "hours": 1.0, "hunger": 75, "mood": 15,
-				"text": "Whole fried tilapia with chips and kachumbari, right by the water."})
+			if "borehole" in n.to_lower():
+				out.append({"label": "💧 Pump cool fresh borehole water (Free)", "cost": 0, "hours": 0.2, "energy": 18, "mood": 10, "hunger": 6,
+					"text": "You pump the heavy iron handle at %s and splash cool, crystal-clear underground water on your face!" % n})
+				out.append({"label": "Carry 20L yellow jerrycans for neighbours (+UGX 3,000)", "cost": 0, "hours": 0.45, "energy": -13, "mood": 8, "special": "borehole_earn",
+					"text": "You ferry four 20-litre yellow jerrycans up the suburb lane. Neighbours thank you with UGX 3,000!"})
+			else:
+				out.append({"label": "Swim in Lake Victoria (Free)", "cost": 0, "hours": 0.6, "mood": 26, "energy": -6, "special": "swim",
+					"text": "You wade off Ggaba Beach into cool Lake Victoria and swim along the shoreline. Walk into the water anytime on foot too!"})
+				out.append({"label": "Relax by the lake", "cost": 0, "hours": 1.0, "mood": 22, "energy": 10,
+					"text": "The breeze off Lake Victoria, fishing canoes coming in. Peace."})
+				out.append({"label": "Fried tilapia & chips", "cost": 12000, "hours": 1.0, "hunger": 75, "mood": 15,
+					"text": "Whole fried tilapia with chips and kachumbari, right by the water."})
 		"sport":
-			if h >= 14.0 and h < 19.0:
+			out.append({"label": "⚽ Join a 5-aside street football kickabout (Free)", "cost": 0, "hours": 0.8, "mood": 30, "energy": -12,
+				"text": "Small-goal dusty pitch action! You nutmeg a defender and slot home the winning goal!"})
+			if h >= 14.0 and h < 19.5:
 				out.append({"label": "Watch a local match", "cost": 5000, "hours": 2.0, "mood": 32, "energy": -5,
 					"text": "Drums, vuvuzelas and a late winner. The crowd spills onto the street singing."})
 		"taxi":
@@ -432,9 +465,20 @@ func _shop_items(n: String, name: String) -> Array:
 	if "furniture" in n or "mattress" in n:
 		return [{"label": "Buy a plastic chair for your room", "cost": 12000, "hours": 0.5, "mood": 10,
 			"text": "A red plastic chair, tied to a boda and delivered to your room. Luxury."}]
-	if "hardware" in n:
-		return [{"label": "Buy a padlock for your room", "cost": 7000, "hours": 0.3, "mood": 5,
-			"text": "A strong padlock. Your room - and your boda helmet - are safer now."}]
+	if "building site" in n or "cement" in n or "brick" in n or "hardware" in n:
+		return [
+			{"label": "🧱 Mix mortar & stack red bricks shift (+UGX 6,500)", "cost": 0, "hours": 0.9, "energy": -22, "mood": 8, "special": "site_earn",
+				"text": "Hard honest suburb construction work at %s — wheelbarrows of sand, cement & red clay bricks. Foreman pays UGX 6,500!" % name},
+			{"label": "Buy a heavy-duty padlock for your room", "cost": 7000, "hours": 0.3, "mood": 8,
+				"text": "A strong steel padlock from %s. Your room and helmet are secure." % name},
+			{"label": "Buy bags of Tororo Cement for your future plot", "cost": 28000, "hours": 0.5, "mood": 30,
+				"text": "Brick by brick, bag by bag — your own suburb house dream in Kampala is getting closer!"},
+		]
+	if "driving school" in n:
+		return [
+			{"label": "🪪 Take Official Riding Permit Test (UGX 18,000)", "cost": 18000, "hours": 1.0, "mood": 24, "special": "permit_test",
+				"text": "Road signs, roundabout discipline & figure-eight cone test passed! Official Riding Permit issued!"},
+		]
 	if "stationery" in n or "printing" in n:
 		return [{"label": "Print & photocopy your documents", "cost": 1000, "hours": 0.3, "mood": 3,
 			"text": "Copies of your ID and permit, in case the traffic police ask."}]
@@ -520,6 +564,63 @@ func _run_activity(delta: float) -> void:
 		main.hud.toast("Earned UGX 3,500 helping offload market produce!")
 		save_life()
 		return
+	elif str(a.get("special", "")) == "borehole_earn":
+		main.add_money(3000, "Suburb borehole jerrycan delivery")
+		main.hud.toast("💧 Earned UGX 3,000 carrying 20L yellow jerrycans in the suburb!")
+		save_life()
+		return
+	elif str(a.get("special", "")) == "site_earn":
+		main.add_money(6500, "Suburb construction site shift")
+		main.hud.toast("🧱 Earned UGX 6,500 mixing mortar & stacking bricks at the site!")
+		save_life()
+		return
+	elif str(a.get("special", "")) == "shamba_earn":
+		main.add_money(4500, "Village shamba matooke harvest")
+		main.hud.toast("🌱 Earned UGX 4,500 helping harvest matooke in the shamba!")
+		save_life()
+		return
+	elif str(a.get("special", "")) == "buy_farm":
+		farm_produce += 1
+		if main.player and main.player.cargo_body:
+			main.player.cargo_body.visible = true
+		main.sfx.play("bonus")
+		main.hud.toast("🌱 Loaded Shamba Matooke (x%d)! Ride to any City Market to sell for UGX 11,000!" % farm_produce)
+		save_life()
+		return
+	elif str(a.get("special", "")) == "sell_farm":
+		if farm_produce > 0:
+			farm_produce -= 1
+			main.add_money(11000, "Sold wholesale Shamba Matooke")
+			if farm_produce == 0 and main.player and main.player.cargo_body and (main.jobs == null or main.jobs.state != 1):
+				main.player.cargo_body.visible = false
+			main.sfx.play("bonus")
+			main.hud.toast("💰 Sold Shamba Matooke for UGX 11,000! (+UGX 6,500 pure trader profit!)")
+		save_life()
+		return
+	elif str(a.get("special", "")) == "groom_boost":
+		main.adjust_rating(0.04)
+		main.hud.toast("💈 Fresh Kampala cut! +24 Mood & +0.04 ★ Rider Rating!")
+		save_life()
+		return
+	elif str(a.get("special", "")) == "groom_vip":
+		main.adjust_rating(0.06)
+		main.hud.toast("✨ Executive salon styling! +34 Mood & +0.06 ★ Rider Rating!")
+		save_life()
+		return
+	elif str(a.get("special", "")) == "permit_test":
+		main.has_permit = true
+		main.sfx.play("bonus")
+		main.hud.toast("🪪 Official Riding Permit earned! Traffic Police checkpoints will salute you!")
+		main.save_game()
+		save_life()
+		return
+	elif str(a.get("special", "")) == "momo_vip":
+		if main.jobs:
+			main.jobs.new_job("vip_tour")
+		main.sfx.play("chime")
+		main.hud.toast("📱 Stage Data Bundle active! High-paying VIP customer dispatched!")
+		save_life()
+		return
 	elif str(a.get("special", "")) == "repair_boda":
 		if main.player:
 			main.player.repair_bike()
@@ -571,7 +672,7 @@ func _update_chips() -> void:
 	if ride_state == 2 and ride and p.position.distance_to(ride.global_position) < 9.0:
 		pl = {"name": "%s's %s" % [ride_driver, ride_kind], "cat": "ride", "district": "", "pos": ride.global_position}
 		opts = [{"label": "Hop on - go to %s" % ride_dest["name"], "special": "board"}]
-	var key := "%s|%d|%d|%d" % [pl.get("name", ""), opts.size(), int(main.time_of_day * 2), groceries]
+	var key := "%s|%d|%d|%d|%d" % [pl.get("name", ""), opts.size(), int(main.time_of_day * 2), groceries, farm_produce]
 	if key == _chips_key:
 		return
 	_chips_key = key
@@ -1250,10 +1351,10 @@ func _build_ui() -> void:
 	ui.layer = 5
 	add_child(ui)
 
-	# needs panel, under the minimap (minimizable!)
-	var np := _panel(ui, Color(0.05, 0.06, 0.08, 0.78))
-	np.position = Vector2(12, 228)
-	np.custom_minimum_size = Vector2(196, 0)
+	# needs panel, under the minimap (sleek & minimizable!)
+	var np := _panel(ui, Color(0.05, 0.06, 0.08, 0.68))
+	np.position = Vector2(10, 194)
+	np.custom_minimum_size = Vector2(176, 0)
 	var nv := VBoxContainer.new()
 	nv.add_theme_constant_override("separation", 3)
 	np.add_child(nv)
@@ -1483,9 +1584,14 @@ func _call_taxi_from_stage(pl: Dictionary) -> void:
 
 
 func _update_needs_ui() -> void:
-	var hud_modal: bool = main.hud != null and (main.hud.bigmap.visible or main.hud.phone_panel.visible or main.hud.summary.visible or main.hud.police_panel.visible)
+	var hud_modal: bool = main.hud != null and (main.hud.bigmap.visible or main.hud.phone_panel.visible or main.hud.summary.visible or main.hud.police_panel.visible or main.hud.title_panel.visible or main.hud.settings_panel.visible or main.hud.trophies_panel.visible)
 	ui.visible = not hud_modal
-	needs_lbl.text = "%s  %s%s" % [weekday(), main.time_str(), ("   Groceries x%d" % groceries) if groceries > 0 else ""]
+	var inv_txt := ""
+	if groceries > 0:
+		inv_txt += "  🛒x%d" % groceries
+	if farm_produce > 0:
+		inv_txt += "  🌱x%d" % farm_produce
+	needs_lbl.text = "%s  %s%s" % [weekday(), main.time_str(), inv_txt]
 	var vals := {"food": hunger, "energy": energy, "mood": mood}
 	for k in bars:
 		var f: ColorRect = bars[k]
@@ -1547,7 +1653,7 @@ func save_life() -> void:
 		return
 	var f := FileAccess.open(_save_path(), FileAccess.WRITE)
 	if f:
-		f.store_string(JSON.stringify({"hunger": hunger, "energy": energy, "mood": mood, "groceries": groceries}))
+		f.store_string(JSON.stringify({"hunger": hunger, "energy": energy, "mood": mood, "groceries": groceries, "farm_produce": farm_produce}))
 
 
 func load_life() -> void:
@@ -1559,6 +1665,7 @@ func load_life() -> void:
 		energy = float(d.get("energy", energy))
 		mood = float(d.get("mood", mood))
 		groceries = int(d.get("groceries", 0))
+		farm_produce = int(d.get("farm_produce", 0))
 
 
 # =================================================================== the hired vehicle

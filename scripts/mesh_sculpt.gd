@@ -21,13 +21,23 @@ static func extrude_profile(key: String, pts_yz: Array, width_x: float, bevel_x 
 	cy /= float(n)
 	cz /= float(n)
 
+	# Ensure clockwise profile orientation in (Y, Z) so outward normals face exterior (+Y on roof, -Z on front)
+	var area2 := 0.0
+	for i in n:
+		var p0: Vector2 = pts_yz[i]
+		var p1: Vector2 = pts_yz[(i + 1) % n]
+		area2 += (p1.x - p0.x) * (p1.y + p0.y)
+	var ordered_pts := pts_yz.duplicate()
+	if area2 > 0.0:
+		ordered_pts.reverse()
+
 	# 4 rings along X: -hw (inset), -iw (full), +iw (full), +hw (inset)
 	var rings := []
 	for spec in [[-hw, bevel_inset], [-iw, 0.0], [iw, 0.0], [hw, bevel_inset]]:
 		var rx: float = spec[0]
 		var ins: float = spec[1]
 		var ring := PackedVector3Array()
-		for p in pts_yz:
+		for p in ordered_pts:
 			var py: float = (p as Vector2).x
 			var pz: float = (p as Vector2).y
 			if ins > 0.0:
@@ -42,25 +52,24 @@ static func extrude_profile(key: String, pts_yz: Array, width_x: float, bevel_x 
 	var st := SurfaceTool.new()
 	st.begin(Mesh.PRIMITIVE_TRIANGLES)
 
-	# Connect adjacent rings (outer bevels + main roof/hood/windshield body)
+	# Connect adjacent rings with outward-facing Godot CW winding
 	for r in 3:
 		var a: PackedVector3Array = rings[r]
 		var b: PackedVector3Array = rings[r + 1]
 		for i in n:
 			var j := (i + 1) % n
-			_quad(st, a[i], a[j], b[j], b[i])
+			_quad(st, a[i], b[i], b[j], a[j])
 
-	# Cap left (-hw) and right (+hw) sides with triangle fan from center
+	# Cap left (-hw, normal -X) and right (+hw, normal +X) sides
 	var left_ring: PackedVector3Array = rings[0]
 	var right_ring: PackedVector3Array = rings[3]
 	var c_left := Vector3(-hw, cy, cz)
 	var c_right := Vector3(hw, cy, cz)
 	for i in n:
 		var j := (i + 1) % n
-		_tri(st, c_left, left_ring[j], left_ring[i])
-		_tri(st, c_right, right_ring[i], right_ring[j])
+		_tri(st, c_left, left_ring[i], left_ring[j])
+		_tri(st, c_right, right_ring[j], right_ring[i])
 
-	st.generate_normals()
 	var mesh := st.commit()
 	_cache[key] = mesh
 	return mesh

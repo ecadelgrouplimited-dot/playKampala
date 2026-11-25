@@ -50,8 +50,11 @@ func _update() -> void:
 	base_dist = clampf(base_dist, 6.0, 110.0)
 	dist = clampf(dist, 6.0, 130.0)
 	pitch = clampf(pitch, deg_to_rad(-72.0), deg_to_rad(-9.0))
-	target.x = clampf(target.x, -340.0, 340.0)
-	target.z = clampf(target.z, -340.0, 340.0)
+	if follow == null:
+		target.x = clampf(target.x, -340.0, 340.0)
+		target.z = clampf(target.z, -340.0, 340.0)
+	else:
+		target.z = minf(target.z, 340.0)
 	basis = Basis(Vector3.UP, yaw) * Basis(Vector3.RIGHT, pitch)
 	position = target
 	cam.position = Vector3(0, 0, dist)

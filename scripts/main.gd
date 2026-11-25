@@ -19,6 +19,7 @@ const Car = preload("res://scripts/car.gd")
 const Sfx = preload("res://scripts/sfx.gd")
 const Person = preload("res://scripts/person.gd")
 const Life = preload("res://scripts/life.gd")
+const EndlessWorld = preload("res://scripts/endless_world.gd")
 const PERSON_SCALE := 1.42   # bold, readable character scale on both phone and desktop screens
 
 # ---------------------------------------------------------------- city layout
@@ -48,49 +49,49 @@ const NAME_B := [
 ]
 const RESIDENTS := ["Nakato", "Okello", "Auma", "Ssemakula", "Namubiru", "Kato", "Achieng", "Mugisha", "Nabirye", "Opio", "Wasswa", "Babirye", "Tumusiime", "Kyomuhendo", "Lubega"]
 
-# ---------------------------------------------------------------- colours
-const MURRAM := Color(0.76, 0.38, 0.20)        # Rich sunlit Kampala laterite red soil
-const EARTH := Color(0.62, 0.42, 0.26)
-const ASPHALT := Color(0.31, 0.30, 0.32)       # Warm sun-baked Kampala tarmac (no cold blue!)
-const PAVEMENT := Color(0.84, 0.78, 0.69)      # Warm cream-sand concrete sidewalks
-const PAINT := Color(0.96, 0.95, 0.90)
-const GLASS := Color(0.14, 0.19, 0.26)
-const DARK := Color(0.10, 0.10, 0.11)
-const GREY := Color(0.45, 0.46, 0.48)
-const WOOD := Color(0.48, 0.31, 0.18)
-const SHUTTER := Color(0.50, 0.54, 0.59)
-const SHOP_DARK := Color(0.12, 0.09, 0.07)
-const TAXI_WHITE := Color(0.96, 0.96, 0.94)
-const TAXI_BLUE := Color(0.08, 0.28, 0.76)
-const LEAF := Color(0.20, 0.46, 0.18)
-const LEAF2 := Color(0.28, 0.56, 0.22)
-const JACARANDA := Color(0.60, 0.42, 0.85)
-const CURB_YELLOW := Color(0.96, 0.78, 0.12)
-const DRAIN_DARK := Color(0.14, 0.12, 0.10)
+# ---------------------------------------------------------------- colours (Grounded, Natural Photorealistic Ugandan Palette)
+const MURRAM := Color(0.68, 0.36, 0.21)        # Authentic Ugandan laterite red earth
+const EARTH := Color(0.52, 0.38, 0.26)
+const ASPHALT := Color(0.24, 0.24, 0.26)       # Natural weathered tarmac
+const PAVEMENT := Color(0.76, 0.72, 0.66)      # Weathered concrete walkways
+const PAINT := Color(0.94, 0.92, 0.88)
+const GLASS := Color(0.14, 0.21, 0.29)
+const DARK := Color(0.11, 0.11, 0.13)
+const GREY := Color(0.46, 0.47, 0.49)
+const WOOD := Color(0.44, 0.29, 0.17)
+const SHUTTER := Color(0.46, 0.50, 0.55)
+const SHOP_DARK := Color(0.10, 0.09, 0.08)
+const TAXI_WHITE := Color(0.94, 0.94, 0.92)
+const TAXI_BLUE := Color(0.11, 0.31, 0.68)
+const LEAF := Color(0.18, 0.42, 0.17)
+const LEAF2 := Color(0.27, 0.52, 0.21)
+const JACARANDA := Color(0.54, 0.40, 0.76)
+const CURB_YELLOW := Color(0.86, 0.68, 0.16)
+const DRAIN_DARK := Color(0.13, 0.12, 0.11)
 
 const WALLS := [
-	Color(0.96, 0.91, 0.79), Color(0.97, 0.76, 0.60), Color(0.57, 0.77, 0.91),
-	Color(0.62, 0.86, 0.72), Color(0.80, 0.72, 0.89), Color(0.96, 0.62, 0.56),
-	Color(0.95, 0.95, 0.93), Color(0.93, 0.80, 0.42), Color(1.00, 0.78, 0.06),
-	Color(0.88, 0.12, 0.14), Color(0.47, 0.71, 0.47), Color(0.98, 0.88, 0.70),
+	Color(0.91, 0.86, 0.76), Color(0.88, 0.74, 0.61), Color(0.74, 0.81, 0.86),
+	Color(0.75, 0.83, 0.76), Color(0.84, 0.79, 0.73), Color(0.83, 0.63, 0.54),
+	Color(0.92, 0.91, 0.88), Color(0.86, 0.76, 0.52), Color(0.78, 0.52, 0.38),
+	Color(0.72, 0.34, 0.28), Color(0.68, 0.75, 0.66), Color(0.89, 0.82, 0.68),
 ]
 const ROOFS := [
-	Color(0.58, 0.28, 0.17), Color(0.55, 0.58, 0.61), Color(0.20, 0.45, 0.30),
-	Color(0.70, 0.18, 0.14), Color(0.22, 0.35, 0.60), Color(0.48, 0.24, 0.15),
+	Color(0.52, 0.25, 0.17), Color(0.54, 0.57, 0.60), Color(0.20, 0.39, 0.27),
+	Color(0.58, 0.22, 0.17), Color(0.25, 0.35, 0.48), Color(0.44, 0.24, 0.16),
 ]
 const CLOTHES := [
-	Color(0.95, 0.55, 0.10), Color(0.90, 0.80, 0.15), Color(0.15, 0.55, 0.30),
-	Color(0.55, 0.20, 0.60), Color(0.15, 0.35, 0.75), Color(0.85, 0.15, 0.20),
-	Color(0.95, 0.95, 0.95), Color(0.10, 0.10, 0.12), Color(0.35, 0.70, 0.80),
-	Color(0.95, 0.45, 0.60), Color(0.40, 0.30, 0.20), Color(0.25, 0.25, 0.45),
+	Color(0.82, 0.46, 0.16), Color(0.82, 0.68, 0.20), Color(0.18, 0.48, 0.30),
+	Color(0.46, 0.24, 0.50), Color(0.18, 0.36, 0.66), Color(0.74, 0.20, 0.22),
+	Color(0.92, 0.91, 0.89), Color(0.15, 0.16, 0.19), Color(0.30, 0.58, 0.68),
+	Color(0.78, 0.42, 0.50), Color(0.42, 0.32, 0.22), Color(0.26, 0.28, 0.42),
 ]
 const SKINS := [
-	Color(0.36, 0.23, 0.15), Color(0.45, 0.30, 0.20), Color(0.30, 0.19, 0.12),
-	Color(0.52, 0.35, 0.23), Color(0.25, 0.16, 0.10),
+	Color(0.35, 0.22, 0.14), Color(0.44, 0.29, 0.19), Color(0.29, 0.18, 0.11),
+	Color(0.50, 0.34, 0.22), Color(0.24, 0.15, 0.10),
 ]
 const SIGNS := [
-	Color(1.00, 0.80, 0.10), Color(0.86, 0.13, 0.14), Color(0.15, 0.35, 0.75),
-	Color(0.15, 0.55, 0.30), Color(0.95, 0.95, 0.95), Color(0.95, 0.50, 0.10),
+	Color(0.86, 0.66, 0.14), Color(0.72, 0.18, 0.18), Color(0.16, 0.34, 0.64),
+	Color(0.16, 0.46, 0.28), Color(0.24, 0.27, 0.33), Color(0.78, 0.42, 0.14),
 ]
 const GOODS := [
 	Color(1.00, 0.85, 0.15), Color(0.85, 0.15, 0.15), Color(0.20, 0.50, 0.85),
@@ -160,7 +161,7 @@ var rng := RandomNumberGenerator.new()
 var bakers := {}
 var _mesh_cache := {}
 
-var mat_solid: StandardMaterial3D
+var mat_solid: Material
 var mat_road: StandardMaterial3D
 var mat_window: StandardMaterial3D
 var mat_window_gen: StandardMaterial3D
@@ -191,6 +192,8 @@ var hud: CanvasLayer
 var player: CharacterBody3D
 var jobs: Node3D
 var life: Node          # Kampala Life: needs, places, routes, rides, citizens
+var endless_world: Node3D
+var horizon_hills: Node3D
 var collider_body: StaticBody3D
 var sfx: Node
 var built := false
@@ -318,11 +321,41 @@ func _make_materials() -> void:
 	var murram_tex := _make_noise_textures(0.11, 0.34, 3.6, 303)
 	var water_tex := _make_noise_textures(0.05, 0.14, 2.4, 404)
 
-	mat_solid = _mat()
-	mat_solid.roughness = 0.86
-	mat_solid.albedo_texture = solid_tex[0]
-	mat_solid.uv1_triplanar = true
-	mat_solid.uv1_scale = Vector3(0.28, 0.28, 0.28)
+	# Custom World-Space Architectural Shader: grounds every building/wall with base contact AO,
+	# Ugandan red-laterite lower-wall dust splash, and natural weathered plaster micro-grain!
+	var arch_sh := Shader.new()
+	arch_sh.code = """
+shader_type spatial;
+render_mode diffuse_burley, specular_schlick_ggx;
+uniform sampler2D detail_tex : source_color, filter_linear_mipmap, repeat_enable;
+uniform vec3 dust_col = vec3(0.56, 0.31, 0.19);
+varying vec3 v_wpos;
+varying vec3 v_wnrm;
+void vertex() {
+	v_wpos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	v_wnrm = normalize((MODEL_MATRIX * vec4(NORMAL, 0.0)).xyz);
+}
+void fragment() {
+	vec3 an = abs(v_wnrm);
+	vec2 uv = (an.y > 0.7) ? v_wpos.xz : ((an.x > an.z) ? v_wpos.zy : v_wpos.xy);
+	float grain = texture(detail_tex, uv * 0.24).r;
+	float fine = texture(detail_tex, uv * 1.15).r;
+	vec3 col = COLOR.rgb * mix(0.88, 1.06, grain * 0.7 + fine * 0.3);
+	// Ground-contact ambient occlusion & Kampala laterite dust along lower 0.65m of vertical walls
+	float wall_mask = 1.0 - smoothstep(0.35, 0.85, an.y);
+	float h = clamp(v_wpos.y, 0.0, 2.0);
+	float base_ao = mix(0.68, 1.0, smoothstep(0.0, 0.52, h));
+	float dust = (1.0 - smoothstep(0.02, 0.68, h)) * wall_mask * 0.28;
+	col = mix(col * mix(1.0, base_ao, wall_mask), dust_col, dust);
+	ALBEDO = col;
+	ROUGHNESS = clamp(0.88 - fine * 0.12, 0.65, 0.95);
+	SPECULAR = 0.25;
+}
+"""
+	var sm := ShaderMaterial.new()
+	sm.shader = arch_sh
+	sm.set_shader_parameter("detail_tex", solid_tex[0])
+	mat_solid = sm
 
 	mat_road = _mat()
 	mat_road.roughness = 0.76
@@ -1014,16 +1047,16 @@ func model_umbrella(col: Color, height := 2.3, radius := 1.3) -> Array:
 
 func model_tree(kind: int) -> Array:
 	match kind:
-		0:  # Tall sculpted Kampala palm tree with drooping curved emerald fronds
+		0:  # Tall sculpted Kampala palm tree with smooth curved trunk & drooping emerald fronds
 			var palm_frond := MeshSculpt.curved_frond("palm_frond", 2.5, 0.78)
 			var p := [
-				part(_cyl(0.15, 0.26, 2.4, 7), Vector3(0, 1.2, 0), Color(0.50, 0.34, 0.20)),
-				part(_cyl(0.11, 0.16, 2.5, 7), Vector3(0.16, 3.55, -0.06), Color(0.54, 0.38, 0.22), Basis(Vector3.FORWARD, -0.10)),
+				part(_cyl(0.15, 0.25, 2.45, 8), Vector3(0, 1.22, 0), Color(0.48, 0.34, 0.21)),
+				part(_cyl(0.11, 0.155, 2.55, 8), Vector3(-0.125, 3.62, 0.0), Color(0.52, 0.37, 0.23), Basis(Vector3.FORWARD, -0.10)),
 			]
 			for i in 8:
 				var a := i * TAU / 8.0 + 0.18
 				var col := Color(0.18, 0.56, 0.18) if i % 2 == 0 else Color(0.32, 0.68, 0.20)
-				p.append(part(palm_frond, Vector3(0.26, 4.72, -0.08), col, Basis(Vector3.UP, a) * Basis(Vector3.RIGHT, 0.12)))
+				p.append(part(palm_frond, Vector3(-0.25, 4.82, 0.0), col, Basis(Vector3.UP, a) * Basis(Vector3.RIGHT, 0.12)))
 			return p
 		1:  # Faceted low-poly tropical shade tree (Mango / Jacaranda)
 			var c_big := MeshSculpt.faceted_canopy("tree_canopy_big", 2.15, 0.78, 11)
@@ -1735,6 +1768,8 @@ func _process(delta: float) -> void:
 	if not built:
 		return
 	Person.focus = rig.target
+	if horizon_hills and player:
+		horizon_hills.position = Vector3(player.position.x, 0.0, minf(player.position.z, 0.0))
 	sfx.update_engine(player.on_boda and player.fuel > 0.0, clampf(player.speed / player.BODA_MAX, 0.0, 1.0), delta)
 	sfx.update_ambience(raining, night_amount, delta)
 	sfx.update_spatial_audio(player.global_position, vehicles, music_spots, delta)
@@ -2013,6 +2048,28 @@ func _parse_args() -> void:
 		elif a == "--min-job":
 			hud.job_minimized = true
 			hud.job_min_btn.text = "+"
+		elif a == "--no-tut":
+			tutorial_step = 4
+		elif a.begins_with("--teleport="):
+			var tp_parts := a.substr(11).split(",")
+			if tp_parts.size() >= 2:
+				var tpos := Vector3(tp_parts[0].to_float(), 0.0, tp_parts[1].to_float())
+				player.position = tpos
+				if not player.on_boda and player.parked_boda:
+					player.parked_boda.position = tpos + Vector3(0.2, 0, -2.6)
+				if absf(tpos.x) > absf(tpos.z) and tpos.x > HALF:
+					player.heading = -PI * 0.5
+					rig.yaw = -PI * 0.5
+				elif absf(tpos.x) > absf(tpos.z) and tpos.x < -HALF:
+					player.heading = PI * 0.5
+					rig.yaw = PI * 0.5
+				if player.boda_body:
+					player.boda_body.rotation.y = player.heading
+				if horizon_hills:
+					horizon_hills.position = Vector3(tpos.x, 0.0, minf(tpos.z, 0.0))
+				if endless_world and endless_world.has_method("force_sync"):
+					endless_world.force_sync()
+				rig.target = tpos + Vector3(0, 2.05, 0)
 		elif a == "--power-off":
 			toggle_power()
 		elif a.begins_with("--dist="):
@@ -2096,6 +2153,8 @@ func _spawn_player(pos: Vector3) -> void:
 	add_child(parked)
 	player.parked_boda = parked
 	player.heading = 0.0
+	_attach_contact_shadow(player, 1.15, 2.35)
+	_attach_contact_shadow(parked, 1.05, 2.15)
 	apply_bike_paint()
 
 	rig.follow = player
@@ -3151,14 +3210,16 @@ func _build_roads() -> void:
 			var drain_pos := mid + (Vector3(0, 0.01, s * 3.85) if along_x else Vector3(s * 3.85, 0.01, 0))
 			var drain_sz := Vector3(rlen, 0.02, 0.28) if along_x else Vector3(0.28, 0.02, rlen)
 			box(drain_pos, drain_sz, DRAIN_DARK, Transform3D.IDENTITY, "road")
-			# Alternating black & yellow curb blocks along the pavement edge
+			# Clean weathered concrete curbs mid-block, with yellow-and-black corner safety kerbs at junctions
 			var seg_len := 2.0
 			var num_segs := int(rlen / seg_len)
+			var concrete_curb := PAVEMENT.darkened(0.18)
 			for ci in num_segs:
 				var coff := -rlen * 0.5 + (ci + 0.5) * seg_len
-				var ccol := CURB_YELLOW if ci % 2 == 0 else DARK
+				var near_junc := absf(coff) > rlen * 0.5 - 4.5
+				var ccol := (CURB_YELLOW if ci % 2 == 0 else DARK) if near_junc else concrete_curb
 				var cpos := mid + (Vector3(coff, 0.11, s * 4.02) if along_x else Vector3(s * 4.02, 0.11, coff))
-				var csz := Vector3(seg_len, 0.16, 0.18) if along_x else Vector3(0.18, 0.16, seg_len)
+				var csz := Vector3(seg_len, 0.15, 0.18) if along_x else Vector3(0.18, 0.15, seg_len)
 				box(cpos, csz, ccol)
 		var k := -BLOCK / 2 + 8.0
 		while k < BLOCK / 2 - 7.0:
@@ -3808,37 +3869,78 @@ func _build_wash_bays() -> void:
 
 
 func _build_hills() -> void:
-	# Kampala's famous Seven Hills on the golden horizon — dotted with cream houses, greenery, Gaddafi Mosque & Cathedrals
+	# Kampala's famous Seven Hills on the distant golden horizon — follows the horizon so endless roads never collide with hills!
+	horizon_hills = Node3D.new()
+	add_child(horizon_hills)
+	var hb = Baker.new()
 	for i in 10:
-		var a := i * TAU / 10.0 + rng.randf_range(-0.12, 0.12)
-		var dist := rng.randf_range(290, 365)
-		var r := rng.randf_range(68, 105)
-		var sy := rng.randf_range(0.38, 0.54)
-		var c := Vector3(sin(a) * dist, -6, cos(a) * dist)
-		if c.z > HALF + 85.0 and absf(c.x) < 160.0:
+		var a := i * TAU / 10.0 + rng.randf_range(-0.08, 0.08)
+		var dist := rng.randf_range(385.0, 445.0)
+		var r := rng.randf_range(68.0, 98.0)
+		var sy := rng.randf_range(0.36, 0.50)
+		var c := Vector3(sin(a) * dist, -8.0, cos(a) * dist)
+		if c.z > HALF + 85.0 and absf(c.x) < 190.0:
 			continue   # keep southern Lake Victoria horizon open!
-		var hill_col := LEAF2.lerp(MURRAM, 0.42 if i % 2 == 0 else 0.25)
-		_add("far", _sphere(r, r * 2.0, 12, 6), Transform3D(Basis.IDENTITY.scaled(Vector3(1, sy, 1)), c), hill_col)
-		for k in 60:
+		if absf(c.z) < 95.0 or absf(c.x) < 95.0:
+			c += c.normalized() * 55.0   # keep cardinal highway vistas open!
+		var hill_col := LEAF2.lerp(MURRAM, 0.28 if i % 2 == 0 else 0.16)
+		hb.add(_sphere(r, r * 2.0, 12, 6), Transform3D(Basis.IDENTITY.scaled(Vector3(1, sy, 1)), c), hill_col)
+		for k in 50:
 			var dir := Vector3(rng.randf_range(-1, 1), rng.randf_range(0.28, 1.0), rng.randf_range(-1, 1)).normalized()
 			var hp := c + Vector3(dir.x * r, dir.y * r * sy, dir.z * r)
-			box(hp, Vector3(3.6, 2.6, 3.6), _pick([Color(0.95, 0.90, 0.80), Color(0.92, 0.84, 0.72), Color(0.78, 0.34, 0.22), Color(0.22, 0.56, 0.22)]), Transform3D.IDENTITY, "far")
-		if i == 5:   # Old Kampala Hill — Golden-domed Gaddafi National Mosque (visible looking north down Entebbe Rd!)
+			hb.add(_box_mesh(Vector3(3.6, 2.6, 3.6)), Transform3D(Basis.IDENTITY, hp), _pick([Color(0.95, 0.90, 0.80), Color(0.92, 0.84, 0.72), Color(0.76, 0.36, 0.24), Color(0.24, 0.48, 0.24)]))
+		if i == 5:   # Old Kampala Hill — Golden-domed Gaddafi National Mosque
 			var top := c + Vector3(0, r * sy - 1.0, 0)
-			box(top + Vector3(0, 5.5, 0), Vector3(18, 11, 18), Color(0.96, 0.91, 0.78), Transform3D.IDENTITY, "far")
-			_add("far", _sphere(7.5, 11.0, 12, 6), Transform3D(Basis.IDENTITY, top + Vector3(0, 12.5, 0)), Color(0.98, 0.80, 0.22))
+			hb.add(_box_mesh(Vector3(18, 11, 18)), Transform3D(Basis.IDENTITY, top + Vector3(0, 5.5, 0)), Color(0.96, 0.91, 0.78))
+			hb.add(_sphere(7.5, 11.0, 12, 6), Transform3D(Basis.IDENTITY, top + Vector3(0, 12.5, 0)), Color(0.98, 0.80, 0.22))
 			for mx in [-11.0, 11.0]:
-				_add("far", _cyl(0.85, 1.15, 24.0, 8), Transform3D(Basis.IDENTITY, top + Vector3(mx, 12.0, 0)), Color(0.96, 0.91, 0.78))
-				_add("far", _sphere(1.2, 2.0, 8, 4), Transform3D(Basis.IDENTITY, top + Vector3(mx, 24.5, 0)), Color(0.98, 0.80, 0.22))
+				hb.add(_cyl(0.85, 1.15, 24.0, 8), Transform3D(Basis.IDENTITY, top + Vector3(mx, 12.0, 0)), Color(0.96, 0.91, 0.78))
+				hb.add(_sphere(1.2, 2.0, 8, 4), Transform3D(Basis.IDENTITY, top + Vector3(mx, 24.5, 0)), Color(0.98, 0.80, 0.22))
 		if i == 3 or i == 7:   # Namirembe & Rubaga Cathedrals
 			var top2 := c + Vector3(0, r * sy - 1.0, 0)
-			box(top2 + Vector3(0, 5.0, 0), Vector3(10, 10, 18), Color(0.94, 0.89, 0.82), Transform3D.IDENTITY, "far")
-			_add("far", _sphere(5.5, 8.0, 10, 5), Transform3D(Basis.IDENTITY, top2 + Vector3(0, 11.0, 0)), Color(0.76, 0.32, 0.20))
+			hb.add(_box_mesh(Vector3(10, 10, 18)), Transform3D(Basis.IDENTITY, top2 + Vector3(0, 5.0, 0)), Color(0.94, 0.89, 0.82))
+			hb.add(_sphere(5.5, 8.0, 10, 5), Transform3D(Basis.IDENTITY, top2 + Vector3(0, 11.0, 0)), Color(0.76, 0.32, 0.20))
+	var hmi := MeshInstance3D.new()
+	hmi.mesh = hb.build()
+	hmi.material_override = _mat()
+	hmi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	horizon_hills.add_child(hmi)
 
 
 # =============================================================== traffic & people
 var _car_beam_mesh: PrismMesh
 var _boda_beam_mesh: PrismMesh
+var _shadow_mat: StandardMaterial3D
+
+func _attach_contact_shadow(parent: Node3D, w: float, l: float) -> void:
+	if _shadow_mat == null:
+		var g := Gradient.new()
+		g.set_color(0, Color(0, 0, 0, 0.56))
+		g.add_point(0.58, Color(0, 0, 0, 0.30))
+		g.set_color(2, Color(0, 0, 0, 0.0))
+		var gt := GradientTexture2D.new()
+		gt.gradient = g
+		gt.fill = GradientTexture2D.FILL_RADIAL
+		gt.fill_from = Vector2(0.5, 0.5)
+		gt.fill_to = Vector2(1.0, 0.5)
+		gt.width = 64
+		gt.height = 64
+		_shadow_mat = StandardMaterial3D.new()
+		_shadow_mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+		_shadow_mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		_shadow_mat.albedo_texture = gt
+		_shadow_mat.cull_mode = BaseMaterial3D.CULL_DISABLED
+	var pm := PlaneMesh.new()
+	pm.size = Vector2(w, l)
+	var sh := MeshInstance3D.new()
+	sh.mesh = pm
+	sh.material_override = _shadow_mat
+	sh.position = Vector3(0, 0.042, 0)
+	sh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	sh.visibility_range_end = 110.0
+	parent.add_child(sh)
+
+
 func _spawn_car(parts: Array, kind: String, spd: float, lane: float, weave: float) -> void:
 	var b = Baker.new()
 	for p in parts:
@@ -3877,6 +3979,8 @@ func _spawn_car(parts: Array, kind: String, spd: float, lane: float, weave: floa
 	car.lane = lane
 	car.weave = weave
 	car.length = mi.mesh.get_aabb().size.z * mi.scale.z
+	var sw := 1.05 if kind == "boda" else (2.75 if kind in ["bus", "trailer"] else 2.15)
+	_attach_contact_shadow(car, sw, car.length * 1.08)
 	car.set_meta("kind", kind)
 	car.add_to_group("agents")
 	add_child(car)
@@ -4258,7 +4362,6 @@ func player_horn() -> void:
 		vdp.y = 0.0
 		if vdp.length() < 11.0 and vdp.dot(fwd) > 0.0:
 			v._stop_timer = 0.0
-			v._ignore = maxf(v._ignore, 1.2)
 
 
 ## Height of the ground under a point: pavements are raised, roads are flat.
@@ -4284,13 +4387,28 @@ func in_mud_road(p: Vector3) -> bool:
 
 func district_at(p: Vector3) -> String:
 	if p.x > HALF + 6.0:
-		return "Mukono / Bweyogerere Suburb"
+		var dx := p.x - HALF
+		if dx < 260.0: return "Bweyogerere & Kira Suburb"
+		if dx < 580.0: return "Seeta & Namugongo Estate"
+		if dx < 980.0: return "Mukono Town Council"
+		return "Lugazi / Jinja Highway Corridor"
 	if p.x < -HALF - 6.0:
-		return "Nateete / Wakiso Suburb"
+		var dxw := -p.x - HALF
+		if dxw < 260.0: return "Nateete & Lungujja Suburb"
+		if dxw < 580.0: return "Buloba & Wakiso Suburb"
+		if dxw < 980.0: return "Wakiso Town & Estates"
+		return "Mpigi / Masaka Highway Corridor"
 	if p.z < -HALF - 6.0:
-		return "Kawempe / Kisaasi Suburb"
+		var dzn := -p.z - HALF
+		if dzn < 260.0: return "Kawempe & Kisaasi Suburb"
+		if dzn < 580.0: return "Matugga & Kasangati Suburb"
+		if dzn < 980.0: return "Bombo Town"
+		return "Wobulenzi / Luweero–Gulu Corridor"
 	if p.z > HALF + 6.0:
-		return "Kajjansi / Entebbe Rd" if p.x < -BLOCK * 0.45 else "Ggaba Beach & Lake Victoria"
+		if p.x < -BLOCK * 0.45:
+			var dzs := p.z - HALF
+			return "Kajjansi Trading Centre" if dzs < 320.0 else "Kisubi / Entebbe Highway"
+		return "Ggaba Beach & Lake Victoria"
 	var bx := int(floor((p.x + HALF) / BLOCK))
 	var bz := int(floor((p.z + HALF) / BLOCK))
 	var d = district_of.get(Vector2i(bx, bz))
@@ -4300,16 +4418,16 @@ func district_at(p: Vector3) -> String:
 func street_at(p: Vector3) -> String:
 	if in_mud_road(p):
 		if p.x > HALF:
-			return "Bweyogerere Murram Rd"
+			return "Kira–Mukono Red Murram Rd"
 		if p.x < -HALF:
-			return "Wakiso Murram Rd"
-		return "Kisaasi Murram Rd"
+			return "Wakiso Village Murram Rd"
+		return "Kisaasi–Matugga Murram Rd"
 	if p.x > HALF + 6.0:
-		return "Jinja–Mukono Highway"
+		return "Jinja–Mukono Highway" if absf(p.z) < 28.0 else "Eastern Suburb Estate Access"
 	if p.x < -HALF - 6.0:
-		return "Masaka–Mbarara Highway"
+		return "Masaka–Wakiso Highway" if absf(p.z) < 28.0 else "Western Suburb Estate Access"
 	if p.z < -HALF - 6.0:
-		return "Gulu–Bombo Highway"
+		return "Bombo–Gulu Highway" if absf(p.x) < 28.0 else "Northern Suburb Estate Access"
 	if p.z > HALF + 6.0:
 		return "Entebbe Airport Highway" if p.x < -BLOCK * 0.45 else "Ggaba Lakeshore Rd"
 	var ix := clampi(roundi((p.x + HALF) / BLOCK), 0, NS_STREETS.size() - 1)
@@ -4645,6 +4763,9 @@ func _ready() -> void:
 	life = Life.new()
 	life.main = self
 	add_child(life)
+	endless_world = EndlessWorld.new()
+	endless_world.main = self
+	add_child(endless_world)
 
 	obstacles.append(player)
 	obstacles.append(player.parked_boda)
