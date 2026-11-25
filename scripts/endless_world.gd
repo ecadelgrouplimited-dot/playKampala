@@ -102,6 +102,8 @@ func _spawn_chunk(c: Vector2i) -> void:
 	if on_ew_hwy:
 		b_road.add(main._box_mesh(Vector3(CHUNK, 0.05, 11.2)), Transform3D(Basis.IDENTITY, Vector3(0, 0.025, hwy_z)), main.ASPHALT)
 		b_murram.add(main._box_mesh(Vector3(CHUNK, 0.03, 15.8)), Transform3D(Basis.IDENTITY, Vector3(0, 0.012, hwy_z)), murram_col)
+		for es in [-5.1, 5.1]:
+			b_road.add(main._box_mesh(Vector3(CHUNK, 0.012, 0.16)), Transform3D(Basis.IDENTITY, Vector3(0, 0.056, hwy_z + es)), main.PAINT)
 		for dx in range(-42, 46, 10):
 			b_road.add(main._box_mesh(Vector3(4.4, 0.012, 0.24)), Transform3D(Basis.IDENTITY, Vector3(dx, 0.056, hwy_z)), main.PAINT)
 		# Roadside palms, eucalyptus utility poles & milestone post along the highway!
@@ -120,6 +122,8 @@ func _spawn_chunk(c: Vector2i) -> void:
 	if on_ns_hwy or on_entebbe:
 		b_road.add(main._box_mesh(Vector3(11.2, 0.05, CHUNK)), Transform3D(Basis.IDENTITY, Vector3(hwy_x, 0.025, 0)), main.ASPHALT)
 		b_murram.add(main._box_mesh(Vector3(15.8, 0.03, CHUNK)), Transform3D(Basis.IDENTITY, Vector3(hwy_x, 0.012, 0)), murram_col)
+		for es2 in [-5.1, 5.1]:
+			b_road.add(main._box_mesh(Vector3(0.16, 0.012, CHUNK)), Transform3D(Basis.IDENTITY, Vector3(hwy_x + es2, 0.056, 0)), main.PAINT)
 		for dz in range(-42, 46, 10):
 			b_road.add(main._box_mesh(Vector3(0.24, 0.012, 4.4)), Transform3D(Basis.IDENTITY, Vector3(hwy_x, 0.056, dz)), main.PAINT)
 		for tz in [-34.0, 14.0]:

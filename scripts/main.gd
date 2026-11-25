@@ -49,49 +49,49 @@ const NAME_B := [
 ]
 const RESIDENTS := ["Nakato", "Okello", "Auma", "Ssemakula", "Namubiru", "Kato", "Achieng", "Mugisha", "Nabirye", "Opio", "Wasswa", "Babirye", "Tumusiime", "Kyomuhendo", "Lubega"]
 
-# ---------------------------------------------------------------- colours (Grounded, Natural Photorealistic Ugandan Palette)
-const MURRAM := Color(0.68, 0.36, 0.21)        # Authentic Ugandan laterite red earth
-const EARTH := Color(0.52, 0.38, 0.26)
-const ASPHALT := Color(0.24, 0.24, 0.26)       # Natural weathered tarmac
-const PAVEMENT := Color(0.76, 0.72, 0.66)      # Weathered concrete walkways
-const PAINT := Color(0.94, 0.92, 0.88)
-const GLASS := Color(0.14, 0.21, 0.29)
-const DARK := Color(0.11, 0.11, 0.13)
-const GREY := Color(0.46, 0.47, 0.49)
-const WOOD := Color(0.44, 0.29, 0.17)
-const SHUTTER := Color(0.46, 0.50, 0.55)
-const SHOP_DARK := Color(0.10, 0.09, 0.08)
-const TAXI_WHITE := Color(0.94, 0.94, 0.92)
-const TAXI_BLUE := Color(0.11, 0.31, 0.68)
-const LEAF := Color(0.18, 0.42, 0.17)
-const LEAF2 := Color(0.27, 0.52, 0.21)
-const JACARANDA := Color(0.54, 0.40, 0.76)
-const CURB_YELLOW := Color(0.86, 0.68, 0.16)
-const DRAIN_DARK := Color(0.13, 0.12, 0.11)
+# ---------------------------------------------------------------- colours (Warm Sunlit Stylized Kampala Illustration Palette)
+const MURRAM := Color(0.74, 0.38, 0.21)        # Sunlit Ugandan laterite red earth
+const EARTH := Color(0.58, 0.40, 0.26)
+const ASPHALT := Color(0.25, 0.26, 0.31)       # Cool slate tarmac (matches reference street!)
+const PAVEMENT := Color(0.84, 0.67, 0.50)      # Warm sunlit terracotta-sandstone walkways
+const PAINT := Color(0.97, 0.94, 0.86)         # Crisp warm cream road markings
+const GLASS := Color(0.16, 0.26, 0.38)
+const DARK := Color(0.11, 0.11, 0.14)
+const GREY := Color(0.52, 0.54, 0.58)
+const WOOD := Color(0.48, 0.31, 0.18)
+const SHUTTER := Color(0.42, 0.48, 0.56)
+const SHOP_DARK := Color(0.14, 0.12, 0.13)
+const TAXI_WHITE := Color(0.96, 0.96, 0.95)
+const TAXI_BLUE := Color(0.12, 0.42, 0.78)
+const LEAF := Color(0.16, 0.50, 0.20)
+const LEAF2 := Color(0.34, 0.66, 0.22)
+const JACARANDA := Color(0.56, 0.40, 0.80)
+const CURB_YELLOW := Color(0.94, 0.74, 0.18)
+const DRAIN_DARK := Color(0.15, 0.14, 0.15)
 
 const WALLS := [
-	Color(0.91, 0.86, 0.76), Color(0.88, 0.74, 0.61), Color(0.74, 0.81, 0.86),
-	Color(0.75, 0.83, 0.76), Color(0.84, 0.79, 0.73), Color(0.83, 0.63, 0.54),
-	Color(0.92, 0.91, 0.88), Color(0.86, 0.76, 0.52), Color(0.78, 0.52, 0.38),
-	Color(0.72, 0.34, 0.28), Color(0.68, 0.75, 0.66), Color(0.89, 0.82, 0.68),
+	Color(0.88, 0.52, 0.35), Color(0.94, 0.84, 0.70), Color(0.91, 0.68, 0.48),
+	Color(0.84, 0.44, 0.31), Color(0.95, 0.89, 0.78), Color(0.86, 0.60, 0.42),
+	Color(0.76, 0.84, 0.88), Color(0.92, 0.76, 0.52), Color(0.80, 0.48, 0.36),
+	Color(0.74, 0.36, 0.28), Color(0.76, 0.82, 0.72), Color(0.93, 0.82, 0.64),
 ]
 const ROOFS := [
-	Color(0.52, 0.25, 0.17), Color(0.54, 0.57, 0.60), Color(0.20, 0.39, 0.27),
-	Color(0.58, 0.22, 0.17), Color(0.25, 0.35, 0.48), Color(0.44, 0.24, 0.16),
+	Color(0.62, 0.26, 0.18), Color(0.54, 0.57, 0.62), Color(0.20, 0.44, 0.28),
+	Color(0.68, 0.24, 0.18), Color(0.24, 0.38, 0.52), Color(0.48, 0.26, 0.17),
 ]
 const CLOTHES := [
-	Color(0.82, 0.46, 0.16), Color(0.82, 0.68, 0.20), Color(0.18, 0.48, 0.30),
-	Color(0.46, 0.24, 0.50), Color(0.18, 0.36, 0.66), Color(0.74, 0.20, 0.22),
-	Color(0.92, 0.91, 0.89), Color(0.15, 0.16, 0.19), Color(0.30, 0.58, 0.68),
-	Color(0.78, 0.42, 0.50), Color(0.42, 0.32, 0.22), Color(0.26, 0.28, 0.42),
+	Color(0.86, 0.46, 0.16), Color(0.90, 0.72, 0.18), Color(0.18, 0.54, 0.32),
+	Color(0.52, 0.24, 0.56), Color(0.18, 0.42, 0.74), Color(0.80, 0.20, 0.22),
+	Color(0.94, 0.92, 0.88), Color(0.16, 0.18, 0.22), Color(0.26, 0.62, 0.72),
+	Color(0.84, 0.42, 0.52), Color(0.46, 0.34, 0.22), Color(0.26, 0.30, 0.48),
 ]
 const SKINS := [
-	Color(0.35, 0.22, 0.14), Color(0.44, 0.29, 0.19), Color(0.29, 0.18, 0.11),
-	Color(0.50, 0.34, 0.22), Color(0.24, 0.15, 0.10),
+	Color(0.38, 0.23, 0.15), Color(0.46, 0.29, 0.19), Color(0.31, 0.19, 0.12),
+	Color(0.52, 0.35, 0.22), Color(0.26, 0.16, 0.11),
 ]
 const SIGNS := [
-	Color(0.86, 0.66, 0.14), Color(0.72, 0.18, 0.18), Color(0.16, 0.34, 0.64),
-	Color(0.16, 0.46, 0.28), Color(0.24, 0.27, 0.33), Color(0.78, 0.42, 0.14),
+	Color(0.90, 0.68, 0.14), Color(0.78, 0.20, 0.18), Color(0.16, 0.38, 0.70),
+	Color(0.16, 0.50, 0.30), Color(0.24, 0.28, 0.36), Color(0.84, 0.44, 0.14),
 ]
 const GOODS := [
 	Color(1.00, 0.85, 0.15), Color(0.85, 0.15, 0.15), Color(0.20, 0.50, 0.85),
@@ -101,7 +101,7 @@ const PRODUCE := [
 	Color(0.85, 0.15, 0.10), Color(0.35, 0.60, 0.20), Color(0.95, 0.80, 0.20),
 	Color(0.50, 0.20, 0.45), Color(0.90, 0.55, 0.15), Color(0.55, 0.40, 0.25),
 ]
-const VESTS := [Color(1.0, 0.55, 0.05), Color(0.75, 0.95, 0.15), Color(1.0, 0.85, 0.1)]
+const VESTS := [Color(0.98, 0.88, 0.10), Color(0.98, 0.54, 0.08), Color(0.78, 0.96, 0.14)]
 const NS_STREETS := [
 	"Kafumbe Mukasa Rd",
 	"Ben Kiwanuka St",
@@ -121,7 +121,7 @@ const EW_STREETS := [
 	"Ggaba Road",
 ]
 const BIKE_PAINTS := [
-	["Stage Red", Color(0.84, 0.12, 0.10)],
+	["Boxer Crimson Red", Color(0.84, 0.11, 0.16)],
 	["Kampala Gold", Color(0.96, 0.76, 0.08)],
 	["Electric Blue", Color(0.10, 0.44, 0.92)],
 	["Emerald Viper", Color(0.12, 0.76, 0.34)],
@@ -129,11 +129,11 @@ const BIKE_PAINTS := [
 	["Stealth Black", Color(0.15, 0.16, 0.20)],
 ]
 const RIDER_OUTFITS := [
-	["Stage Neon", Color(0.55, 0.94, 0.16), Color(0.16, 0.22, 0.34)],
-	["SafeBoda Orange", Color(0.96, 0.45, 0.08), Color(0.12, 0.14, 0.18)],
-	["Kampala Red", Color(0.84, 0.14, 0.16), Color(0.18, 0.20, 0.28)],
-	["Royal Blue", Color(0.14, 0.42, 0.92), Color(0.18, 0.18, 0.22)],
-	["Sunday White", Color(0.95, 0.95, 0.96), Color(0.12, 0.14, 0.18)],
+	["Kampala Yellow Vest", Color(0.98, 0.88, 0.10), Color(0.16, 0.28, 0.46)],
+	["SafeBoda Orange", Color(0.96, 0.45, 0.08), Color(0.14, 0.18, 0.28)],
+	["Kampala Red", Color(0.84, 0.14, 0.16), Color(0.18, 0.22, 0.34)],
+	["Royal Blue", Color(0.14, 0.42, 0.92), Color(0.18, 0.20, 0.26)],
+	["Sunday White", Color(0.95, 0.95, 0.96), Color(0.14, 0.18, 0.26)],
 ]
 const KAMPALA_STAGES := [
 	"Old Taxi Park Stage",
@@ -170,7 +170,7 @@ var mat_neon_pink: StandardMaterial3D
 var mat_neon_cyan: StandardMaterial3D
 var mat_ember: StandardMaterial3D
 var mat_tv_screen: StandardMaterial3D
-var mat_agent: StandardMaterial3D
+var mat_agent: Material
 var mat_water: StandardMaterial3D
 var mat_murram: StandardMaterial3D
 var mud_zones: Array = []          # Array of Rect2 in XZ for Ugandan red murram / mud roads
@@ -321,14 +321,14 @@ func _make_materials() -> void:
 	var murram_tex := _make_noise_textures(0.11, 0.34, 3.6, 303)
 	var water_tex := _make_noise_textures(0.05, 0.14, 2.4, 404)
 
-	# Custom World-Space Architectural Shader: grounds every building/wall with base contact AO,
-	# Ugandan red-laterite lower-wall dust splash, and natural weathered plaster micro-grain!
+	# Stylized Sunlit Kampala Architecture Shader: warm golden sunlight, soft cerulean sky shadow bounce,
+	# plaster micro-grain, and lower-wall terracotta ground-contact AO!
 	var arch_sh := Shader.new()
 	arch_sh.code = """
 shader_type spatial;
 render_mode diffuse_burley, specular_schlick_ggx;
 uniform sampler2D detail_tex : source_color, filter_linear_mipmap, repeat_enable;
-uniform vec3 dust_col = vec3(0.56, 0.31, 0.19);
+uniform vec3 dust_col = vec3(0.66, 0.38, 0.24);
 varying vec3 v_wpos;
 varying vec3 v_wnrm;
 void vertex() {
@@ -338,18 +338,19 @@ void vertex() {
 void fragment() {
 	vec3 an = abs(v_wnrm);
 	vec2 uv = (an.y > 0.7) ? v_wpos.xz : ((an.x > an.z) ? v_wpos.zy : v_wpos.xy);
-	float grain = texture(detail_tex, uv * 0.24).r;
-	float fine = texture(detail_tex, uv * 1.15).r;
-	vec3 col = COLOR.rgb * mix(0.88, 1.06, grain * 0.7 + fine * 0.3);
-	// Ground-contact ambient occlusion & Kampala laterite dust along lower 0.65m of vertical walls
+	float grain = texture(detail_tex, uv * 0.26).r;
+	vec3 col = COLOR.rgb * mix(0.93, 1.06, grain);
+	// Warm golden top-bounce & cool sky-violet shadow tint (matches PlayKampala illustration style!)
+	float sky_up = clamp(v_wnrm.y * 0.5 + 0.5, 0.0, 1.0);
+	col *= mix(vec3(0.92, 0.89, 0.98), vec3(1.05, 1.01, 0.95), sky_up);
 	float wall_mask = 1.0 - smoothstep(0.35, 0.85, an.y);
-	float h = clamp(v_wpos.y, 0.0, 2.0);
-	float base_ao = mix(0.68, 1.0, smoothstep(0.0, 0.52, h));
-	float dust = (1.0 - smoothstep(0.02, 0.68, h)) * wall_mask * 0.28;
+	float h = clamp(v_wpos.y, 0.0, 2.5);
+	float base_ao = mix(0.74, 1.0, smoothstep(0.0, 0.55, h));
+	float dust = (1.0 - smoothstep(0.02, 0.62, h)) * wall_mask * 0.22;
 	col = mix(col * mix(1.0, base_ao, wall_mask), dust_col, dust);
 	ALBEDO = col;
-	ROUGHNESS = clamp(0.88 - fine * 0.12, 0.65, 0.95);
-	SPECULAR = 0.25;
+	ROUGHNESS = 0.80;
+	SPECULAR = 0.30;
 }
 """
 	var sm := ShaderMaterial.new()
@@ -358,22 +359,22 @@ void fragment() {
 	mat_solid = sm
 
 	mat_road = _mat()
-	mat_road.roughness = 0.76
-	mat_road.metallic_specular = 0.52
+	mat_road.roughness = 0.72
+	mat_road.metallic_specular = 0.48
 	mat_road.albedo_texture = road_tex[0]
 	mat_road.normal_enabled = true
 	mat_road.normal_texture = road_tex[1]
-	mat_road.normal_scale = 0.55
+	mat_road.normal_scale = 0.42
 	mat_road.uv1_triplanar = true
 	mat_road.uv1_scale = Vector3(0.45, 0.45, 0.45)
 
 	mat_murram = _mat()
-	mat_murram.roughness = 0.90
+	mat_murram.roughness = 0.88
 	mat_murram.metallic_specular = 0.22
 	mat_murram.albedo_texture = murram_tex[0]
 	mat_murram.normal_enabled = true
 	mat_murram.normal_texture = murram_tex[1]
-	mat_murram.normal_scale = 0.95
+	mat_murram.normal_scale = 0.85
 	mat_murram.uv1_triplanar = true
 	mat_murram.uv1_scale = Vector3(0.32, 0.32, 0.32)
 
@@ -388,13 +389,30 @@ void fragment() {
 	mat_water.uv1_triplanar = true
 	mat_water.uv1_scale = Vector3(0.10, 0.10, 0.10)
 
-	mat_agent = _mat()
-	mat_agent.roughness = 0.42
-	mat_agent.metallic = 0.12
-	mat_agent.metallic_specular = 0.65
-	mat_agent.rim_enabled = true
-	mat_agent.rim = 0.26
-	mat_agent.rim_tint = 0.45
+	# Stylized Character & Vehicle Illustration Shader: smooth wrap lighting, warm sun sheen,
+	# rich sky-blue shadow bounce (never flat grey!), and crisp golden edge rim-highlight!
+	var agent_sh := Shader.new()
+	agent_sh.code = """
+shader_type spatial;
+render_mode diffuse_burley, specular_schlick_ggx;
+varying vec3 v_wnrm;
+void vertex() {
+	v_wnrm = normalize((MODEL_MATRIX * vec4(NORMAL, 0.0)).xyz);
+}
+void fragment() {
+	float fresnel = pow(1.0 - clamp(dot(NORMAL, VIEW), 0.0, 1.0), 3.0);
+	float up = clamp(v_wnrm.y * 0.5 + 0.5, 0.0, 1.0);
+	vec3 hemi = mix(vec3(0.88, 0.86, 0.96), vec3(1.04, 1.01, 0.96), up);
+	vec3 base_c = COLOR.rgb * hemi;
+	ALBEDO = base_c + mix(base_c, vec3(1.0, 0.94, 0.80), 0.55) * fresnel * 0.24;
+	ROUGHNESS = 0.36;
+	METALLIC = 0.08;
+	SPECULAR = 0.68;
+}
+"""
+	var am := ShaderMaterial.new()
+	am.shader = agent_sh
+	mat_agent = am
 
 	mat_window = _mat(Color(1.0, 0.78, 0.45))
 	mat_window_gen = _mat(Color(1.0, 0.94, 0.78))
@@ -601,30 +619,78 @@ func _pick(arr: Array) -> Variant:
 # =============================================================== models
 # All models face -Z (Godot's "forward") and stand on y = 0.
 
+func _human_meshes() -> Dictionary:
+	return {
+		"torso_m": MeshSculpt.lathe_profile("hum_torso_m", [
+			Vector2(0.158, -0.02), Vector2(0.168, 0.08), Vector2(0.194, 0.22),
+			Vector2(0.222, 0.34), Vector2(0.205, 0.43), Vector2(0.082, 0.47)
+		], 14, Vector2(1.06, 0.72)),
+		"torso_f": MeshSculpt.lathe_profile("hum_torso_f", [
+			Vector2(0.155, -0.02), Vector2(0.132, 0.10), Vector2(0.178, 0.26),
+			Vector2(0.184, 0.34), Vector2(0.168, 0.42), Vector2(0.072, 0.46)
+		], 14, Vector2(1.02, 0.74)),
+		"pelvis_m": MeshSculpt.lathe_profile("hum_pelvis_m", [
+			Vector2(0.115, -0.11), Vector2(0.168, -0.02), Vector2(0.164, 0.08), Vector2(0.156, 0.13)
+		], 14, Vector2(1.04, 0.76)),
+		"pelvis_f": MeshSculpt.lathe_profile("hum_pelvis_f", [
+			Vector2(0.118, -0.11), Vector2(0.184, -0.01), Vector2(0.176, 0.07), Vector2(0.148, 0.13)
+		], 14, Vector2(1.08, 0.80)),
+		"skirt": MeshSculpt.lathe_profile("hum_skirt", [
+			Vector2(0.258, -0.27), Vector2(0.232, -0.10), Vector2(0.194, 0.08), Vector2(0.152, 0.24)
+		], 14, Vector2(1.04, 0.88)),
+		"thigh": MeshSculpt.lathe_profile("hum_thigh", [
+			Vector2(0.068, -0.23), Vector2(0.084, -0.10), Vector2(0.104, 0.08), Vector2(0.098, 0.22), Vector2(0.070, 0.26)
+		], 12, Vector2(0.96, 1.04)),
+		"calf": MeshSculpt.lathe_profile("hum_calf", [
+			Vector2(0.048, -0.21), Vector2(0.056, -0.10), Vector2(0.076, 0.06), Vector2(0.070, 0.19), Vector2(0.058, 0.23)
+		], 12, Vector2(0.95, 1.04)),
+		"sleeve": MeshSculpt.lathe_profile("hum_sleeve_v2", [
+			Vector2(0.066, -0.09), Vector2(0.076, 0.0), Vector2(0.084, 0.07),
+			Vector2(0.068, 0.13), Vector2(0.012, 0.168)
+		], 12),
+		"forearm": MeshSculpt.lathe_profile("hum_forearm", [
+			Vector2(0.042, -0.14), Vector2(0.054, -0.02), Vector2(0.062, 0.08), Vector2(0.055, 0.15)
+		], 12),
+		"head": MeshSculpt.lathe_profile("hum_head", [
+			Vector2(0.055, -0.13), Vector2(0.104, -0.07), Vector2(0.128, 0.01),
+			Vector2(0.134, 0.09), Vector2(0.112, 0.15), Vector2(0.052, 0.18)
+		], 14, Vector2(0.94, 1.04)),
+		"shoe": MeshSculpt.extrude_profile("hum_shoe", [
+			Vector2(0.018, -0.14), Vector2(0.062, -0.12), Vector2(0.086, -0.03),
+			Vector2(0.082, 0.08), Vector2(0.018, 0.08)
+		], 0.108, 0.024, 0.015),
+		"sole": MeshSculpt.extrude_profile("hum_sole", [
+			Vector2(0.0, -0.145), Vector2(0.022, -0.145), Vector2(0.022, 0.085), Vector2(0.0, 0.085)
+		], 0.114, 0.015, 0.008),
+		"helmet_open": MeshSculpt.lathe_profile("boda_open_helmet_v2", [
+			Vector2(0.148, -0.08), Vector2(0.166, 0.01), Vector2(0.168, 0.09),
+			Vector2(0.138, 0.16), Vector2(0.005, 0.198)
+		], 14, Vector2(0.98, 1.06), PI * 1.44, -PI * 0.22),
+		"helmet_visor": MeshSculpt.lathe_profile("boda_visor_front", [
+			Vector2(0.174, 0.02), Vector2(0.178, 0.09), Vector2(0.162, 0.13)
+		], 10, Vector2(1.0, 1.06), PI * 0.72, -PI * 0.86),
+	}
+
+
 func model_person(female: bool, scale := 1.0, carry := true) -> Array:
+	var hm := _human_meshes()
 	var skin: Color = _pick(SKINS)
 	var top: Color = _pick(CLOTHES)
 	var bottom: Color = top if (female and rng.randf() < 0.5) else _pick(CLOTHES)
-	var p := []
-	if female:
-		p.append(part(_cyl(0.17, 0.30, 0.86, 6), Vector3(0, 0.43, 0), bottom))
-	else:
-		for sx in [-0.11, 0.11]:
-			p.append(part(_box_mesh(Vector3(0.15, 0.86, 0.17)), Vector3(sx, 0.43, 0), bottom))
-	p.append(part(_box_mesh(Vector3(0.44, 0.60, 0.26)), Vector3(0, 1.15, 0), top))
-	for sx in [-0.29, 0.29]:
-		p.append(part(_box_mesh(Vector3(0.11, 0.52, 0.13)), Vector3(sx, 1.15, 0), top))
-		p.append(part(_box_mesh(Vector3(0.10, 0.12, 0.11)), Vector3(sx, 0.84, 0), skin))
-	p.append(part(_sphere(0.15, 0.32), Vector3(0, 1.62, 0), skin))
-	if female and rng.randf() < 0.6:
-		p.append(part(_sphere(0.16, 0.22), Vector3(0, 1.72, 0.01), _pick(CLOTHES)))   # headwrap
-	else:
-		p.append(part(_sphere(0.152, 0.16), Vector3(0, 1.70, 0.01), DARK))            # hair
+	var p := [
+		part(hm["torso_f" if female else "torso_m"], Vector3(0, 1.02, 0), top),
+		part(hm["skirt" if female else "pelvis_m"], Vector3(0, 0.74 if female else 0.94, 0), bottom),
+		part(hm["head"], Vector3(0, 1.66, 0), skin),
+		part(_sphere(0.138, 0.18, 10, 5), Vector3(0, 1.73, 0.015), _pick(CLOTHES) if (female and rng.randf() < 0.55) else DARK),
+	]
+	for sx in [-1.0, 1.0]:
+		p.append(part(hm["thigh"], Vector3(sx * 0.105, 0.69, 0), skin if female else bottom))
+		p.append(part(hm["calf"], Vector3(sx * 0.105, 0.28, 0), skin if female else bottom))
+		p.append(part(hm["shoe"], Vector3(sx * 0.105, 0.0, -0.02), DARK))
+		p.append(part(hm["sleeve"], Vector3(sx * 0.225, 1.33, 0), top))
+		p.append(part(hm["forearm"], Vector3(sx * 0.245, 1.08, -0.03), skin))
 	if carry and rng.randf() < 0.18:
-		match rng.randi() % 3:
-			0: p.append(part(_box_mesh(Vector3(0.26, 0.34, 0.17)), Vector3(0, 1.96, 0), Color(1.0, 0.85, 0.1)))  # jerrycan
-			1: p.append(part(_sphere(0.24, 0.36), Vector3(0, 1.94, 0), Color(0.3, 0.55, 0.2)))                   # matooke
-			2: p.append(part(_cyl(0.28, 0.2, 0.22), Vector3(0, 1.9, 0), Color(0.75, 0.6, 0.35)))                  # basket
+		p.append(part(_box_mesh(Vector3(0.26, 0.34, 0.17)), Vector3(0, 1.96, 0), Color(0.98, 0.84, 0.12)))
 	if scale != 1.0:
 		var s := Transform3D(Basis.IDENTITY.scaled(Vector3.ONE * scale), Vector3.ZERO)
 		for q in p:
@@ -632,23 +698,23 @@ func model_person(female: bool, scale := 1.0, carry := true) -> Array:
 	return p
 
 
-## A person in standing pose, as parts for the skinned Person mesh:
-## [mesh, transform, colour, bone]. Styles: casual, gomesi, kanzu, school, vendor.
-func model_human(female: bool, style := "casual", carry := false, custom_top: Variant = null, custom_bottom: Variant = null, custom_skin: Variant = null, custom_shoe: Variant = null) -> Array:
+## Sculpted, anatomical, expressive Kampala citizens & player (zero stick limbs!)
+func model_human(female: bool, style := "casual", carry := false, custom_top: Variant = null, custom_bottom: Variant = null, custom_skin: Variant = null, custom_shoe: Variant = null, wear_vest := false) -> Array:
+	var hm := _human_meshes()
 	var skin: Color = custom_skin if custom_skin != null else _pick(SKINS)
 	var top: Color = custom_top if custom_top != null else _pick(CLOTHES)
-	var bottom: Color = custom_bottom if custom_bottom != null else _pick([DARK, Color(0.18, 0.24, 0.42), Color(0.40, 0.34, 0.28), Color(0.22, 0.28, 0.24), Color(0.55, 0.48, 0.40)])
-	var shoe: Color = custom_shoe if custom_shoe != null else _pick([DARK, Color(0.36, 0.22, 0.12), Color(0.92, 0.92, 0.94)])
+	var bottom: Color = custom_bottom if custom_bottom != null else _pick([Color(0.16, 0.26, 0.44), DARK, Color(0.38, 0.32, 0.25), Color(0.20, 0.28, 0.24), Color(0.52, 0.44, 0.36)])
+	var shoe: Color = custom_shoe if custom_shoe != null else _pick([Color(0.16, 0.14, 0.14), Color(0.38, 0.22, 0.12), Color(0.88, 0.88, 0.92)])
 	var hair := Color(0.06, 0.05, 0.05)
 	if style == "school":
 		top = _pick([Color(0.95, 0.95, 0.95), Color(0.75, 0.85, 0.95), Color(0.95, 0.85, 0.5)])
 		bottom = _pick([Color(0.55, 0.45, 0.3), Color(0.15, 0.25, 0.5), Color(0.2, 0.4, 0.25)])
 	elif style == "police":
-		top = Color(0.97, 0.97, 0.99)     # Uganda Traffic Police white uniform
-		bottom = Color(0.10, 0.14, 0.24)  # dark navy trousers with blue trim
+		top = Color(0.97, 0.97, 0.99)
+		bottom = Color(0.10, 0.14, 0.24)
 		shoe = DARK
 	elif style == "attendant":
-		top = Color(0.10, 0.62, 0.30)     # bright petrol station uniform
+		top = Color(0.10, 0.62, 0.30)
 		bottom = Color(0.12, 0.16, 0.22)
 		shoe = DARK
 	elif style == "team_red":
@@ -665,113 +731,108 @@ func model_human(female: bool, style := "casual", carry := false, custom_top: Va
 		top = skin
 		bottom = _pick([Color(0.12, 0.58, 0.92), Color(0.95, 0.35, 0.18), Color(0.18, 0.78, 0.45), Color(0.95, 0.80, 0.15)])
 		shoe = skin
+
 	var long_robe := style == "gomesi" or style == "kanzu"
 	var skirt := female and not long_robe and style != "swim" and custom_bottom == null and rng.randf() < 0.65
 	var leg_col: Color = skin if (skirt or long_robe or style == "swim") else bottom
-	var arm_x := 0.215 if female else 0.242
-	var leg_x := 0.092 if female else 0.105
+	var tshirt_col: Color = Color(0.14, 0.15, 0.18) if wear_vest else (Color(0.15, 0.15, 0.2) if style == "kanzu" else top)
+	var arm_x := 0.205 if female else 0.232
+	var leg_x := 0.096 if female else 0.108
 	var p := []
+
 	for sx in [-1.0, 1.0]:
 		var thigh := Person.THIGH_L if sx < 0 else Person.THIGH_R
 		var shin := Person.SHIN_L if sx < 0 else Person.SHIN_R
 		var arm := Person.ARM_L if sx < 0 else Person.ARM_R
 		var fore := Person.FORE_L if sx < 0 else Person.FORE_R
-		# Shoes / sandals with crisp sole
-		p.append([_box_mesh(Vector3(0.095, 0.065, 0.21)), Transform3D(Basis.IDENTITY, Vector3(sx * leg_x, 0.032, -0.032)), shoe, shin])
-		# Tapered calves & thighs
-		p.append([_capsule(0.060 if female else 0.068, 0.45), Transform3D(Basis.IDENTITY, Vector3(sx * leg_x, 0.27, 0)), leg_col, shin])
-		p.append([_capsule(0.082 if female else 0.088, 0.47), Transform3D(Basis.IDENTITY, Vector3(sx * leg_x, 0.69, 0)), leg_col, thigh])
-		# Arms: fitted sleeves + natural skin forearms & hands
-		var sleeve: Color = Color(0.15, 0.15, 0.2) if style == "kanzu" else top
-		var upper_r := 0.050 if female else 0.059
-		var fore_r := 0.043 if female else 0.050
-		p.append([_capsule(upper_r, 0.29), Transform3D(Basis.IDENTITY, Vector3(sx * arm_x, 1.26, 0)), sleeve, arm])
-		p.append([_capsule(fore_r, 0.27), Transform3D(Basis.IDENTITY, Vector3(sx * (arm_x + 0.01), 0.99, 0)), skin, fore])
-		p.append([_sphere(0.048 if female else 0.055, 0.10, 6, 3), Transform3D(Basis.IDENTITY, Vector3(sx * (arm_x + 0.012), 0.84, 0)), skin, fore])
-		if style == "gomesi":   # iconic Ugandan gomesi puffed shoulders
-			p.append([_sphere(0.115, 0.20, 7, 3), Transform3D(Basis.IDENTITY, Vector3(sx * 0.19, 1.42, 0)), top, Person.SPINE])
+		if style != "swim":
+			p.append([hm["sole"], Transform3D(Basis.IDENTITY, Vector3(sx * leg_x, 0.0, -0.01)), Color(0.94, 0.94, 0.92), shin])
+		p.append([hm["shoe"], Transform3D(Basis.IDENTITY, Vector3(sx * leg_x, 0.005, -0.01)), shoe, shin])
+		# Sculpted muscular calves & thighs with seamless overlapping joints (no sticks!)
+		var l_sc := Vector3(0.90, 1.0, 0.92) if female else Vector3(1.0, 1.0, 1.0)
+		p.append([hm["calf"], Transform3D(Basis.IDENTITY.scaled(l_sc), Vector3(sx * leg_x, 0.27, 0)), leg_col, shin])
+		p.append([hm["thigh"], Transform3D(Basis.IDENTITY.scaled(l_sc), Vector3(sx * leg_x, 0.69, 0)), leg_col, thigh])
+		# Sculpted short-sleeve deltoid/bicep + bare muscular forearm + hand
+		var a_sc := Vector3(0.86, 1.0, 0.86) if female else Vector3(1.0, 1.0, 1.0)
+		p.append([hm["sleeve"], Transform3D(Basis.IDENTITY.scaled(a_sc), Vector3(sx * arm_x, 1.32, 0)), tshirt_col, arm])
+		p.append([_capsule(0.052 if female else 0.060, 0.22), Transform3D(Basis.IDENTITY, Vector3(sx * (arm_x + 0.006), 1.21, 0)), skin, arm])
+		p.append([hm["forearm"], Transform3D(Basis.IDENTITY.scaled(a_sc), Vector3(sx * (arm_x + 0.015), 1.01, 0)), skin, fore])
+		p.append([_sphere(0.050 if female else 0.058, 0.105, 8, 4), Transform3D(Basis.IDENTITY, Vector3(sx * (arm_x + 0.018), 0.85, -0.01)), skin, fore])
+		if style == "gomesi":
+			p.append([_sphere(0.118, 0.20, 8, 4), Transform3D(Basis.IDENTITY, Vector3(sx * 0.19, 1.43, 0)), top, Person.SPINE])
 
-	# Hips / skirt / trousers silhouette (distinct male vs female shaping)
+	# Hips / Skirt / Robe
 	if long_robe:
 		var robe: Color = top if style == "gomesi" else Color(0.96, 0.95, 0.90)
-		p.append([_cyl(0.155, 0.28, 0.88, 12), Transform3D(Basis.IDENTITY, Vector3(0, 0.50, 0)), robe, Person.HIPS])
-		p.append([_cyl(0.145, 0.16, 0.14, 12), Transform3D(Basis.IDENTITY, Vector3(0, 0.98, 0)), robe, Person.HIPS])
+		p.append([_cyl(0.16, 0.28, 0.88, 12), Transform3D(Basis.IDENTITY, Vector3(0, 0.50, 0)), robe, Person.HIPS])
 	elif skirt:
-		# Vibrant Kitenge / Ankara patterned wrap skirt with contrasting hem border
 		var sk_col: Color = bottom if rng.randf() < 0.5 else top
-		var hem_col: Color = _pick(CLOTHES)
-		p.append([_cyl(0.145, 0.245, 0.54, 12), Transform3D(Basis.IDENTITY, Vector3(0, 0.72, 0)), sk_col, Person.HIPS])
-		p.append([_cyl(0.232, 0.252, 0.08, 12), Transform3D(Basis.IDENTITY, Vector3(0, 0.48, 0)), hem_col, Person.HIPS])
+		p.append([hm["skirt"], Transform3D(Basis.IDENTITY, Vector3(0, 0.74, 0)), sk_col, Person.HIPS])
+		p.append([_cyl(0.245, 0.262, 0.07, 14), Transform3D(Basis.IDENTITY.scaled(Vector3(1.04, 1.0, 0.88)), Vector3(0, 0.49, 0)), _pick(CLOTHES), Person.HIPS])
 	elif female:
-		p.append([_sphere(0.175, 0.25, 10, 5), Transform3D(Basis.IDENTITY.scaled(Vector3(1.06, 0.96, 0.82)), Vector3(0, 0.93, 0)), bottom, Person.HIPS])
+		p.append([hm["pelvis_f"], Transform3D(Basis.IDENTITY, Vector3(0, 0.94, 0)), bottom, Person.HIPS])
 	else:
-		p.append([_sphere(0.162, 0.25, 10, 5), Transform3D(Basis.IDENTITY.scaled(Vector3(1.0, 1.0, 0.78)), Vector3(0, 0.93, 0)), bottom, Person.HIPS])
-		# Belt & buckle for men's trousers
+		p.append([hm["pelvis_m"], Transform3D(Basis.IDENTITY, Vector3(0, 0.94, 0)), bottom, Person.HIPS])
 		if style != "swim":
-			p.append([_cyl(0.166, 0.166, 0.045, 10), Transform3D(Basis.IDENTITY.scaled(Vector3(1.0, 1.0, 0.76)), Vector3(0, 0.99, 0)), DARK, Person.HIPS])
-			p.append([_box_mesh(Vector3(0.055, 0.048, 0.02)), Transform3D(Basis.IDENTITY, Vector3(0, 0.99, -0.128)), Color(0.85, 0.72, 0.24), Person.HIPS])
+			p.append([_cyl(0.168, 0.168, 0.045, 12), Transform3D(Basis.IDENTITY.scaled(Vector3(1.04, 1.0, 0.76)), Vector3(0, 1.01, 0)), DARK, Person.HIPS])
+			p.append([_box_mesh(Vector3(0.055, 0.048, 0.02)), Transform3D(Basis.IDENTITY, Vector3(0, 1.01, -0.132)), Color(0.88, 0.74, 0.24), Person.HIPS])
 
-	# Torso: distinct sculpted silhouette for women vs broad-shouldered men
-	var torso_col: Color = Color(0.15, 0.15, 0.2) if style == "kanzu" else top
-	if female:
-		p.append([_cyl(0.158, 0.128, 0.44, 12), Transform3D(Basis.IDENTITY.scaled(Vector3(1.0, 1.0, 0.76)), Vector3(0, 1.21, 0)), torso_col, Person.SPINE])
-		p.append([_capsule(0.076, 0.36), Transform3D(Basis(Vector3.FORWARD, PI / 2).scaled(Vector3(1.0, 1.0, 0.85)), Vector3(0, 1.39, 0)), torso_col, Person.SPINE])
-		# Subtle tailored bodice shaping & waist sash / handbag
-		p.append([_sphere(0.125, 0.17, 10, 5), Transform3D(Basis.IDENTITY.scaled(Vector3(1.12, 0.82, 0.82)), Vector3(0, 1.26, -0.045)), torso_col, Person.SPINE])
-		if style == "casual" and custom_top == null and rng.randf() < 0.45:
-			# Kampala shoulder handbag
-			p.append([_box_mesh(Vector3(0.09, 0.20, 0.22)), Transform3D(Basis.IDENTITY, Vector3(0.24, 0.96, 0.02)), _pick([DARK, Color(0.58, 0.24, 0.14), Color(0.78, 0.56, 0.22)]), Person.SPINE])
-	else:
-		p.append([_cyl(0.195, 0.158, 0.46, 12), Transform3D(Basis.IDENTITY.scaled(Vector3(1.0, 1.0, 0.72)), Vector3(0, 1.21, 0)), torso_col, Person.SPINE])
-		p.append([_capsule(0.088, 0.42), Transform3D(Basis(Vector3.FORWARD, PI / 2).scaled(Vector3(1.0, 1.0, 0.86)), Vector3(0, 1.40, 0)), torso_col, Person.SPINE])
-	# Crisp shirt collar
-	if style != "swim":
-		p.append([_cyl(0.078, 0.092, 0.055, 10), Transform3D(Basis.IDENTITY, Vector3(0, 1.44, 0)), torso_col.lightened(0.08), Person.SPINE])
+	# Sculpted Organic Torso + Optional Open High-Vis Boda Reflector Vest with Silver Stripes!
+	p.append([hm["torso_f" if female else "torso_m"], Transform3D(Basis.IDENTITY, Vector3(0, 1.02, 0)), tshirt_col, Person.SPINE])
+	if wear_vest:
+		var silver := Color(0.86, 0.90, 0.94)
+		# Open front panels + full bright high-vis yellow back + crisp silver reflective bands!
+		p.append([hm["torso_f" if female else "torso_m"], Transform3D(Basis.IDENTITY.scaled(Vector3(1.05, 0.93, 1.06)), Vector3(0, 1.03, 0.006)), top, Person.SPINE])
+		p.append([_box_mesh(Vector3(0.095, 0.38, 0.05)), Transform3D(Basis.IDENTITY, Vector3(0, 1.23, -0.155)), tshirt_col, Person.SPINE])
+		for sy_band in [1.11, 1.22]:
+			p.append([_cyl(0.214, 0.202, 0.032, 14), Transform3D(Basis.IDENTITY.scaled(Vector3(1.07, 1.0, 0.77)), Vector3(0, sy_band, 0.006)), silver, Person.SPINE])
+		for sx_band in [-0.10, 0.10]:
+			p.append([_box_mesh(Vector3(0.034, 0.16, 0.30)), Transform3D(Basis.IDENTITY, Vector3(sx_band, 1.38, 0.005)), silver, Person.SPINE])
+	if female and style == "casual" and custom_top == null and rng.randf() < 0.45:
+		p.append([_box_mesh(Vector3(0.09, 0.20, 0.22)), Transform3D(Basis.IDENTITY, Vector3(0.24, 0.96, 0.02)), _pick([DARK, Color(0.58, 0.24, 0.14), Color(0.78, 0.56, 0.22)]), Person.SPINE])
 	if style == "gomesi":
-		p.append([_cyl(0.165, 0.175, 0.085, 12), Transform3D(Basis.IDENTITY, Vector3(0, 1.02, 0)), _pick(CLOTHES), Person.SPINE])   # vibrant sash
+		p.append([_cyl(0.165, 0.175, 0.085, 12), Transform3D(Basis.IDENTITY, Vector3(0, 1.02, 0)), _pick(CLOTHES), Person.SPINE])
 	if style == "vendor":
-		p.append([_box_mesh(Vector3(0.28, 0.44, 0.03)), Transform3D(Basis.IDENTITY, Vector3(0, 1.0, -0.13)), _pick([PAINT, Color(0.9, 0.5, 0.2)]), Person.SPINE])
+		p.append([_box_mesh(Vector3(0.28, 0.44, 0.03)), Transform3D(Basis.IDENTITY, Vector3(0, 1.0, -0.14)), _pick([PAINT, Color(0.9, 0.5, 0.2)]), Person.SPINE])
 	if style == "police":
-		p.append([_cyl(0.195, 0.175, 0.08, 10), Transform3D(Basis.IDENTITY.scaled(Vector3(1, 1, 0.75)), Vector3(0, 1.04, 0)), Color(0.75, 0.98, 0.15), Person.SPINE])
-		p.append([_box_mesh(Vector3(0.32, 0.34, 0.03)), Transform3D(Basis.IDENTITY, Vector3(0, 1.24, -0.135)), Color(0.75, 0.98, 0.15), Person.SPINE])
-		p.append([_box_mesh(Vector3(0.42, 0.05, 0.12)), Transform3D(Basis.IDENTITY, Vector3(0, 1.47, 0)), Color(0.10, 0.18, 0.45), Person.SPINE])
-	if style == "casual" and not female and custom_top == null and rng.randf() < 0.28:
-		p.append([_box_mesh(Vector3(0.025, 0.30, 0.02)), Transform3D(Basis.IDENTITY, Vector3(0, 1.28, -0.128)), _pick([DARK, Color(0.65, 0.12, 0.12)]), Person.SPINE])
+		p.append([_cyl(0.205, 0.185, 0.08, 12), Transform3D(Basis.IDENTITY.scaled(Vector3(1.05, 1, 0.76)), Vector3(0, 1.06, 0)), Color(0.75, 0.98, 0.15), Person.SPINE])
+		p.append([_box_mesh(Vector3(0.32, 0.34, 0.03)), Transform3D(Basis.IDENTITY, Vector3(0, 1.25, -0.15)), Color(0.75, 0.98, 0.15), Person.SPINE])
+		p.append([_box_mesh(Vector3(0.44, 0.05, 0.12)), Transform3D(Basis.IDENTITY, Vector3(0, 1.46, 0)), Color(0.10, 0.18, 0.45), Person.SPINE])
 
-	# Neck, head, expressive face (sclera + iris eyes, brows, nose, ears, smile) & hairstyles
-	p.append([_cyl(0.044, 0.050, 0.10, 8), Transform3D(Basis.IDENTITY, Vector3(0, 1.50, 0)), skin, Person.HEAD])
-	p.append([_sphere(0.126 if female else 0.130, 0.28, 12, 6), Transform3D(Basis.IDENTITY, Vector3(0, 1.655, 0)), skin, Person.HEAD])
-	for ear_x in [-0.122, 0.122]:
-		p.append([_sphere(0.022, 0.042, 6, 3), Transform3D(Basis.IDENTITY, Vector3(ear_x, 1.655, 0.005)), skin.darkened(0.08), Person.HEAD])
-	p.append([_box_mesh(Vector3(0.028, 0.036, 0.026)), Transform3D(Basis.IDENTITY, Vector3(0, 1.64, -0.126)), skin.darkened(0.14), Person.HEAD])
-	p.append([_box_mesh(Vector3(0.044, 0.012, 0.014)), Transform3D(Basis.IDENTITY, Vector3(0, 1.595, -0.118)), Color(0.42, 0.18, 0.16) if female else skin.darkened(0.26), Person.HEAD])
-	for ex in [-0.042, 0.042]:
-		p.append([_sphere(0.020, 0.026, 6, 3), Transform3D(Basis.IDENTITY, Vector3(ex, 1.682, -0.110)), Color(0.96, 0.96, 0.94), Person.HEAD])
-		p.append([_sphere(0.012, 0.018, 5, 3), Transform3D(Basis.IDENTITY, Vector3(ex, 1.682, -0.122)), Color(0.05, 0.04, 0.04), Person.HEAD])
-		p.append([_box_mesh(Vector3(0.034, 0.009, 0.010)), Transform3D(Basis.IDENTITY, Vector3(ex, 1.708, -0.115)), hair, Person.HEAD])
+	# Sculpted Neck, Jawline/Head, Expressive Smiling Face & Hairstyles
+	p.append([_cyl(0.052, 0.062, 0.12, 10), Transform3D(Basis.IDENTITY, Vector3(0, 1.50, 0)), skin, Person.HEAD])
+	p.append([hm["head"], Transform3D(Basis.IDENTITY, Vector3(0, 1.66, 0)), skin, Person.HEAD])
+	for ear_x in [-0.126, 0.126]:
+		p.append([_sphere(0.025, 0.048, 6, 3), Transform3D(Basis.IDENTITY, Vector3(ear_x, 1.66, 0.005)), skin.darkened(0.08), Person.HEAD])
+	p.append([_sphere(0.020, 0.038, 6, 3), Transform3D(Basis.IDENTITY, Vector3(0, 1.645, -0.132)), skin.darkened(0.10), Person.HEAD])
+	# Bright warm smile (white teeth + lip line, matching the joyful rider in the reference art!)
+	p.append([_box_mesh(Vector3(0.052, 0.018, 0.016)), Transform3D(Basis.IDENTITY, Vector3(0, 1.598, -0.122)), Color(0.97, 0.97, 0.96), Person.HEAD])
+	for ex in [-0.044, 0.044]:
+		p.append([_sphere(0.022, 0.028, 6, 3), Transform3D(Basis.IDENTITY, Vector3(ex, 1.685, -0.116)), Color(0.97, 0.97, 0.95), Person.HEAD])
+		p.append([_sphere(0.013, 0.019, 6, 3), Transform3D(Basis.IDENTITY, Vector3(ex, 1.685, -0.128)), Color(0.06, 0.05, 0.05), Person.HEAD])
+		p.append([_box_mesh(Vector3(0.036, 0.010, 0.012)), Transform3D(Basis.IDENTITY, Vector3(ex, 1.714, -0.120)), hair, Person.HEAD])
+	if not female and style != "school":
+		# Subtle neat chin beard line tucked cleanly along the jaw
+		p.append([_box_mesh(Vector3(0.056, 0.016, 0.018)), Transform3D(Basis.IDENTITY, Vector3(0, 1.565, -0.098)), hair, Person.HEAD])
 	if style == "police":
-		p.append([_cyl(0.155, 0.135, 0.09, 10), Transform3D(Basis.IDENTITY, Vector3(0, 1.80, 0)), Color(0.98, 0.98, 1.0), Person.HEAD])
-		p.append([_cyl(0.138, 0.138, 0.04, 10), Transform3D(Basis.IDENTITY, Vector3(0, 1.75, 0)), Color(0.10, 0.22, 0.55), Person.HEAD])
-		p.append([_box_mesh(Vector3(0.18, 0.02, 0.12)), Transform3D(Basis.IDENTITY, Vector3(0, 1.74, -0.12)), DARK, Person.HEAD])
+		p.append([_cyl(0.158, 0.138, 0.09, 12), Transform3D(Basis.IDENTITY, Vector3(0, 1.81, 0)), Color(0.98, 0.98, 1.0), Person.HEAD])
+		p.append([_cyl(0.142, 0.142, 0.04, 12), Transform3D(Basis.IDENTITY, Vector3(0, 1.76, 0)), Color(0.10, 0.22, 0.55), Person.HEAD])
+		p.append([_box_mesh(Vector3(0.18, 0.02, 0.12)), Transform3D(Basis.IDENTITY, Vector3(0, 1.75, -0.12)), DARK, Person.HEAD])
 	elif female and (style == "gomesi" or (custom_top == null and rng.randf() < 0.42)):
 		var wrap_col: Color = _pick(CLOTHES)
-		p.append([_sphere(0.146, 0.22, 10, 5), Transform3D(Basis.IDENTITY, Vector3(0, 1.74, 0.014)), wrap_col, Person.HEAD])
-		p.append([_sphere(0.072, 0.12, 8, 4), Transform3D(Basis.IDENTITY, Vector3(0, 1.79, 0.09)), wrap_col.lightened(0.1), Person.HEAD])
+		p.append([_sphere(0.150, 0.23, 10, 5), Transform3D(Basis.IDENTITY, Vector3(0, 1.75, 0.016)), wrap_col, Person.HEAD])
+		p.append([_sphere(0.076, 0.13, 8, 4), Transform3D(Basis.IDENTITY, Vector3(0, 1.80, 0.095)), wrap_col.lightened(0.1), Person.HEAD])
 	elif female:
-		# Authentic Ugandan women's hairstyles: braids cascading down back or natural high puff
-		p.append([_sphere(0.134, 0.19, 10, 5), Transform3D(Basis.IDENTITY, Vector3(0, 1.725, 0.016)), hair, Person.HEAD])
+		p.append([_sphere(0.140, 0.20, 10, 5), Transform3D(Basis.IDENTITY, Vector3(0, 1.735, 0.018)), hair, Person.HEAD])
 		if custom_top != null or rng.randf() < 0.55:
-			# Long neat braids / locs
-			for bx in [-0.07, -0.025, 0.025, 0.07]:
-				p.append([_capsule(0.024, 0.24), Transform3D(Basis.IDENTITY, Vector3(bx, 1.56, 0.10)), hair, Person.HEAD])
+			for bx in [-0.075, -0.026, 0.026, 0.075]:
+				p.append([_capsule(0.026, 0.25), Transform3D(Basis.IDENTITY, Vector3(bx, 1.57, 0.105)), hair, Person.HEAD])
 		else:
-			# High afro puff / braided bun
-			p.append([_sphere(0.088, 0.15, 8, 4), Transform3D(Basis.IDENTITY, Vector3(0, 1.81, 0.06)), hair, Person.HEAD])
+			p.append([_sphere(0.092, 0.16, 8, 4), Transform3D(Basis.IDENTITY, Vector3(0, 1.82, 0.065)), hair, Person.HEAD])
 	else:
-		# Men's clean fade / short hair
-		p.append([_sphere(0.132, 0.16, 10, 5), Transform3D(Basis.IDENTITY, Vector3(0, 1.725, 0.010)), hair, Person.HEAD])
+		p.append([_sphere(0.142, 0.24, 12, 6), Transform3D(Basis.IDENTITY, Vector3(0, 1.755, 0.014)), hair, Person.HEAD])
 		if style == "kanzu" and rng.randf() < 0.55:
-			p.append([_cyl(0.122, 0.132, 0.10, 10), Transform3D(Basis.IDENTITY, Vector3(0, 1.80, 0)), Color(0.95, 0.95, 0.92), Person.HEAD])
+			p.append([_cyl(0.126, 0.136, 0.10, 10), Transform3D(Basis.IDENTITY, Vector3(0, 1.83, 0)), Color(0.95, 0.95, 0.92), Person.HEAD])
 	if carry:
 		match randi() % 3:
 			0: p.append([_box_mesh(Vector3(0.26, 0.34, 0.17)), Transform3D(Basis.IDENTITY, Vector3(0, 1.98, 0)), Color(1.0, 0.85, 0.1), Person.HEAD])
@@ -803,178 +864,251 @@ func make_person(female: bool, style: String, carry: bool, pos: Vector3, scale :
 
 
 func model_boda(rider := true, passenger := false, custom_col: Variant = null) -> Array:
-	var frame: Color = (custom_col as Color) if custom_col is Color else _pick([Color(0.86, 0.14, 0.12), Color(0.14, 0.15, 0.18), Color(0.12, 0.38, 0.84), Color(0.86, 0.14, 0.12)])
-	var wheel := Basis(Vector3.FORWARD, PI / 2)
-	var fork_tilt := Basis(Vector3.RIGHT, 0.38)
-	var chrome := Color(0.82, 0.85, 0.88)
-	var tank_mesh := MeshSculpt.extrude_profile("boda_tank", [
-		Vector2(0.76, -0.46), Vector2(0.95, -0.40), Vector2(1.04, -0.22),
-		Vector2(0.96, 0.02), Vector2(0.78, 0.04), Vector2(0.72, -0.22)
-	], 0.36, 0.07, 0.04)
-	var seat_mesh := MeshSculpt.extrude_profile("boda_seat", [
-		Vector2(0.82, -0.02), Vector2(0.94, 0.06), Vector2(0.97, 0.54),
-		Vector2(0.91, 0.72), Vector2(0.80, 0.68), Vector2(0.79, 0.10)
-	], 0.30, 0.05, 0.03)
-	var fender_f := MeshSculpt.extrude_profile("boda_fender_f", [
-		Vector2(0.54, -0.84), Vector2(0.67, -0.72), Vector2(0.69, -0.50),
-		Vector2(0.58, -0.38), Vector2(0.54, -0.44), Vector2(0.62, -0.62)
-	], 0.15, 0.02, 0.01)
+	var frame: Color = (custom_col as Color) if custom_col is Color else _pick([Color(0.84, 0.11, 0.16), Color(0.84, 0.11, 0.16), Color(0.12, 0.40, 0.86), Color(0.16, 0.17, 0.20)])
+	var fork_tilt := Basis(Vector3.RIGHT, 0.36)
+	var chrome := Color(0.84, 0.87, 0.92)
+	var alloy := Color(0.78, 0.82, 0.88)
+	var rubber := Color(0.13, 0.13, 0.16)
+	var wpair_f := MeshSculpt.spoked_wheel_pair("boda_wheel_f", 0.35, 0.092, 0.11, 5)
+	var wpair_r := MeshSculpt.spoked_wheel_pair("boda_wheel_r", 0.35, 0.098, 0.12, 5)
+	var tank_mesh := MeshSculpt.extrude_profile("boda_tank_v2", [
+		Vector2(0.75, -0.47), Vector2(0.96, -0.40), Vector2(1.06, -0.20),
+		Vector2(0.98, 0.04), Vector2(0.79, 0.06), Vector2(0.71, -0.22)
+	], 0.38, 0.08, 0.045)
+	var side_cover := MeshSculpt.extrude_profile("boda_side_panel", [
+		Vector2(0.58, -0.04), Vector2(0.78, 0.0), Vector2(0.81, 0.36), Vector2(0.64, 0.28)
+	], 0.29, 0.03, 0.02)
+	var tail_cowl := MeshSculpt.extrude_profile("boda_tail_cowl", [
+		Vector2(0.76, 0.34), Vector2(0.84, 0.38), Vector2(0.89, 0.84), Vector2(0.79, 0.86)
+	], 0.27, 0.03, 0.02)
+	var seat_mesh := MeshSculpt.extrude_profile("boda_seat_v2", [
+		Vector2(0.82, -0.02), Vector2(0.94, 0.06), Vector2(0.98, 0.58),
+		Vector2(0.93, 0.78), Vector2(0.82, 0.76), Vector2(0.79, 0.08)
+	], 0.31, 0.05, 0.03)
+	var fender_f := MeshSculpt.extrude_profile("boda_fender_v2", [
+		Vector2(0.54, -0.86), Vector2(0.69, -0.72), Vector2(0.71, -0.50),
+		Vector2(0.57, -0.38), Vector2(0.53, -0.44), Vector2(0.63, -0.64)
+	], 0.16, 0.025, 0.012)
 	var p := [
-		# Front & rear spoked tires with bright alloy rims + brake hub
-		part(_cyl(0.34, 0.34, 0.12, 12), Vector3(0, 0.34, -0.66), DARK, wheel),
-		part(_cyl(0.22, 0.22, 0.13, 12), Vector3(0, 0.34, -0.66), chrome, wheel),
-		part(_cyl(0.08, 0.08, 0.15, 8), Vector3(0, 0.34, -0.66), GREY, wheel),
-		part(_cyl(0.34, 0.34, 0.13, 12), Vector3(0, 0.34, 0.62), DARK, wheel),
-		part(_cyl(0.22, 0.22, 0.14, 12), Vector3(0, 0.34, 0.62), chrome, wheel),
-		part(_cyl(0.09, 0.09, 0.16, 8), Vector3(0, 0.34, 0.62), GREY, wheel),
-		# Sculpted front mudguard & raked telescopic chrome forks
+		# Real 3D Torus Rubber Tyres + Open 5-Spoke Silver Cast-Alloy Wheels!
+		part(wpair_f[0], Vector3(0, 0.35, -0.66), rubber),
+		part(wpair_f[1], Vector3(0, 0.35, -0.66), alloy),
+		part(wpair_r[0], Vector3(0, 0.35, 0.62), rubber),
+		part(wpair_r[1], Vector3(0, 0.35, 0.62), alloy),
+		# Sculpted front mudguard, raked telescopic chrome forks & triple-clamp
 		part(fender_f, Vector3.ZERO, frame),
-		part(_cyl(0.026, 0.028, 0.74, 8), Vector3(-0.085, 0.69, -0.55), chrome, fork_tilt),
-		part(_cyl(0.026, 0.028, 0.74, 8), Vector3(0.085, 0.69, -0.55), chrome, fork_tilt),
-		# Sculpted teardrop fuel tank & contoured leather boda saddle
+		part(_cyl(0.028, 0.030, 0.76, 10), Vector3(-0.095, 0.70, -0.55), chrome, fork_tilt),
+		part(_cyl(0.028, 0.030, 0.76, 10), Vector3(0.095, 0.70, -0.55), chrome, fork_tilt),
+		part(_box_mesh(Vector3(0.24, 0.04, 0.08)), Vector3(0, 0.92, -0.47), DARK),
+		# Glossy sculpted teardrop fuel tank + white highlight stripe + red side cover & tail cowl
 		part(tank_mesh, Vector3.ZERO, frame),
-		part(seat_mesh, Vector3.ZERO, Color(0.12, 0.12, 0.14)),
-		# Silver finned engine block, crash guard & angled chrome exhaust muffler
-		part(_box_mesh(Vector3(0.26, 0.30, 0.40)), Vector3(0, 0.48, -0.06), Color(0.62, 0.65, 0.68)),
-		part(_box_mesh(Vector3(0.30, 0.05, 0.36)), Vector3(0, 0.56, -0.06), Color(0.45, 0.48, 0.52)),
-		part(_box_mesh(Vector3(0.30, 0.05, 0.36)), Vector3(0, 0.46, -0.06), Color(0.45, 0.48, 0.52)),
-		part(_cyl(0.048, 0.058, 0.92, 8), Vector3(0.18, 0.38, 0.34), chrome, Basis(Vector3.RIGHT, PI / 2 - 0.12)),
-		# Twin orange coil rear shocks
-		part(_cyl(0.032, 0.032, 0.42, 8), Vector3(-0.12, 0.60, 0.52), Color(0.95, 0.45, 0.10), Basis(Vector3.RIGHT, -0.28)),
-		part(_cyl(0.032, 0.032, 0.42, 8), Vector3(0.12, 0.60, 0.52), Color(0.95, 0.45, 0.10), Basis(Vector3.RIGHT, -0.28)),
-		# Handlebars, handgrips, chrome twin mirrors, round headlamp & amber turn signals
-		part(_cyl(0.022, 0.022, 0.78, 8), Vector3(0, 1.07, -0.46), DARK, wheel),
-		part(_cyl(0.032, 0.032, 0.14, 8), Vector3(-0.34, 1.07, -0.46), Color(0.16, 0.16, 0.18), wheel),
-		part(_cyl(0.032, 0.032, 0.14, 8), Vector3(0.34, 1.07, -0.46), Color(0.16, 0.16, 0.18), wheel),
-		part(_cyl(0.012, 0.012, 0.16, 6), Vector3(-0.26, 1.15, -0.46), chrome),
-		part(_cyl(0.012, 0.012, 0.16, 6), Vector3(0.26, 1.15, -0.46), chrome),
-		part(_sphere(0.055, 0.075, 8, 4), Vector3(-0.29, 1.24, -0.46), DARK),
-		part(_sphere(0.055, 0.075, 8, 4), Vector3(0.29, 1.24, -0.46), DARK),
-		part(_cyl(0.105, 0.095, 0.13, 12), Vector3(0, 0.96, -0.60), DARK, Basis(Vector3.RIGHT, PI / 2)),
-		part(_cyl(0.092, 0.092, 0.04, 12), Vector3(0, 0.96, -0.66), Color(1.0, 0.96, 0.78), Basis(Vector3.RIGHT, PI / 2)),
-		part(_sphere(0.035, 0.06, 6, 3), Vector3(-0.15, 0.95, -0.60), Color(0.98, 0.56, 0.08)),
-		part(_sphere(0.035, 0.06, 6, 3), Vector3(0.15, 0.95, -0.60), Color(0.98, 0.56, 0.08)),
-		# Rear carrier rack & tail light
-		part(_box_mesh(Vector3(0.36, 0.04, 0.40)), Vector3(0, 0.94, 0.78), chrome),
-		part(_box_mesh(Vector3(0.14, 0.08, 0.05)), Vector3(0, 0.85, 0.94), Color(0.92, 0.12, 0.12)),
+		part(_box_mesh(Vector3(0.39, 0.028, 0.24)), Vector3(0, 0.92, -0.22), Color(0.98, 0.92, 0.92), Basis(Vector3.RIGHT, 0.18)),
+		part(side_cover, Vector3.ZERO, frame.darkened(0.06)),
+		part(tail_cowl, Vector3.ZERO, frame),
+		part(seat_mesh, Vector3.ZERO, Color(0.14, 0.14, 0.17)),
+		# Detailed Bajaj Boxer Engine: silver round crankcase + dark finned cylinder barrel + tubular chrome crash-bar!
+		part(_cyl(0.12, 0.12, 0.25, 10), Vector3(0, 0.42, -0.05), alloy, Basis(Vector3.FORWARD, PI * 0.5)),
+		part(_box_mesh(Vector3(0.18, 0.21, 0.18)), Vector3(0, 0.58, -0.14), Color(0.24, 0.26, 0.30), Basis(Vector3.RIGHT, 0.20)),
+		for_fin_bar(0.54), for_fin_bar(0.59), for_fin_bar(0.64),
+		# Tubular silver engine crash-guard loops (left & right, just like the icon!)
+		part(_cyl(0.016, 0.016, 0.32, 8), Vector3(-0.21, 0.56, -0.28), chrome),
+		part(_cyl(0.016, 0.016, 0.32, 8), Vector3(0.21, 0.56, -0.28), chrome),
+		part(_cyl(0.016, 0.016, 0.42, 8), Vector3(0, 0.70, -0.28), chrome, Basis(Vector3.FORWARD, PI * 0.5)),
+		part(_cyl(0.016, 0.016, 0.42, 8), Vector3(0, 0.41, -0.26), chrome, Basis(Vector3.FORWARD, PI * 0.5)),
+		# Swingarm, chain case & upswept chrome exhaust muffler
+		part(_box_mesh(Vector3(0.22, 0.055, 0.52)), Vector3(0, 0.36, 0.34), Color(0.22, 0.24, 0.28)),
+		part(_cyl(0.048, 0.060, 0.92, 10), Vector3(0.18, 0.39, 0.35), chrome, Basis(Vector3.RIGHT, PI / 2 - 0.11)),
+		# Twin orange/copper coil rear shocks + rear footrest guard frames
+		part(_cyl(0.036, 0.036, 0.42, 10), Vector3(-0.13, 0.60, 0.54), Color(0.88, 0.40, 0.12), Basis(Vector3.RIGHT, -0.26)),
+		part(_cyl(0.036, 0.036, 0.42, 10), Vector3(0.13, 0.60, 0.54), Color(0.88, 0.40, 0.12), Basis(Vector3.RIGHT, -0.26)),
+		part(_box_mesh(Vector3(0.36, 0.024, 0.28)), Vector3(0, 0.46, 0.56), chrome),
+		# Twin black round speedometer/tachometer pods + swept black handlebars + angled mirrors
+		part(_cyl(0.056, 0.052, 0.08, 10), Vector3(-0.065, 1.07, -0.55), DARK, Basis(Vector3.RIGHT, 0.45)),
+		part(_cyl(0.056, 0.052, 0.08, 10), Vector3(0.065, 1.07, -0.55), DARK, Basis(Vector3.RIGHT, 0.45)),
+		part(_cyl(0.020, 0.020, 0.78, 8), Vector3(0, 1.08, -0.45), DARK, Basis(Vector3.FORWARD, PI * 0.5)),
+		part(_cyl(0.030, 0.030, 0.15, 8), Vector3(-0.34, 1.08, -0.44), Color(0.14, 0.14, 0.16), Basis(Vector3.FORWARD, PI * 0.5)),
+		part(_cyl(0.030, 0.030, 0.15, 8), Vector3(0.34, 1.08, -0.44), Color(0.14, 0.14, 0.16), Basis(Vector3.FORWARD, PI * 0.5)),
+		part(_cyl(0.010, 0.010, 0.18, 6), Vector3(-0.27, 1.17, -0.45), DARK, Basis(Vector3.FORWARD, 0.32)),
+		part(_cyl(0.010, 0.010, 0.18, 6), Vector3(0.27, 1.17, -0.45), DARK, Basis(Vector3.FORWARD, -0.32)),
+		part(_box_mesh(Vector3(0.13, 0.075, 0.035)), Vector3(-0.33, 1.25, -0.45), DARK),
+		part(_box_mesh(Vector3(0.13, 0.075, 0.035)), Vector3(0.33, 1.25, -0.45), DARK),
+		# Large chrome-rimmed round headlamp + glowing warm lens + round amber turn signals on stalks!
+		part(_cyl(0.125, 0.105, 0.14, 14), Vector3(0, 0.95, -0.60), DARK, Basis(Vector3.RIGHT, PI / 2)),
+		part(_cyl(0.128, 0.128, 0.03, 14), Vector3(0, 0.95, -0.65), chrome, Basis(Vector3.RIGHT, PI / 2)),
+		part(_cyl(0.112, 0.112, 0.035, 14), Vector3(0, 0.95, -0.665), Color(1.0, 0.95, 0.74), Basis(Vector3.RIGHT, PI / 2)),
+		part(_sphere(0.044, 0.078, 8, 4), Vector3(-0.18, 0.93, -0.59), Color(1.0, 0.58, 0.06)),
+		part(_sphere(0.044, 0.078, 8, 4), Vector3(0.18, 0.93, -0.59), Color(1.0, 0.58, 0.06)),
+		# Chrome rear pillion grab-rail hoop, carrier rack, mudflap & tail-lamp
+		part(_cyl(0.016, 0.016, 0.34, 8), Vector3(-0.16, 0.94, 0.72), chrome, Basis(Vector3.RIGHT, PI * 0.42)),
+		part(_cyl(0.016, 0.016, 0.34, 8), Vector3(0.16, 0.94, 0.72), chrome, Basis(Vector3.RIGHT, PI * 0.42)),
+		part(_cyl(0.016, 0.016, 0.34, 8), Vector3(0, 1.00, 0.87), chrome, Basis(Vector3.FORWARD, PI * 0.5)),
+		part(_box_mesh(Vector3(0.14, 0.08, 0.05)), Vector3(0, 0.84, 0.90), Color(0.92, 0.12, 0.12)),
+		part(_box_mesh(Vector3(0.15, 0.18, 0.03)), Vector3(0, 0.68, 0.88), DARK, Basis(Vector3.RIGHT, 0.22)),
 	]
 	if rider:
-		p.append_array(_seated(0.12, _pick(VESTS), rng.randf() < 0.7))
+		p.append_array(_seated(0.10, _pick(VESTS), rng.randf() < 0.85, null, null, null, false, true))
 	if passenger:
-		p.append_array(_seated(0.62, _pick(CLOTHES), false))
+		p.append_array(_seated(0.56, _pick(CLOTHES), false, null, null, null, rng.randf() < 0.5, false))
 	return p
 
 
-func _seated(z: float, top: Color, helmet: bool, custom_skin: Variant = null, custom_legs: Variant = null, custom_helmet_col: Variant = null, female := false) -> Array:
-	# a rider sitting on the bike, built from rounded shapes (matching walking rider when customized)
+func for_fin_bar(y_pos: float) -> Array:
+	return part(_box_mesh(Vector3(0.21, 0.018, 0.21)), Vector3(0, y_pos, -0.14), Color(0.56, 0.60, 0.66), Basis(Vector3.RIGHT, 0.20))
+
+
+func _seated(z: float, top: Color, helmet: bool, custom_skin: Variant = null, custom_legs: Variant = null, custom_helmet_col: Variant = null, female := false, boda_vest := false) -> Array:
+	var hm := _human_meshes()
 	var skin: Color = custom_skin if custom_skin != null else _pick(SKINS)
-	var legs: Color = custom_legs if custom_legs != null else _pick([DARK, Color(0.2, 0.25, 0.4), Color(0.4, 0.35, 0.3)])
-	var lean := Basis(Vector3.RIGHT, -0.18)
+	var legs: Color = custom_legs if custom_legs != null else Color(0.16, 0.28, 0.46)
+	var tshirt: Color = Color(0.13, 0.14, 0.18) if boda_vest else top
+	var silver := Color(0.86, 0.90, 0.94)
+	var hair := Color(0.06, 0.05, 0.05)
+	var lean := Basis(Vector3.RIGHT, -0.15)
 	var p := [
-		part(_cyl(0.165 if female else 0.19, 0.135 if female else 0.16, 0.50, 10), Vector3(0, 1.38, z), top, lean.scaled(Vector3(1, 1, 0.75))),
-		part(_capsule(0.078 if female else 0.088, 0.38 if female else 0.44), Vector3(0, 1.56, z - 0.04), top, Basis(Vector3.FORWARD, PI / 2)),
-		part(_cyl(0.046, 0.050, 0.10, 6), Vector3(0, 1.70, z - 0.06), skin),
-		part(_sphere(0.122, 0.26, 10, 5), Vector3(0, 1.84, z - 0.07), skin),
-		part(_sphere(0.17, 0.12, 8, 4), Vector3(0, 1.11, z + 0.03), legs),
+		# Sculpted athletic torso leaning slightly forward + dark T-shirt base
+		part(hm["torso_f" if female else "torso_m"], Vector3(0, 1.12, z + 0.03), tshirt, lean),
+		part(hm["pelvis_f" if female else "pelvis_m"], Vector3(0, 1.04, z + 0.05), legs),
+		part(_cyl(0.052, 0.062, 0.12, 10), Vector3(0, 1.60, z - 0.05), skin),
+		part(hm["head"], Vector3(0, 1.75, z - 0.06), skin),
+		# Expressive smiling face on the rider!
+		part(_box_mesh(Vector3(0.050, 0.018, 0.016)), Vector3(0, 1.69, z - 0.182), Color(0.97, 0.97, 0.96)),
+		part(_sphere(0.020, 0.026, 6, 3), Vector3(-0.042, 1.775, z - 0.175), Color(0.97, 0.97, 0.95)),
+		part(_sphere(0.020, 0.026, 6, 3), Vector3(0.042, 1.775, z - 0.175), Color(0.97, 0.97, 0.95)),
+		part(_sphere(0.012, 0.018, 6, 3), Vector3(-0.042, 1.775, z - 0.188), hair),
+		part(_sphere(0.012, 0.018, 6, 3), Vector3(0.042, 1.775, z - 0.188), hair),
 	]
+	if not female:
+		p.append(part(_box_mesh(Vector3(0.054, 0.016, 0.018)), Vector3(0, 1.658, z - 0.155), hair))
+	if boda_vest:
+		# Open V-neck high-vis yellow/orange reflector vest OVER dark T-shirt + twin silver reflective bands!
+		p.append(part(hm["torso_f" if female else "torso_m"], Vector3(0, 1.13, z + 0.036), top, lean.scaled(Vector3(1.05, 0.93, 1.06))))
+		p.append(part(_box_mesh(Vector3(0.095, 0.36, 0.05)), Vector3(0, 1.36, z - 0.135), tshirt, lean))
+		for sy_b in [1.21, 1.32]:
+			p.append(part(_cyl(0.214, 0.202, 0.032, 14), Vector3(0, sy_b, z + 0.022), silver, lean.scaled(Vector3(1.07, 1.0, 0.77))))
+		for sx_b in [-0.105, 0.105]:
+			p.append(part(_box_mesh(Vector3(0.034, 0.15, 0.30)), Vector3(sx_b, 1.48, z - 0.025), silver, lean))
+
 	for sx in [-1.0, 1.0]:
-		p.append(part(_capsule(0.076, 0.5), Vector3(sx * 0.13, 1.06, z - 0.18), legs, Basis(Vector3.RIGHT, PI / 2)))
-		p.append(part(_capsule(0.062, 0.46), Vector3(sx * 0.18, 0.75, z - 0.42), legs, Basis(Vector3.RIGHT, 0.15)))
-		p.append(part(_box_mesh(Vector3(0.095, 0.065, 0.21)), Vector3(sx * 0.18, 0.52, z - 0.5), DARK))
-		p.append(part(_capsule(0.046 if female else 0.052, 0.48), Vector3(sx * 0.25, 1.33, z - 0.3), top, Basis(Vector3.RIGHT, 1.1)))
-		p.append(part(_sphere(0.046, 0.095, 6, 3), Vector3(sx * 0.29, 1.10, z - 0.52), skin))
+		# Sculpted bent blue-jeans thighs hugging tank -> rounded knee -> calf angled to footpeg -> sneaker with white sole!
+		p.append(part(hm["thigh"], Vector3(sx * 0.16, 1.00, z - 0.14), legs, Basis(Vector3.RIGHT, 1.18) * Basis(Vector3.FORWARD, sx * 0.14)))
+		p.append(part(_sphere(0.074, 0.14, 8, 4), Vector3(sx * 0.185, 0.91, z - 0.34), legs))
+		p.append(part(hm["calf"], Vector3(sx * 0.185, 0.69, z - 0.27), legs, Basis(Vector3.RIGHT, -0.32)))
+		p.append(part(hm["sole"], Vector3(sx * 0.19, 0.46, z - 0.22), Color(0.95, 0.95, 0.93), Basis(Vector3.RIGHT, 0.18)))
+		p.append(part(hm["shoe"], Vector3(sx * 0.19, 0.465, z - 0.22), Color(0.16, 0.14, 0.14), Basis(Vector3.RIGHT, 0.18)))
+		if boda_vest:
+			# Two-segment bent muscular rider arms: dark short sleeve out to elbow + bare brown forearm forward to handlebar grip!
+			var u_basis := Basis(Vector3.FORWARD, -sx * 0.42) * Basis(Vector3.RIGHT, 0.48)
+			p.append(part(hm["sleeve"], Vector3(sx * 0.23, 1.44, z - 0.08), tshirt, u_basis))
+			p.append(part(_capsule(0.056, 0.22), Vector3(sx * 0.27, 1.34, z - 0.15), skin, u_basis))
+			var f_basis := Basis(Vector3.UP, sx * 0.14) * Basis(Vector3.RIGHT, 1.32)
+			p.append(part(hm["forearm"], Vector3(sx * 0.305, 1.19, z - 0.35), skin, f_basis))
+			p.append(part(_sphere(0.054, 0.10, 8, 4), Vector3(sx * 0.32, 1.09, z - 0.54), skin))
+		else:
+			# Passenger holding waist/grab-rail
+			p.append(part(hm["sleeve"], Vector3(sx * 0.21, 1.42, z + 0.02), tshirt))
+			p.append(part(hm["forearm"], Vector3(sx * 0.21, 1.18, z - 0.10), skin, Basis(Vector3.RIGHT, 0.85)))
+
 	if helmet:
-		var hcol: Color = custom_helmet_col if custom_helmet_col != null else _pick([DARK, Color(0.9, 0.1, 0.1), Color(0.95, 0.95, 0.95), Color(0.2, 0.3, 0.8)])
-		p.append(part(_sphere(0.148, 0.24, 10, 5), Vector3(0, 1.90, z - 0.07), hcol))
-		p.append(part(_box_mesh(Vector3(0.18, 0.075, 0.05)), Vector3(0, 1.86, z - 0.20), GLASS))
+		# Iconic Open-Face Golden-Yellow Kampala Boda Helmet with black inner liner & front-only clear curved visor!
+		var hcol: Color = custom_helmet_col if custom_helmet_col != null else Color(0.98, 0.74, 0.12)
+		p.append(part(hm["helmet_open"], Vector3(0, 1.77, z - 0.055), hcol))
+		p.append(part(hm["helmet_visor"], Vector3(0, 1.77, z - 0.055), Color(0.76, 0.90, 0.98)))
+		p.append(part(_cyl(0.012, 0.012, 0.18, 6), Vector3(0, 1.62, z - 0.09), DARK, Basis(Vector3.FORWARD, PI * 0.5)))
 	else:
-		p.append(part(_sphere(0.126, 0.16, 10, 5), Vector3(0, 1.90, z - 0.06), Color(0.06, 0.05, 0.05)))
-		if female:
-			for bx in [-0.06, 0.0, 0.06]:
-				p.append(part(_capsule(0.024, 0.22), Vector3(bx, 1.74, z + 0.04), Color(0.06, 0.05, 0.05)))
+		p.append(part(_sphere(0.140, 0.19, 10, 5), Vector3(0, 1.82, z - 0.045), hair))
 	return p
 
 
 func model_taxi() -> Array:
-	var wheel := Basis(Vector3.FORWARD, PI / 2)
-	# Sculpted sloped-nose Toyota HiAce Ugandan matatu body (NOT a flat box!)
-	var body_mesh := MeshSculpt.extrude_profile("taxi_hiace_body", [
-		Vector2(0.42, -2.35), Vector2(1.12, -2.36), Vector2(1.94, -1.78),
-		Vector2(2.04, -1.25), Vector2(2.04, 2.22), Vector2(1.88, 2.36),
-		Vector2(0.42, 2.36)
-	], 1.94, 0.10, 0.07)
-	var wind_mesh := MeshSculpt.extrude_profile("taxi_hiace_wind", [
-		Vector2(1.24, -2.28), Vector2(1.86, -1.82), Vector2(1.86, -1.66), Vector2(1.24, -2.14)
-	], 1.68, 0.04, 0.02)
+	var wpair := MeshSculpt.spoked_wheel_pair("taxi_wheel", 0.37, 0.105, 0.22, 6)
+	var body_mesh := MeshSculpt.extrude_profile("taxi_hiace_body_v2", [
+		Vector2(0.40, -2.36), Vector2(1.12, -2.38), Vector2(1.94, -1.80),
+		Vector2(2.05, -1.24), Vector2(2.05, 2.22), Vector2(1.88, 2.36),
+		Vector2(0.40, 2.36)
+	], 1.94, 0.10, 0.06)
+	var wind_mesh := MeshSculpt.extrude_profile("taxi_hiace_wind_v2", [
+		Vector2(1.22, -2.31), Vector2(1.88, -1.83), Vector2(1.88, -1.68), Vector2(1.22, -2.16)
+	], 1.74, 0.03, 0.015)
 	var p := [
 		part(body_mesh, Vector3.ZERO, TAXI_WHITE),
 		part(wind_mesh, Vector3.ZERO, GLASS),
-		part(_box_mesh(Vector3(1.96, 0.56, 3.65)), Vector3(0, 1.56, 0.36), GLASS),
-		part(_box_mesh(Vector3(1.66, 0.54, 0.06)), Vector3(0, 1.56, 2.35), GLASS),
-		# Front & rear sculpted bumpers, grille, side mirrors, headlights & Uganda plates
-		part(_box_mesh(Vector3(1.96, 0.24, 0.18)), Vector3(0, 0.52, -2.38), DARK),
-		part(_box_mesh(Vector3(1.96, 0.24, 0.18)), Vector3(0, 0.52, 2.38), DARK),
-		part(_box_mesh(Vector3(0.36, 0.18, 0.07)), Vector3(-0.68, 0.88, -2.36), Color(1.0, 0.97, 0.84)),
-		part(_box_mesh(Vector3(0.36, 0.18, 0.07)), Vector3(0.68, 0.88, -2.36), Color(1.0, 0.97, 0.84)),
-		part(_box_mesh(Vector3(0.88, 0.22, 0.06)), Vector3(0, 0.86, -2.36), DARK),
-		part(_box_mesh(Vector3(0.44, 0.13, 0.05)), Vector3(0, 0.52, -2.48), CURB_YELLOW),
-		part(_box_mesh(Vector3(0.44, 0.13, 0.05)), Vector3(0, 0.52, 2.48), CURB_YELLOW),
-		part(_box_mesh(Vector3(0.14, 0.16, 0.08)), Vector3(-1.04, 1.32, -1.92), DARK),
-		part(_box_mesh(Vector3(0.14, 0.16, 0.08)), Vector3(1.04, 1.32, -1.92), DARK),
-		# Rear taillights & diagonal Kampala reflective stripes
-		part(_box_mesh(Vector3(0.28, 0.22, 0.06)), Vector3(-0.76, 0.92, 2.36), Color(0.92, 0.14, 0.12)),
-		part(_box_mesh(Vector3(0.28, 0.22, 0.06)), Vector3(0.76, 0.92, 2.36), Color(0.92, 0.14, 0.12)),
+		# Framed dark-tinted side window bays with crisp white B/C/D pillars!
+		part(_box_mesh(Vector3(1.97, 0.54, 1.08)), Vector3(0, 1.56, -1.08), GLASS),
+		part(_box_mesh(Vector3(1.97, 0.54, 1.16)), Vector3(0, 1.56, 0.22), GLASS),
+		part(_box_mesh(Vector3(1.97, 0.54, 1.12)), Vector3(0, 1.56, 1.54), GLASS),
+		part(_box_mesh(Vector3(1.72, 0.54, 0.08)), Vector3(0, 1.56, 2.34), GLASS),
+		# Front & rear sculpted bumpers, slatted black grille, headlamps, amber corner indicators & roof TAXI sign!
+		part(_box_mesh(Vector3(1.98, 0.24, 0.20)), Vector3(0, 0.50, -2.38), DARK),
+		part(_box_mesh(Vector3(1.98, 0.24, 0.20)), Vector3(0, 0.50, 2.38), DARK),
+		part(_box_mesh(Vector3(0.36, 0.18, 0.08)), Vector3(-0.62, 0.86, -2.37), Color(1.0, 0.97, 0.84)),
+		part(_box_mesh(Vector3(0.36, 0.18, 0.08)), Vector3(0.62, 0.86, -2.37), Color(1.0, 0.97, 0.84)),
+		part(_box_mesh(Vector3(0.14, 0.18, 0.08)), Vector3(-0.86, 0.86, -2.36), Color(1.0, 0.58, 0.08)),
+		part(_box_mesh(Vector3(0.14, 0.18, 0.08)), Vector3(0.86, 0.86, -2.36), Color(1.0, 0.58, 0.08)),
+		part(_box_mesh(Vector3(0.84, 0.24, 0.07)), Vector3(0, 0.84, -2.37), DARK),
+		part(_box_mesh(Vector3(0.46, 0.13, 0.05)), Vector3(0, 0.50, -2.49), TAXI_WHITE),
+		part(_box_mesh(Vector3(0.46, 0.13, 0.05)), Vector3(0, 0.50, 2.49), CURB_YELLOW),
+		part(_box_mesh(Vector3(0.14, 0.20, 0.09)), Vector3(-1.05, 1.34, -1.90), DARK),
+		part(_box_mesh(Vector3(0.14, 0.20, 0.09)), Vector3(1.05, 1.34, -1.90), DARK),
+		part(_box_mesh(Vector3(0.64, 0.18, 0.22)), Vector3(0, 2.13, -1.25), TAXI_WHITE),
+		part(_box_mesh(Vector3(0.28, 0.24, 0.07)), Vector3(-0.78, 0.92, 2.36), Color(0.92, 0.14, 0.12)),
+		part(_box_mesh(Vector3(0.28, 0.24, 0.07)), Vector3(0.78, 0.92, 2.36), Color(0.92, 0.14, 0.12)),
 		part(_box_mesh(Vector3(0.55, 0.18, 0.04)), Vector3(-0.55, 0.72, 2.37), CURB_YELLOW),
 		part(_box_mesh(Vector3(0.55, 0.18, 0.04)), Vector3(0.55, 0.72, 2.37), Color(0.92, 0.22, 0.10)),
-		# Rooftop luggage rack
-		part(_box_mesh(Vector3(1.52, 0.07, 2.75)), Vector3(0, 2.08, 0.25), GREY),
+		part(_box_mesh(Vector3(1.52, 0.06, 2.55)), Vector3(0, 2.09, 0.35), GREY),
 	]
-	if rng.randf() < 0.75:
-		p.append(part(_box_mesh(Vector3(0.65, 0.34, 0.85)), Vector3(-0.3, 2.28, 0.4), _pick(GOODS)))
-		p.append(part(_sphere(0.32, 0.45, 7, 3), Vector3(0.32, 2.28, -0.2), Color(0.28, 0.58, 0.18)))
+	if rng.randf() < 0.65:
+		p.append(part(_box_mesh(Vector3(0.62, 0.30, 0.80)), Vector3(-0.28, 2.26, 0.45), _pick(GOODS)))
+		p.append(part(_sphere(0.30, 0.42, 7, 3), Vector3(0.30, 2.26, -0.15), Color(0.28, 0.58, 0.18)))
 	for wx in [-0.88, 0.88]:
 		for wz in [-1.45, 1.48]:
-			p.append(part(_cyl(0.37, 0.37, 0.24, 12), Vector3(wx, 0.37, wz), DARK, wheel))
-			p.append(part(_cyl(0.22, 0.22, 0.26, 10), Vector3(wx, 0.37, wz), Color(0.78, 0.80, 0.84), wheel))
-	# Iconic Kampala blue-and-white checkered matatu band
+			p.append(part(wpair[0], Vector3(wx, 0.37, wz), DARK))
+			p.append(part(wpair[1], Vector3(wx, 0.37, wz), Color(0.80, 0.83, 0.88)))
+	# Iconic Kampala blue-and-white checkered matatu band + lower blue skirt
+	p.append(part(_box_mesh(Vector3(1.96, 0.24, 4.55)), Vector3(0, 0.66, 0.0), TAXI_BLUE.lightened(0.08)))
 	for side in [-1.0, 1.0]:
 		for i in 22:
 			for row in 2:
 				var c := TAXI_BLUE if (i + row) % 2 == 0 else TAXI_WHITE
-				p.append(part(_box_mesh(Vector3(0.03, 0.18, 0.20)), Vector3(side * 0.98, 0.90 + row * 0.18, -2.05 + i * 0.20), c))
+				p.append(part(_box_mesh(Vector3(0.03, 0.16, 0.20)), Vector3(side * 0.98, 0.94 + row * 0.16, -2.05 + i * 0.20), c))
 	return p
 
 
 func model_car(col: Color) -> Array:
-	var wheel := Basis(Vector3.FORWARD, PI / 2)
-	# Sculpted aerodynamic sedan/SUV silhouette (sloped hood, raked windshield, tapered roof!)
-	var car_body := MeshSculpt.extrude_profile("sedan_sculpt_body", [
-		Vector2(0.34, -2.08), Vector2(0.74, -2.06), Vector2(0.92, -1.10),
-		Vector2(1.48, -0.42), Vector2(1.50, 0.92), Vector2(0.96, 1.56),
+	var wpair := MeshSculpt.spoked_wheel_pair("car_wheel", 0.34, 0.095, 0.20, 5)
+	var car_body := MeshSculpt.extrude_profile("sedan_sculpt_body_v2", [
+		Vector2(0.34, -2.08), Vector2(0.76, -2.06), Vector2(0.94, -1.08),
+		Vector2(1.50, -0.40), Vector2(1.50, 0.90), Vector2(0.96, 1.56),
 		Vector2(0.88, 2.06), Vector2(0.34, 2.06)
-	], 1.82, 0.12, 0.08)
-	var car_glass := MeshSculpt.extrude_profile("sedan_sculpt_glass", [
-		Vector2(0.95, -0.98), Vector2(1.42, -0.38), Vector2(1.43, 0.86), Vector2(0.98, 1.42)
-	], 1.66, 0.06, 0.03)
+	], 1.82, 0.11, 0.07)
+	# Glass cabin slightly wider than beveled roof sides + framed front/rear windshields so windows show crisply!
+	var car_side_win_f := MeshSculpt.extrude_profile("sedan_win_f", [
+		Vector2(0.98, -0.96), Vector2(1.42, -0.36), Vector2(1.42, 0.18), Vector2(0.98, 0.18)
+	], 1.85, 0.02, 0.01)
+	var car_side_win_r := MeshSculpt.extrude_profile("sedan_win_r", [
+		Vector2(0.98, 0.30), Vector2(1.42, 0.30), Vector2(1.42, 0.84), Vector2(0.98, 1.38)
+	], 1.85, 0.02, 0.01)
 	var p := [
 		part(car_body, Vector3.ZERO, col),
-		part(car_glass, Vector3.ZERO, GLASS),
-		part(_box_mesh(Vector3(1.84, 0.20, 0.16)), Vector3(0, 0.42, -2.06), DARK),
-		part(_box_mesh(Vector3(1.84, 0.20, 0.16)), Vector3(0, 0.42, 2.06), DARK),
-		part(_box_mesh(Vector3(0.34, 0.14, 0.07)), Vector3(-0.62, 0.68, -2.07), Color(1.0, 0.97, 0.84)),
-		part(_box_mesh(Vector3(0.34, 0.14, 0.07)), Vector3(0.62, 0.68, -2.07), Color(1.0, 0.97, 0.84)),
-		part(_box_mesh(Vector3(0.68, 0.16, 0.06)), Vector3(0, 0.64, -2.07), DARK),
-		part(_box_mesh(Vector3(0.32, 0.15, 0.07)), Vector3(-0.62, 0.72, 2.07), Color(0.92, 0.14, 0.12)),
-		part(_box_mesh(Vector3(0.32, 0.15, 0.07)), Vector3(0.62, 0.72, 2.07), Color(0.92, 0.14, 0.12)),
-		part(_box_mesh(Vector3(0.42, 0.11, 0.05)), Vector3(0, 0.44, -2.14), CURB_YELLOW),
-		part(_box_mesh(Vector3(0.42, 0.11, 0.05)), Vector3(0, 0.44, 2.14), CURB_YELLOW),
-		part(_box_mesh(Vector3(0.14, 0.10, 0.08)), Vector3(-0.96, 1.04, -0.52), col),
-		part(_box_mesh(Vector3(0.14, 0.10, 0.08)), Vector3(0.96, 1.04, -0.52), col),
+		part(car_side_win_f, Vector3.ZERO, GLASS),
+		part(car_side_win_r, Vector3.ZERO, GLASS),
+		part(_box_mesh(Vector3(1.54, 0.56, 0.06)), Vector3(0, 1.22, -0.74), GLASS, Basis(Vector3.RIGHT, -0.78)),
+		part(_box_mesh(Vector3(1.50, 0.54, 0.06)), Vector3(0, 1.22, 1.22), GLASS, Basis(Vector3.RIGHT, 0.78)),
+		part(_box_mesh(Vector3(1.86, 0.20, 0.18)), Vector3(0, 0.42, -2.06), DARK),
+		part(_box_mesh(Vector3(1.86, 0.20, 0.18)), Vector3(0, 0.42, 2.06), DARK),
+		part(_box_mesh(Vector3(0.36, 0.15, 0.08)), Vector3(-0.62, 0.68, -2.07), Color(1.0, 0.97, 0.84)),
+		part(_box_mesh(Vector3(0.36, 0.15, 0.08)), Vector3(0.62, 0.68, -2.07), Color(1.0, 0.97, 0.84)),
+		part(_box_mesh(Vector3(0.70, 0.17, 0.07)), Vector3(0, 0.64, -2.07), DARK),
+		part(_box_mesh(Vector3(0.34, 0.16, 0.08)), Vector3(-0.62, 0.72, 2.07), Color(0.92, 0.14, 0.12)),
+		part(_box_mesh(Vector3(0.34, 0.16, 0.08)), Vector3(0.62, 0.72, 2.07), Color(0.92, 0.14, 0.12)),
+		part(_box_mesh(Vector3(0.42, 0.11, 0.05)), Vector3(0, 0.44, -2.15), TAXI_WHITE),
+		part(_box_mesh(Vector3(0.42, 0.11, 0.05)), Vector3(0, 0.44, 2.15), CURB_YELLOW),
+		part(_box_mesh(Vector3(0.14, 0.10, 0.08)), Vector3(-0.98, 1.04, -0.52), col),
+		part(_box_mesh(Vector3(0.14, 0.10, 0.08)), Vector3(0.98, 1.04, -0.52), col),
 	]
 	for wx in [-0.82, 0.82]:
 		for wz in [-1.32, 1.32]:
-			p.append(part(_cyl(0.33, 0.33, 0.22, 12), Vector3(wx, 0.33, wz), DARK, wheel))
-			p.append(part(_cyl(0.20, 0.20, 0.24, 10), Vector3(wx, 0.33, wz), Color(0.78, 0.80, 0.84), wheel))
+			p.append(part(wpair[0], Vector3(wx, 0.34, wz), DARK))
+			p.append(part(wpair[1], Vector3(wx, 0.34, wz), Color(0.80, 0.83, 0.88)))
 	return p
 
 
@@ -1047,60 +1181,84 @@ func model_umbrella(col: Color, height := 2.3, radius := 1.3) -> Array:
 
 func model_tree(kind: int) -> Array:
 	match kind:
-		0:  # Tall sculpted Kampala palm tree with smooth curved trunk & drooping emerald fronds
-			var palm_frond := MeshSculpt.curved_frond("palm_frond", 2.5, 0.78)
-			var p := [
-				part(_cyl(0.15, 0.25, 2.45, 8), Vector3(0, 1.22, 0), Color(0.48, 0.34, 0.21)),
-				part(_cyl(0.11, 0.155, 2.55, 8), Vector3(-0.125, 3.62, 0.0), Color(0.52, 0.37, 0.23), Basis(Vector3.FORWARD, -0.10)),
-			]
+		0:  # Iconic Ringed Curved Kampala Boulevard Palm Tree with 12 lush arched tropical fronds!
+			var palm_frond := MeshSculpt.curved_frond("palm_frond_lush", 2.95, 0.96)
+			var palm_inner := MeshSculpt.curved_frond("palm_frond_inner", 2.15, 0.76)
+			var p := []
+			var cur := Vector3.ZERO
+			for seg in 7:
+				var t := float(seg) / 6.0
+				var r_bot := lerpf(0.26, 0.12, t)
+				var r_top := lerpf(0.23, 0.105, t)
+				var tilt := -0.14 + t * 0.08
+				var seg_h := 0.78
+				var b_seg := Basis(Vector3.FORWARD, tilt)
+				var up_dir: Vector3 = (b_seg * Vector3.UP).normalized()
+				var mid := cur + up_dir * (seg_h * 0.5)
+				var bark := Color(0.50, 0.33, 0.20) if seg % 2 == 0 else Color(0.42, 0.27, 0.16)
+				p.append(part(_cyl(r_top, r_bot, seg_h + 0.05, 10), mid, bark, b_seg))
+				p.append(part(_cyl(r_top * 1.06, r_top * 1.06, 0.045, 10), cur + up_dir * seg_h, Color(0.36, 0.23, 0.14), b_seg))
+				cur += up_dir * seg_h
+			for ci in 3:
+				var ca := ci * TAU / 3.0
+				p.append(part(_sphere(0.11, 0.20, 7, 4), cur + Vector3(cos(ca) * 0.14, -0.10, sin(ca) * 0.14), Color(0.38, 0.28, 0.12)))
 			for i in 8:
 				var a := i * TAU / 8.0 + 0.18
-				var col := Color(0.18, 0.56, 0.18) if i % 2 == 0 else Color(0.32, 0.68, 0.20)
-				p.append(part(palm_frond, Vector3(-0.25, 4.82, 0.0), col, Basis(Vector3.UP, a) * Basis(Vector3.RIGHT, 0.12)))
+				var col := Color(0.15, 0.52, 0.18) if i % 2 == 0 else Color(0.32, 0.68, 0.18)
+				p.append(part(palm_frond, cur + Vector3(0, 0.05, 0), col, Basis(Vector3.UP, a) * Basis(Vector3.RIGHT, 0.08)))
+			for i in 4:
+				var a2 := i * TAU / 4.0 + 0.55
+				p.append(part(palm_inner, cur + Vector3(0, 0.16, 0), Color(0.42, 0.74, 0.20), Basis(Vector3.UP, a2) * Basis(Vector3.RIGHT, -0.32)))
 			return p
-		1:  # Faceted low-poly tropical shade tree (Mango / Jacaranda)
-			var c_big := MeshSculpt.faceted_canopy("tree_canopy_big", 2.15, 0.78, 11)
-			var c_sm := MeshSculpt.faceted_canopy("tree_canopy_sm", 1.35, 0.80, 23)
+		1:  # Lush multi-canopy Mango / Jacaranda shade tree with sculpted trunk
+			var c_big := MeshSculpt.faceted_canopy("tree_canopy_big_v2", 2.25, 0.76, 11)
+			var c_sm := MeshSculpt.faceted_canopy("tree_canopy_sm_v2", 1.45, 0.80, 23)
+			var trunk_m := MeshSculpt.lathe_profile("tree_trunk_m", [
+				Vector2(0.34, 0.0), Vector2(0.24, 0.9), Vector2(0.20, 2.0), Vector2(0.16, 2.8)
+			], 10)
 			var is_jac := rng.randf() < 0.35
-			var col1 := JACARANDA if is_jac else Color(0.20, 0.56, 0.18)
-			var col2 := JACARANDA.lightened(0.14) if is_jac else Color(0.38, 0.72, 0.20)
+			var col1 := JACARANDA if is_jac else Color(0.18, 0.54, 0.18)
+			var col2 := JACARANDA.lightened(0.14) if is_jac else Color(0.36, 0.70, 0.20)
 			return [
-				part(_cyl(0.18, 0.30, 2.6, 7), Vector3(0, 1.3, 0), WOOD),
-				part(c_big, Vector3(0, 3.7, 0), col1),
-				part(c_sm, Vector3(1.15, 3.25, 0.55), col2),
-				part(c_sm, Vector3(-1.0, 3.35, -0.75), col1.lightened(0.08)),
+				part(trunk_m, Vector3.ZERO, WOOD),
+				part(c_big, Vector3(0, 3.75, 0), col1),
+				part(c_sm, Vector3(1.20, 3.30, 0.55), col2),
+				part(c_sm, Vector3(-1.10, 3.40, -0.75), col1.lightened(0.08)),
+				part(c_sm, Vector3(0.20, 4.35, -0.35), col2),
 			]
-		_:  # Lush Kampala Matooke Banana Plant with curved fronds & hanging matooke bunch
-			var b_frond := MeshSculpt.curved_frond("banana_frond", 2.25, 0.72)
+		_:  # Lush Kampala Matooke Banana Plant with wide arched fronds & purple flower heart
+			var b_frond := MeshSculpt.curved_frond("banana_frond_v2", 2.45, 0.84)
 			var p := [
-				part(_cyl(0.12, 0.18, 2.2, 7), Vector3(0, 1.1, 0), Color(0.42, 0.52, 0.22)),
-				part(_sphere(0.22, 0.38, 7, 4), Vector3(0.24, 1.78, 0.12), Color(0.36, 0.64, 0.18)),
+				part(_cyl(0.12, 0.20, 2.3, 9), Vector3(0, 1.15, 0), Color(0.38, 0.52, 0.20)),
+				part(_sphere(0.24, 0.42, 8, 4), Vector3(0.24, 1.82, 0.12), Color(0.34, 0.64, 0.18)),
+				part(_sphere(0.08, 0.18, 6, 4), Vector3(0.30, 1.52, 0.16), Color(0.52, 0.16, 0.30)),
 			]
-			for i in 6:
-				var a := i * TAU / 6.0 + rng.randf() * 0.35
-				var col := Color(0.22, 0.60, 0.16) if i % 2 == 0 else Color(0.40, 0.74, 0.20)
-				p.append(part(b_frond, Vector3(0, 2.15, 0), col, Basis(Vector3.UP, a) * Basis(Vector3.RIGHT, 0.22)))
+			for i in 7:
+				var a := i * TAU / 7.0 + rng.randf() * 0.28
+				var col := Color(0.20, 0.58, 0.16) if i % 2 == 0 else Color(0.40, 0.74, 0.20)
+				p.append(part(b_frond, Vector3(0, 2.22, 0), col, Basis(Vector3.UP, a) * Basis(Vector3.RIGHT, 0.18)))
 			return p
 
 
 # =============================================================== the street
-func shop_house(xf: Transform3D, w: float, d: float, floors: int, lit := "win", arcade_p := 0.65, name := "", district := "") -> void:
+func shop_house(xf: Transform3D, w: float, d: float, floors: int, lit := "win", arcade_p := 0.76, name := "", district := "") -> void:
 	var wall: Color = _pick(WALLS)
-	var trim: Color = wall.darkened(0.25) if rng.randf() < 0.5 else PAINT
+	var trim: Color = Color(0.95, 0.89, 0.80) if wall.get_luminance() < 0.65 else wall.darkened(0.20)
 	var fh := 3.1
 	var h := floors * fh
 	box(Vector3(0, h / 2, -d / 2), Vector3(w, h, d), wall, xf)
 	collide(xf, Vector3(0, h / 2, -d / 2), Vector3(w, h, d))
+	box(Vector3(0, h + 0.12, -d / 2 + 0.12), Vector3(w + 0.34, 0.24, d + 0.34), trim, xf)
 
 	# roof: flat with parapet + black water tank, or painted iron sheets (mabati)
 	if floors >= 2 and rng.randf() < 0.6:
-		box(Vector3(0, h + 0.2, -d / 2), Vector3(w + 0.15, 0.4, d + 0.15), trim, xf)
+		box(Vector3(0, h + 0.32, -d / 2), Vector3(w + 0.15, 0.28, d + 0.15), wall.darkened(0.12), xf)
 		var tx := rng.randf_range(-w / 2 + 1.0, w / 2 - 1.0)
-		box(Vector3(tx, h + 0.7, -d * 0.6), Vector3(1.2, 0.6, 1.2), GREY, xf)
-		_add("solid", _cyl(0.55, 0.55, 1.2), xf * Transform3D(Basis.IDENTITY, Vector3(tx, h + 1.6, -d * 0.6)), DARK)
+		box(Vector3(tx, h + 0.75, -d * 0.6), Vector3(1.2, 0.6, 1.2), GREY, xf)
+		_add("solid", _cyl(0.55, 0.55, 1.2), xf * Transform3D(Basis.IDENTITY, Vector3(tx, h + 1.65, -d * 0.6)), DARK)
 	else:
 		_add("solid", _prism(Vector3(d + 0.8, 1.7, w + 0.3)),
-			xf * Transform3D(Basis(Vector3.UP, PI / 2), Vector3(0, h + 0.85, -d / 2)), _pick(ROOFS))
+			xf * Transform3D(Basis(Vector3.UP, PI / 2), Vector3(0, h + 0.95, -d / 2)), _pick(ROOFS))
 
 	var arcade := floors >= 2 and rng.randf() < arcade_p
 	var sign_col: Color = _pick(SIGNS)
@@ -1111,39 +1269,51 @@ func shop_house(xf: Transform3D, w: float, d: float, floors: int, lit := "win", 
 		var open := rng.randf() < 0.75
 		if open:
 			box(Vector3(bx, 1.35, 0.03), Vector3(bw - 0.5, 2.5, 0.08), SHOP_DARK, xf, lit)
-			# Real framed shop door with glass inset & handle
-			box(Vector3(bx, 1.05, 0.07), Vector3(0.98, 2.08, 0.06), Color(0.24, 0.16, 0.10), xf)
+			box(Vector3(bx, 1.05, 0.07), Vector3(0.98, 2.08, 0.06), Color(0.26, 0.17, 0.11), xf)
 			box(Vector3(bx, 1.15, 0.10), Vector3(0.72, 1.45, 0.03), GLASS, xf, lit)
 			box(Vector3(bx + 0.36, 1.02, 0.12), Vector3(0.06, 0.18, 0.05), Color(0.92, 0.78, 0.25), xf)
-			if rng.randf() < 0.6 and name == "":  # generic goods outside unnamed shops
-				for g in rng.randi_range(2, 5):
-					var s := rng.randf_range(0.3, 0.55)
+			if rng.randf() < 0.55 and name == "":
+				for g in rng.randi_range(2, 4):
+					var s := rng.randf_range(0.3, 0.52)
 					box(Vector3(bx + rng.randf_range(-bw / 2 + 0.4, bw / 2 - 0.4), 0.18 + s / 2, rng.randf_range(0.4, 1.2)),
 						Vector3(s, s, s), _pick(GOODS), xf)
 		else:
 			box(Vector3(bx, 1.35, 0.03), Vector3(bw - 0.5, 2.5, 0.08), SHUTTER, xf)
 		for f in range(1, floors):
 			var wy := f * fh + 1.55
-			box(Vector3(bx, wy, 0.04), Vector3(minf(1.4, bw - 0.8), 1.3, 0.1), GLASS, xf, lit)
-			box(Vector3(bx, wy - 0.72, 0.1), Vector3(minf(1.6, bw - 0.6), 0.1, 0.22), trim, xf)
+			box(Vector3(bx, wy, 0.04), Vector3(minf(1.4, bw - 0.78), 1.35, 0.1), GLASS, xf, lit)
+			box(Vector3(bx, wy - 0.74, 0.12), Vector3(minf(1.65, bw - 0.55), 0.12, 0.24), trim, xf)
 
-	# arcade veranda shading the pavement, with a painted fascia sign & night LED strips
+	# 3D Arched Kampala Veranda Colonnade & Upper Loggia Railings (matches reference street art!)
 	var s_z := 2.32 if arcade else 0.1
 	var s_y := fh + 0.05 if arcade else 2.95
 	if arcade:
-		box(Vector3(0, fh, 1.15), Vector3(w, 0.2, 2.3), trim, xf)
-		box(Vector3(0, fh + 0.05, 2.32), Vector3(w, 0.5, 0.06), sign_col, xf)
-		# Under-veranda fluorescent tube lighting that illuminates the arcade walkway at night
+		box(Vector3(0, fh, 1.15), Vector3(w, 0.22, 2.32), trim, xf)
+		var arch_bays := maxi(2, roundi(w / 3.0))
+		var abw := w / float(arch_bays)
+		var arch_m := MeshSculpt.arch_spandrel("arch_bay_%d" % int(roundf(abw * 10.0)), abw, fh - 0.05, 0.30, 0.22)
+		for ai in arch_bays:
+			var ax := -w * 0.5 + abw * (ai + 0.5)
+			_add("solid", arch_m, xf * Transform3D(Basis.IDENTITY, Vector3(ax, 0.0, 2.15)), trim)
+			box(Vector3(ax - abw * 0.5 + 0.13, 0.18, 2.15), Vector3(0.32, 0.36, 0.36), trim.darkened(0.08), xf)
+		if floors >= 2:
+			box(Vector3(0, fh + 0.92, 2.22), Vector3(w - 0.2, 0.06, 0.06), DARK, xf)
+			var n_bars := int(w * 2.5)
+			for bi in n_bars:
+				var brx := -w * 0.5 + 0.25 + float(bi) / float(maxi(1, n_bars - 1)) * (w - 0.5)
+				box(Vector3(brx, fh + 0.48, 2.22), Vector3(0.035, 0.84, 0.035), DARK, xf)
+		if rng.randf() < 0.55:
+			var pot_x := -w * 0.5 + 0.55
+			_add("solid", _cyl(0.24, 0.18, 0.38, 8), xf * Transform3D(Basis.IDENTITY, Vector3(pot_x, 0.20, 1.75)), Color(0.68, 0.34, 0.20))
+			_add("solid", MeshSculpt.faceted_canopy("pot_plant", 0.34, 1.35, 9), xf * Transform3D(Basis.IDENTITY, Vector3(pot_x, 0.62, 1.75)), LEAF2)
+		box(Vector3(0, fh + 0.05, 2.34), Vector3(w, 0.48, 0.06), sign_col, xf)
 		box(Vector3(0, fh - 0.12, 1.15), Vector3(w * 0.72, 0.04, 0.14), Color(1.0, 0.94, 0.80), xf, "lamp")
-		for px in [-w / 2 + 0.2, w / 2 - 0.2]:
-			box(Vector3(px, fh / 2, 2.15), Vector3(0.28, fh, 0.28), trim, xf)   # no collider: thin pillars trap riders
 	else:
-		# Sculpted sloped colorful shop awning shading the pavement + fascia sign
 		var awn_mesh := MeshSculpt.extrude_profile("shop_awning_%d" % int(roundf(w * 2.0)), [
-			Vector2(2.65, 0.04), Vector2(2.74, 0.04), Vector2(2.26, 1.32), Vector2(2.16, 1.32)
-		], w - 0.35, 0.04, 0.02)
-		_add("solid", awn_mesh, xf, sign_col.lerp(Color(1.0, 0.96, 0.90), 0.15))
-		box(Vector3(0, 2.95, 0.1), Vector3(w - 0.4, 0.55, 0.1), sign_col, xf)
+			Vector2(2.65, 0.04), Vector2(2.74, 0.04), Vector2(2.24, 1.38), Vector2(2.14, 1.38)
+		], w - 0.30, 0.04, 0.02)
+		_add("solid", awn_mesh, xf, sign_col.lerp(Color(0.95, 0.52, 0.22), 0.35))
+		box(Vector3(0, 2.95, 0.1), Vector3(w - 0.4, 0.52, 0.1), sign_col, xf)
 	if name != "":
 		sign_text(name, sign_col, xf * Transform3D(Basis.IDENTITY, Vector3(0, fh + 0.05, 2.36) if arcade else Vector3(0, 2.95, 0.16)), w)
 		add_place(name, xf * Vector3(0, 0, 1.6), district)
@@ -2320,18 +2490,19 @@ func apply_bike_paint() -> void:
 		return
 	var pcol: Color = BIKE_PAINTS[bike_paint % BIKE_PAINTS.size()][1]
 	var out: Array = RIDER_OUTFITS[rider_outfit % RIDER_OUTFITS.size()]
-	var top_col: Color = Color(0.98, 0.84, 0.08) if has_vest else (out[1] as Color)
+	var top_col: Color = Color(0.98, 0.88, 0.10) if has_vest else (out[1] as Color)
 	var bot_col: Color = out[2] as Color
 	var pskin: Color = SKINS[1]
-	var helm_col: Color = pcol.darkened(0.15) if has_helmet else Color(0.14, 0.16, 0.20)
+	var helm_col: Color = Color(0.98, 0.74, 0.12) if bike_paint == 0 else pcol.lightened(0.10)
 	if player.boda_body:
 		var rparts := model_boda(false, false, pcol)
-		rparts.append_array(_seated(0.12, top_col, has_helmet, pskin, bot_col, helm_col, rider_female))
+		# Always render the iconic open-face Kampala boda helmet + high-vis reflector vest over dark T-shirt!
+		rparts.append_array(_seated(0.10, top_col, true, pskin, bot_col, helm_col, rider_female, true))
 		player.boda_body.mesh = _agent_mesh(rparts)
 	if player.parked_boda:
 		player.parked_boda.mesh = _agent_mesh(model_boda(false, false, pcol))
 	if player.walk_body and player.walk_body.has_method("build"):
-		player.walk_body.build(model_human(rider_female, "casual", false, top_col, bot_col, pskin, DARK), mat_agent)
+		player.walk_body.build(model_human(rider_female, "casual", false, top_col, bot_col, pskin, Color(0.16, 0.14, 0.14), true), mat_agent)
 
 
 func set_customization(new_name: String, stage_idx: int, paint_idx: int, outfit_idx: int, is_female := false) -> void:
@@ -3205,19 +3376,21 @@ func _build_roads() -> void:
 		var rlen := BLOCK - 8.0
 		var size := Vector3(rlen, 0.03, 8) if along_x else Vector3(8, 0.03, rlen)
 		box(mid + Vector3(0, 0.015, 0), size, ASPHALT, Transform3D.IDENTITY, "road")
-		# Open storm drain trench & black-and-yellow Kampala kerb stones on both road edges
+		# Crisp cream-white road edge lines + storm drain & warm sandstone-terracotta curbs (matches reference art!)
 		for s in [-1.0, 1.0]:
+			var edge_line_pos := mid + (Vector3(0, 0.036, s * 3.52) if along_x else Vector3(s * 3.52, 0.036, 0))
+			var edge_line_sz := Vector3(rlen, 0.01, 0.14) if along_x else Vector3(0.14, 0.01, rlen)
+			box(edge_line_pos, edge_line_sz, PAINT, Transform3D.IDENTITY, "road")
 			var drain_pos := mid + (Vector3(0, 0.01, s * 3.85) if along_x else Vector3(s * 3.85, 0.01, 0))
-			var drain_sz := Vector3(rlen, 0.02, 0.28) if along_x else Vector3(0.28, 0.02, rlen)
+			var drain_sz := Vector3(rlen, 0.02, 0.26) if along_x else Vector3(0.26, 0.02, rlen)
 			box(drain_pos, drain_sz, DRAIN_DARK, Transform3D.IDENTITY, "road")
-			# Clean weathered concrete curbs mid-block, with yellow-and-black corner safety kerbs at junctions
 			var seg_len := 2.0
 			var num_segs := int(rlen / seg_len)
-			var concrete_curb := PAVEMENT.darkened(0.18)
+			var sandstone_curb := PAVEMENT.darkened(0.14)
 			for ci in num_segs:
 				var coff := -rlen * 0.5 + (ci + 0.5) * seg_len
-				var near_junc := absf(coff) > rlen * 0.5 - 4.5
-				var ccol := (CURB_YELLOW if ci % 2 == 0 else DARK) if near_junc else concrete_curb
+				var near_junc := absf(coff) > rlen * 0.5 - 4.0
+				var ccol := (CURB_YELLOW if ci % 2 == 0 else DARK) if near_junc else sandstone_curb
 				var cpos := mid + (Vector3(coff, 0.11, s * 4.02) if along_x else Vector3(s * 4.02, 0.11, coff))
 				var csz := Vector3(seg_len, 0.15, 0.18) if along_x else Vector3(0.18, 0.15, seg_len)
 				box(cpos, csz, ccol)

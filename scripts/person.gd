@@ -60,10 +60,11 @@ static func _skinned_mesh(parts: Array) -> ArrayMesh:
 	var weights := PackedFloat32Array()
 	var idx := PackedInt32Array()
 	for p in parts:
-		var arr: Array = (p[0] as PrimitiveMesh).get_mesh_arrays()
+		var m_src: Mesh = p[0]
+		var arr: Array = (m_src as ArrayMesh).surface_get_arrays(0) if m_src is ArrayMesh else (m_src as PrimitiveMesh).get_mesh_arrays()
 		var v: PackedVector3Array = arr[Mesh.ARRAY_VERTEX]
 		var n: PackedVector3Array = arr[Mesh.ARRAY_NORMAL]
-		var ind: PackedInt32Array = arr[Mesh.ARRAY_INDEX]
+		var ind: PackedInt32Array = arr[Mesh.ARRAY_INDEX] if arr[Mesh.ARRAY_INDEX] != null else PackedInt32Array()
 		var xf: Transform3D = p[1]
 		var nb := xf.basis.inverse().transposed()
 		var c: Color = p[2]
@@ -75,8 +76,12 @@ static func _skinned_mesh(parts: Array) -> ArrayMesh:
 			cols.append(c)
 			bones.append_array([bone, 0, 0, 0])
 			weights.append_array([1.0, 0.0, 0.0, 0.0])
-		for k in ind:
-			idx.append(base + k)
+		if ind.size() > 0:
+			for k in ind:
+				idx.append(base + k)
+		else:
+			for k in v.size():
+				idx.append(base + k)
 	var a := []
 	a.resize(Mesh.ARRAY_MAX)
 	a[Mesh.ARRAY_VERTEX] = verts
@@ -110,10 +115,10 @@ func animate(delta: float, speed: float) -> void:
 		_rot(THIGH_R, -s * 0.44 * amt)
 		_rot(SHIN_L, -maxf(0.0, c) * 0.68 * amt)
 		_rot(SHIN_R, -maxf(0.0, -c) * 0.68 * amt)
-		_rot(ARM_L, -s * 0.36 * amt)
-		_rot(ARM_R, s * 0.36 * amt)
-		_rot(FORE_L, 0.22 + maxf(0.0, -s) * 0.24 * amt)
-		_rot(FORE_R, 0.22 + maxf(0.0, s) * 0.24 * amt)
+		skel.set_bone_pose_rotation(ARM_L, Quaternion(Vector3.FORWARD, 0.09) * Quaternion(Vector3.RIGHT, -s * 0.36 * amt))
+		skel.set_bone_pose_rotation(ARM_R, Quaternion(Vector3.FORWARD, -0.09) * Quaternion(Vector3.RIGHT, s * 0.36 * amt))
+		_rot(FORE_L, 0.28 + maxf(0.0, -s) * 0.24 * amt)
+		_rot(FORE_R, 0.28 + maxf(0.0, s) * 0.24 * amt)
 		skel.set_bone_pose_rotation(SPINE, Quaternion(Vector3.UP, s * 0.055) * Quaternion(Vector3.RIGHT, -0.04 * amt))
 		skel.set_bone_pose_position(HIPS, _hips_rest + Vector3(0, absf(c) * 0.026 * amt, 0))
 	else:
@@ -123,10 +128,10 @@ func animate(delta: float, speed: float) -> void:
 			for b in [THIGH_L, THIGH_R, SHIN_L, SHIN_R]:
 				_rot(b, 0.0)
 		var br := sin(phase) * 0.03
-		_rot(ARM_L, br)
-		_rot(ARM_R, -br)
-		_rot(FORE_L, 0.12)
-		_rot(FORE_R, 0.12)
+		skel.set_bone_pose_rotation(ARM_L, Quaternion(Vector3.FORWARD, 0.10) * Quaternion(Vector3.RIGHT, br))
+		skel.set_bone_pose_rotation(ARM_R, Quaternion(Vector3.FORWARD, -0.10) * Quaternion(Vector3.RIGHT, -br))
+		_rot(FORE_L, 0.22)
+		_rot(FORE_R, 0.22)
 		skel.set_bone_pose_rotation(SPINE, Quaternion(Vector3.RIGHT, br * 0.5))
 		skel.set_bone_pose_position(HIPS, _hips_rest)
 

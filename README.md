@@ -25,6 +25,17 @@ there are no art files to manage yet.
 - **Power cut**: the lights go off, except one building on a generator
   and the rolex stand's charcoal
 
+## Reference-Art 3D Character, Vehicle & Arched Boulevard Overhaul (v1.2.0 / v6.0)
+- **Zero-Stick Sculpted Organic Anatomy (`scripts/mesh_sculpt.gd`, `scripts/person.gd`, `scripts/main.gd`)**:
+  - Added smooth revolved 3D lathe anatomy (`MeshSculpt.lathe_profile`) and `ArrayMesh` skinning in `Person._skinned_mesh()` so every rider, man, and woman has contoured athletic/curvy torsos, rounded deltoid sleeves, muscular forearms, overlapping thighs & calves (zero stick cylinders or joint gaps), sculpted jawlines, full Ugandan hairstyles, and white-soled sneakers.
+  - Upgraded the default Boda Rider (`_seated()` & `apply_bike_paint()`) to match the PlayKampala cover & icon art 1-to-1: **open-face golden-yellow Kampala boda helmet** with front curved clear visor, **open high-vis yellow reflector vest with twin silver reflective stripes** layered over a charcoal short-sleeve T-shirt, two-segment bent muscular forearms gripping the handlebars, and indigo jeans.
+- **5-Spoke Cast-Alloy Wheels, Detailed Bajaj Boxer & Framed Matatu Windows (`scripts/mesh_sculpt.gd`, `scripts/main.gd`)**:
+  - Added `MeshSculpt.spoked_wheel_pair()` (smooth 3D torus rubber tyres + open 5-spoke cast-alloy wheels) across motorcycles, matatus, and sedans.
+  - Upgraded `model_boda()` with finned cylinder block, silver crankcase, tubular chrome engine crash-guard, twin round speedometers above the chrome-rimmed headlamp, amber stalk indicators, side panels, tail cowl, and chrome rear grab-rail hoop; added individual framed side window bays & rooftop route sign on `model_taxi()` and exterior-visible framed glass on `model_car()`.
+- **3D Arched Kampala Veranda Colonnades, Ringed Palms & Stylized Sunlit Shaders (`scripts/main.gd`, `scripts/endless_world.gd`)**:
+  - Added `MeshSculpt.arch_spandrel()` semi-circular masonry arches, column plinths, wrought-iron upper loggia railings, classical eaves, and potted tropical plants along `shop_house()` streets, plus 7-segment ringed curved palm trunks (`model_tree(0)`) with 12 layered V-folded tropical fronds and crisp cream road edge lines across all city streets & endless highways.
+  - Upgraded `mat_agent` and `mat_solid` with warm golden-sun + cool cerulean-sky hemisphere bounce and golden Fresnel rim highlights matching the official artwork.
+
 ## First-Class Realism, Endless Streaming World & Deep Kampala Life Overhaul (v1.1.0 / v5.0)
 - **Grounded Ugandan Palette, Architectural AO Shader & Contact Shadows** (`scripts/main.gd`, `project.godot`):
   - Enabled 4× MSAA (`msaa_3d=2`) and crisp `4096` soft directional shadows (`soft_shadow_filter_quality=3`).
